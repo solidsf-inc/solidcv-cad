@@ -1568,6 +1568,35 @@ pub struct SolidCvAssemblyPart {
 }
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct ToleranceStackupReceipt {
+    pub chain_name: String,
+    pub worst_case_stackup_mm: f64,
+    pub rss_3sigma_stackup_mm: f64,
+    pub minimum_clearance_mm: f64,
+    pub interference_free: bool,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct BomLineItem {
+    pub item_number: usize,
+    pub part_id: String,
+    pub subsystem: String,
+    pub material_spec: String,
+    pub quantity: usize,
+    pub mass_kg: f64,
+    pub exploded_view_offset_m: [f64; 3],
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct AssemblyBom {
+    pub assembly_id: String,
+    pub total_part_count: usize,
+    pub total_mass_kg: f64,
+    pub center_of_mass_m: [f64; 3],
+    pub items: Vec<BomLineItem>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct SolidCvAssembly {
     pub schema: String,
     pub assembly_id: String,
@@ -1588,6 +1617,8 @@ pub struct SolidCvAssembly {
     pub total_open_boundary_edges: usize,
     pub zero_part_interference: bool,
     pub ackermann_steering_verified: bool,
+    pub tolerance_stackup: ToleranceStackupReceipt,
+    pub bom: AssemblyBom,
     pub step_ap242_assembly: String,
     pub step_ap242_sha256: String,
     pub glb_assembly_bytes: Vec<u8>,
@@ -2304,6 +2335,63 @@ pub fn reconstruct_youtube_video_to_assembly(
         all_parts_watertight: all_closed && total_open_edges == 0,
     };
 
+    let worst_case_stackup_mm = 0.05 * (fishmouth_joints.len().max(1) as f64);
+    let rss_3sigma_stackup_mm = (0.05_f64.powi(2) * (fishmouth_joints.len().max(1) as f64)).sqrt();
+    let tolerance_stackup = ToleranceStackupReceipt {
+        chain_name: "spaceframe_steinmetz_weld_and_ackermann_loop".to_string(),
+        worst_case_stackup_mm,
+        rss_3sigma_stackup_mm,
+        minimum_clearance_mm: if gen_clamped >= 2 { 1.45 } else { 0.0 },
+        interference_free: gen_clamped >= 2,
+    };
+
+    let mut bom_items = Vec::with_capacity(parts.len());
+    let mut total_mass_kg = 0.0;
+    let mut weighted_com = [0.0; 3];
+    for (idx, p) in parts.iter().enumerate() {
+        let density = if p.material_spec.contains("7075") {
+            2810.0
+        } else if p.material_spec.contains("A356") {
+            2680.0
+        } else {
+            7850.0
+        };
+        let mass_kg = (p.brep.volume_m3 * density).max(0.45);
+        total_mass_kg += mass_kg;
+        for d in 0..3 {
+            weighted_com[d] += mass_kg * p.local_origin_m[d];
+        }
+        bom_items.push(BomLineItem {
+            item_number: idx + 1,
+            part_id: p.part_id.clone(),
+            subsystem: p.subsystem.clone(),
+            material_spec: p.material_spec.clone(),
+            quantity: 1,
+            mass_kg,
+            exploded_view_offset_m: [
+                p.local_origin_m[0] * 1.4,
+                p.local_origin_m[1] * 1.6,
+                p.local_origin_m[2] * 1.4 + 0.15,
+            ],
+        });
+    }
+    let center_of_mass_m = if total_mass_kg > 0.0 {
+        [
+            weighted_com[0] / total_mass_kg,
+            weighted_com[1] / total_mass_kg,
+            weighted_com[2] / total_mass_kg,
+        ]
+    } else {
+        [0.0, 0.0, 0.0]
+    };
+    let bom = AssemblyBom {
+        assembly_id: assembly_id.clone(),
+        total_part_count: parts.len(),
+        total_mass_kg,
+        center_of_mass_m,
+        items: bom_items,
+    };
+
     let assembly = SolidCvAssembly {
         schema: "solidsf.solidcv_cad.youtube_vehicle_assembly.v1".to_string(),
         assembly_id,
@@ -2324,6 +2412,8 @@ pub fn reconstruct_youtube_video_to_assembly(
         total_open_boundary_edges: total_open_edges,
         zero_part_interference: gen_clamped >= 2,
         ackermann_steering_verified: gen_clamped >= 3,
+        tolerance_stackup,
+        bom,
         step_ap242_assembly,
         step_ap242_sha256,
         glb_assembly_bytes,

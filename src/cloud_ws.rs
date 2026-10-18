@@ -105,7 +105,7 @@ pub static SOLIDSF_ENCRYPTED_BOUNTY_BLOB: [u8; 737] = [
     0x9E,
 ];
 
-/// Proprietary engine opcode multiplexed over the binary WebSocket connection.
+/// Proprietary engine opcode multiplexed over the binary WebSocket connection (`solidcv-cad` + `solidasm`).
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, Deserialize)]
 #[repr(u8)]
 pub enum WsEngine {
@@ -117,6 +117,18 @@ pub enum WsEngine {
     StepAp242IgesExporter = 0x03,
     /// Watertight Delaunay/octree tetrahedralization & kinematic boundary handoff to `solidcv-cae`.
     CadToCaeTetraMesher = 0x04,
+    /// `solidasm`: Multi-frame video/scan to 12-part watertight 2-manifold assembly decomposer.
+    VideoToAssemblyDecomposer = 0x05,
+    /// `solidasm`: Steinmetz bicubic rational NURBS tube fishmouth coper & weld-loop stitcher.
+    SteinmetzNurbsTubeCoper = 0x06,
+    /// `solidasm`: `SE(3)` kinematic mechanism solver & Ackermann/suspension mate synthesizer.
+    Se3KinematicMechanismSolver = 0x07,
+    /// `solidasm`: 3D worst-case & RSS tolerance stackup and swept-volume interference verifier.
+    ToleranceAndClearanceVerifier = 0x08,
+    /// `solidasm`: Hierarchical `STEP AP242` (`NAUO`), multi-node `.glb`, `IGES 5.3`, and BOM exporter.
+    HierarchicalStepGlbBomExporter = 0x09,
+    /// `solidasm`: Multi-body tetrahedralized assembly + welded joints + mates handoff to `solidcv-cae`.
+    AssemblyToCaeHandoffBridge = 0x0A,
 }
 
 impl WsEngine {
@@ -126,6 +138,12 @@ impl WsEngine {
             0x02 => Some(Self::OhSymmetryBrepCompleter),
             0x03 => Some(Self::StepAp242IgesExporter),
             0x04 => Some(Self::CadToCaeTetraMesher),
+            0x05 => Some(Self::VideoToAssemblyDecomposer),
+            0x06 => Some(Self::SteinmetzNurbsTubeCoper),
+            0x07 => Some(Self::Se3KinematicMechanismSolver),
+            0x08 => Some(Self::ToleranceAndClearanceVerifier),
+            0x09 => Some(Self::HierarchicalStepGlbBomExporter),
+            0x0A => Some(Self::AssemblyToCaeHandoffBridge),
             _ => None,
         }
     }
@@ -137,6 +155,12 @@ impl WsEngine {
             Self::OhSymmetryBrepCompleter => 15,
             Self::StepAp242IgesExporter => 5,
             Self::CadToCaeTetraMesher => 10,
+            Self::VideoToAssemblyDecomposer => 25,
+            Self::SteinmetzNurbsTubeCoper => 20,
+            Self::Se3KinematicMechanismSolver => 20,
+            Self::ToleranceAndClearanceVerifier => 15,
+            Self::HierarchicalStepGlbBomExporter => 20,
+            Self::AssemblyToCaeHandoffBridge => 15,
         }
     }
 }
