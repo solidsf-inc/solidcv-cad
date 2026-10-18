@@ -1,0 +1,27 @@
+[package]
+name = "solidcv-cad"
+version = "0.1.0"
+edition = "2021"
+authors = ["Andy Norris <andy@solidsf.com>", "solidSF <engineering@solidsf.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/solidsf-inc/solidcv-cad"
+homepage = "https://github.com/solidsf-inc/solidcv-cad"
+description = "Pure-Rust Video-to-CAD (BRep + Rational Bicubic NURBS + ISO-10303-21 STEP AP242 + IGES 5.3 + Binary glTF 2.0 .glb + CAD-to-CAE Tetrahedral Handoff) engine powered by solidcv Pixelean/Voxelean/Worldtube algebra, Apple Silicon NEON/Metal 3.1, NVIDIA Grace-Blackwell GB300/GB10 Tensor Cores, and 10-clone NVIDIA OpenShell Safe Sandbox self-evolution."
+keywords = ["cad", "brep", "nurbs", "step-ap242", "gltf"]
+categories = ["computer-vision", "rendering::data-formats", "mathematics", "science"]
+
+[workspace]
+
+[features]
+default = ["brep", "nurbs", "step", "iges", "glb", "cae-handoff", "mechinterp"]
+brep = []
+nurbs = []
+step = []
+iges = []
+glb = []
+cae-handoff = []
+mechinterp = []
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
