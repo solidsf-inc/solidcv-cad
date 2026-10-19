@@ -1801,10 +1801,48 @@ pub fn load_or_synthesize_youtube_video_frames(spec: &YoutubeVehicleVideoSpec) -
 }
 
 fn parse_pgm_32x32(bytes: &[u8]) -> Option<Mat> {
-    if bytes.len() < 1024 || !bytes.starts_with(b"P5") {
+    fn whitespace(byte: u8) -> bool {
+        byte.is_ascii_whitespace() || byte == 0x0b
+    }
+
+    fn token<'a>(input: &mut &'a [u8]) -> Option<&'a [u8]> {
+        loop {
+            while input.first().is_some_and(|&byte| whitespace(byte)) {
+                *input = &input[1..];
+            }
+            if input.first() != Some(&b'#') {
+                break;
+            }
+            let end = input.iter().position(|&byte| byte == b'\n' || byte == b'\r')?;
+            *input = &input[end..];
+        }
+        let end = input.iter().position(|&byte| whitespace(byte) || byte == b'#')?;
+        let (value, rest) = input.split_at(end);
+        *input = rest;
+        Some(value)
+    }
+
+    let mut input = bytes.strip_prefix(b"P5")?;
+    if !input.first().is_some_and(|&byte| whitespace(byte)) {
         return None;
     }
-    let payload = &bytes[bytes.len() - 1024..];
+    // Corpus frames are 32x32, one-byte samples with the full 0..255 range.
+    for expected in [32, 32, 255] {
+        let value = token(&mut input)?;
+        if value.is_empty()
+            || !value.iter().all(u8::is_ascii_digit)
+            || std::str::from_utf8(value).ok()?.parse::<u32>().ok()? != expected
+        {
+            return None;
+        }
+    }
+    // P5 has one whitespace separator after Maxval. Anything after it is
+    // binary data, including whitespace or '#'; never skip raster bytes.
+    let (&separator, raster) = input.split_first()?;
+    if !whitespace(separator) {
+        return None;
+    }
+    let payload = raster.get(..1024)?;
     let mut m = Mat::zeros(16, 16, CV_8UC1).ok()?;
     for r in 0..16 {
         for c in 0..16 {
@@ -2546,6 +2584,49 @@ pub fn evolve_youtube_assembly_skills_recursively() -> RecursiveYoutubeAssemblyE
 mod tests {
     use super::*;
     use crate::mechinterp::{reset_mind, with_counterfactual_ablation, AblationConfig, GlassBoxCadSignature64D, SaeCadBinaryAtom, SaeCadCircuitMatcher};
+
+    fn pgm_fixture(header: &[u8], pixels: &[u8]) -> Vec<u8> {
+        [header, pixels].concat()
+    }
+
+    #[test]
+    fn pgm_reads_first_raster_and_preserves_binary_whitespace() {
+        for first_pixel in [0, b'\n', b' ', b'#', 255] {
+            let mut pixels: Vec<u8> = (0..1024).map(|i| (i % 256) as u8).collect();
+            pixels[0] = first_pixel;
+            for has_second_image in [false, true] {
+                let mut bytes = pgm_fixture(b"P5\n# frame\n32\t32\n255\n", &pixels);
+                if has_second_image {
+                    bytes.extend(pgm_fixture(b"P5\n32 32\n255\n", &[17; 1024]));
+                }
+                let mat = parse_pgm_32x32(&bytes).expect("valid first image");
+                assert_eq!((mat.rows(), mat.cols()), (16, 16));
+                for r in 0..16 {
+                    for c in 0..16 {
+                        assert_eq!(mat.get_u8(r, c), pixels[(r * 64 + c * 2) as usize]);
+                    }
+                }
+            }
+        }
+    }
+
+    #[test]
+    fn pgm_rejects_unsupported_headers_and_truncated_rasters() {
+        for header in [
+            b"P5\n64 16\n255\n".as_slice(),
+            b"P5\n32 32\n65535\n",
+            b"P5\n32 32\n0\n",
+            b"P5\n32 32\n100\n",
+            b"P2\n32 32\n255\n",
+            b"P5\nwidth 32\n255\n",
+            b"P5\n32 32\n255",
+        ] {
+            assert!(parse_pgm_32x32(&pgm_fixture(header, &[0; 2048])).is_none());
+        }
+        // Header bytes must not be mistaken for the missing raster bytes.
+        assert!(parse_pgm_32x32(&pgm_fixture(b"P5\n32 32\n255\n", &[0; 1023])).is_none());
+        assert!(parse_pgm_32x32(b"P5\n# unfinished header").is_none());
+    }
 
     #[test]
     fn ten_clone_solidcv_cad_suite_builds_closed_brep_nurbs_step_iges_and_glb() {
