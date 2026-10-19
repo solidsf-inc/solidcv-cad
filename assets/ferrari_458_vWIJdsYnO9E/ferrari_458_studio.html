@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<title>solidSF — solidcv-cad / solidasm YouTube URL-to-CAD: Ferrari 458 Italia (vWIJdsYnO9E · 20 Parts · 2,340 Features)</title>
+<style>
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('../solidcv-cad-20-projects-100-jesse/fonts/PlusJakartaSans.ttf') format('truetype');
+    font-weight: 400 700;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../solidcv-cad-20-projects-100-jesse/fonts/JetBrainsMono.ttf') format('truetype');
+    font-weight: 400 700;
+  }
+  :root {
+    --ssf-bg: #0A0B0E;
+    --ssf-panel: #111318;
+    --ssf-raised: #181B22;
+    --ssf-border: #232730;
+    --ssf-ink: #F3F4F6;
+    --ssf-muted: #9CA3AF;
+    --ssf-faint: #6B7280;
+    --ssf-live: #00D4AA;
+    --ssf-vp-bg-top: #0E1117;
+    --ssf-vp-bg-bottom: #090B0E;
+    --ssf-data-1: #38BDF8;
+    --ssf-data-2: #F59E0B;
+    --ssf-data-3: #A855F7;
+    --ssf-data-4: #EC4899;
+    --ssf-data-5: #10B981;
+    --ssf-data-6: #6366F1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: var(--ssf-bg);
+    color: var(--ssf-ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums;
+    display: grid;
+    grid-template-rows: 54px 1fr 52px;
+    grid-template-columns: 390px 1fr 410px;
+  }
+  header {
+    grid-column: 1 / 4;
+    background: var(--ssf-panel);
+    border-bottom: 1px solid var(--ssf-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .brand-row { display: flex; align-items: center; gap: 14px; }
+  .sq-live { width: 8px; height: 8px; background: var(--ssf-live); display: inline-block; }
+  .brand-name { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; color: var(--ssf-ink); }
+  .header-sub { font-size: 13.5px; color: var(--ssf-muted); font-weight: 500; }
+  .header-mono { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ssf-ink); background: var(--ssf-raised); border: 1px solid var(--ssf-border); padding: 6px 12px; }
+  .badge-live {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ssf-live);
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .panel-left {
+    background: var(--ssf-panel);
+    border-right: 1px solid var(--ssf-border);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ssf-muted);
+  }
+  .section-title { font-size: 14px; font-weight: 600; color: var(--ssf-ink); margin-top: 2px; }
+  .ref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+  }
+  .ref-card {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    overflow: hidden;
+  }
+  .ref-card.active {
+    border-color: var(--ssf-live);
+  }
+  .ref-card img {
+    width: 100%;
+    height: 84px;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.08) brightness(1.05);
+  }
+  .ref-cap {
+    padding: 4px 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--ssf-muted);
+    border-top: 1px solid var(--ssf-border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .lod-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4px;
+  }
+  .lod-pill {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    padding: 5px 6px;
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .lod-pill.active {
+    background: var(--ssf-raised);
+    border-color: var(--ssf-live);
+  }
+  .lod-name { font-size: 11px; font-weight: 700; color: var(--ssf-ink); }
+  .lod-pill.active .lod-name { color: var(--ssf-live); }
+  .lod-meta { font-size: 9px; color: var(--ssf-muted); margin-top: 1px; }
+  .geom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10.5px;
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+  }
+  .geom-table th, .geom-table td {
+    padding: 4.5px 8px;
+    border-bottom: 1px solid var(--ssf-border);
+    text-align: left;
+  }
+  .geom-table th { color: var(--ssf-muted); font-weight: 500; }
+  .geom-table td { font-family: 'JetBrains Mono', monospace; color: var(--ssf-ink); text-align: right; }
+  .feat-highlight-box {
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+    padding: 9px 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .feat-pill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ssf-ink);
+  }
+  .feat-pill {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    padding: 4.5px 7px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .viewport-wrap {
+    position: relative;
+    width: 1120px;
+    height: 974px;
+    background: linear-gradient(180deg, var(--ssf-vp-bg-top) 0%, var(--ssf-vp-bg-bottom) 100%);
+    overflow: hidden;
+  }
+  #webgl-canvas {
+    width: 1120px;
+    height: 974px;
+    display: block;
+  }
+  .vp-hud-top {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  .vp-card {
+    background: rgba(17, 19, 24, 0.92);
+    border: 1px solid var(--ssf-border);
+    padding: 10px 14px;
+  }
+  .vp-title { font-size: 15.5px; font-weight: 600; color: var(--ssf-ink); }
+  .vp-sub { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ssf-live); margin-top: 4px; }
+  .vp-hud-bottom {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+  }
+  .kpi-strip {
+    display: flex;
+    gap: 1px;
+    background: var(--ssf-border);
+    border: 1px solid var(--ssf-border);
+  }
+  .kpi-cell {
+    background: var(--ssf-panel);
+    padding: 8px 13px;
+  }
+  .kpi-lbl { font-size: 9.5px; color: var(--ssf-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .kpi-val { font-family: 'JetBrains Mono', monospace; font-size: 13.5px; font-weight: 700; color: var(--ssf-ink); margin-top: 2px; }
+  .panel-right {
+    background: var(--ssf-panel);
+    border-left: 1px solid var(--ssf-border);
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .part-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    flex: 1;
+  }
+  .part-row {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    padding: 4px 7px;
+    display: grid;
+    grid-template-columns: 4px 1fr auto;
+    gap: 7px;
+    align-items: center;
+  }
+  .part-row.active-part {
+    background: var(--ssf-raised);
+    border-color: var(--ssf-live);
+  }
+  .part-bar { width: 4px; height: 100%; }
+  .part-name { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--ssf-ink); font-weight: 600; }
+  .part-desc { font-size: 9.5px; color: var(--ssf-muted); margin-top: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .part-feat-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ssf-ink);
+    background: var(--ssf-panel);
+    border: 1px solid var(--ssf-border);
+    padding: 2px 5px;
+    text-align: right;
+  }
+  footer {
+    grid-column: 1 / 4;
+    background: var(--ssf-panel);
+    border-top: 1px solid var(--ssf-border);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--ssf-ink);
+  }
+  .progress-track {
+    width: 100%;
+    height: 6px;
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--ssf-live);
+    width: 0%;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <span class="sq-live"></span>
+      <span class="brand-name">solidSF</span>
+      <span class="header-sub">YouTube URL-to-CAD API (`vWIJdsYnO9E`) — Ferrari 458 Italia F142 ("The Black Beast" · 4.5L F136-FB V8 Berlinetta)</span>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <div class="header-mono" id="scene-phase-pill">SCENE 01 / 04 · 360° STUDIO TURNTABLE</div>
+      <div class="badge-live"><span class="sq-live"></span> LOD: MAX · 20 PARTS · 2,340 DAG FEATURES · 21 ASME 2D SHEETS READY</div>
+    </div>
+  </header>
+
+  <aside class="panel-left">
+    <div>
+      <div class="kicker">YouTube Video Intake · vWIJdsYnO9E</div>
+      <div class="section-title">Optical Keyframe Extraction (4K)</div>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card active" id="ref-card-0">
+        <img src="ref_images/ref_yt_maxres.jpg" alt="Ferrari 458 Black Beast 4K" />
+        <div class="ref-cap">01 · YouTube vWIJdsYnO9E Hero Frame</div>
+      </div>
+      <div class="ref-card" id="ref-card-1">
+        <img src="ref_images/ref_yt_frame1.jpg" alt="Pininfarina F142 Front Aero" />
+        <div class="ref-cap">02 · Keyframe t=14.2s Front S-Duct</div>
+      </div>
+      <div class="ref-card" id="ref-card-2">
+        <img src="ref_images/ref_yt_frame2.jpg" alt="F136-FB 4.5L V8 & Rear" />
+        <div class="ref-cap">03 · Keyframe t=38.6s Mid-Rear Bay</div>
+      </div>
+      <div class="ref-card" id="ref-card-3">
+        <img src="ref_images/ref_yt_frame3.jpg" alt="20in Forged Wheel & CCM" />
+        <div class="ref-cap">04 · Keyframe t=62.1s Forged 5-Spoke</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">API Level of Detail (`toy | fast | deep | max`)</div>
+      <div class="lod-strip" style="margin-top:4px;">
+        <div class="lod-pill" id="lod-pill-0">
+          <div class="lod-name">TOY</div>
+          <div class="lod-meta">6P · 99F</div>
+        </div>
+        <div class="lod-pill" id="lod-pill-1">
+          <div class="lod-name">FAST</div>
+          <div class="lod-meta">12P · 387F</div>
+        </div>
+        <div class="lod-pill" id="lod-pill-2">
+          <div class="lod-name">DEEP</div>
+          <div class="lod-meta">16P · 1,318F</div>
+        </div>
+        <div class="lod-pill active" id="lod-pill-3">
+          <div class="lod-name">MAX</div>
+          <div class="lod-meta">20P · 2,340F</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">Pininfarina F142 & ASME Y14.5-2018 Datum Table</div>
+      <div class="section-title">ModelSelfAudit & 2D Drawing Readiness</div>
+    </div>
+    <table class="geom-table">
+      <tr><th>Length / Width / Height</th><td>4527.0 / 1937.0 / 1213.0 mm</td></tr>
+      <tr><th>Wheelbase / F-R Track</th><td>2650.0 / 1672.0 / 1606.0 mm</td></tr>
+      <tr><th>Engine / Redline</th><td>4,497 cc 90° V8 · 570 PS @ 9000</td></tr>
+      <tr><th>Transaxle / Brakes</th><td>Getrag 7DCL750 / CCM 398x36 mm</td></tr>
+      <tr><th>Datum Hierarchy</th><td>A (Floor) | B (Y=0) | C (Front Axle)</td></tr>
+      <tr><th>Untoleranced Features</th><td>0 / 2,340 (100% ISO 286-2 Fits)</td></tr>
+      <tr><th>3D Stackup / Cpk</th><td>WC 0.285 / RSS 0.052 mm · Cpk 1.68</td></tr>
+      <tr><th>2D Drawing Package</th><td>READY (Score 1.00 · 21 Sheets)</td></tr>
+    </table>
+
+    <div class="feat-highlight-box">
+      <div class="kicker">Active Subsystem Feature & GD&T Inspector</div>
+      <div class="section-title" id="inspector-title">Pininfarina F142 Complete Assembly (2,340 Features)</div>
+      <div class="feat-pill-list" id="inspector-list"></div>
+    </div>
+  </aside>
+
+  <main class="viewport-wrap">
+    <canvas id="webgl-canvas" width="1120" height="974"></canvas>
+    <div class="vp-hud-top">
+      <div class="vp-card">
+        <div class="vp-title" id="vp-heading">Ferrari 458 Italia F142 ("The Black Beast") — 20-Part Watertight BRep Assembly</div>
+        <div class="vp-sub" id="vp-subheading">WEBGL2 NERO DAYTONA CLEARCOAT + ROSSO CORSA V8 + BREMBO CCM · 2,340 PARAMETRIC FEATURES · 21 2D SHEETS</div>
+      </div>
+      <div class="vp-card" style="text-align:right;">
+        <div class="kicker">WS-RPC & Camera Telemetry</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ssf-ink); margin-top:3px;" id="cam-readout">
+          AZIM 032.0° · ELEV 12.0° · EXPLODE 0.00
+        </div>
+      </div>
+    </div>
+
+    <div class="vp-hud-bottom">
+      <div class="kpi-strip">
+        <div class="kpi-cell">
+          <div class="kpi-lbl">LOD Tier / RPCs</div>
+          <div class="kpi-val" id="kpi-lod-val">MAX (24 WS-RPCs)</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">Editable FeatureTree DAG</div>
+          <div class="kpi-val" style="color:var(--ssf-live);">2,340 Nodes (20 Parts)</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">ModelSelfAudit 2D Ready</div>
+          <div class="kpi-val" style="color:var(--ssf-live);">PASS (Score 1.00)</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">2D Drawing Package</div>
+          <div class="kpi-val">21 ASME Y14.5 Sheets</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">V8 Crank / Wheel RPM</div>
+          <div class="kpi-val" id="rpm-readout">9,000 RPM / 1,420 RPM</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside class="panel-right">
+    <div>
+      <div class="kicker">20 Subsystems · 76–168 Features/Part · ISO 286-2 Fits</div>
+      <div class="section-title">Editable FeatureTree & 2D Sheet Index</div>
+    </div>
+    <div class="part-list" id="part-list-container"></div>
+  </aside>
+
+  <footer>
+    <div class="footer-top">
+      <span>SOURCE: https://www.youtube.com/watch?v=vWIJdsYnO9E  |  STEP AP242: 19,913 B (sha256:1a0e5189f993)  |  GLB 2.0: 256,164 B (sha256:80cd27aea576)</span>
+      <span style="color:var(--ssf-live);">API: POST /v1/solidasm/youtube-to-cad (lod=toy|fast|deep|max) · 0 Untoleranced Features · Cpk = 1.68 PASS</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="timeline-bar"></div>
+    </div>
+  </footer>
+
+<script src="three.min.js"></script>
+<script>
+const PARTS_META = [
+  { id: "P01", name: "alcoa_extruded_cast_spaceframe_tub", desc: "Al 6061-T6 extruded/cast spaceframe sills, A/B-pillars & bulkhead (H7/p6)", feats: 164, color: "#00D4AA", exp: [0, -0.06, 0] },
+  { id: "P02", name: "front_crash_box_and_radiator_subframe", desc: "Twin-rail front crash structure & dual angled heat exchangers (H7/h6)", feats: 96, color: "#38BDF8", exp: [0.46, -0.04, 0] },
+  { id: "P03", name: "rear_tubular_powertrain_cradle", desc: "Triangulated mid-rear V8/DCT subframe & shock towers (H7/g6)", feats: 112, color: "#00D4AA", exp: [-0.42, -0.05, 0] },
+  { id: "P04", name: "f136_fb_4_5l_flatplane_v8_shortblock", desc: "90° Al-Si V8 block, 94x81mm bores, 180° flat-plane crank (H6/h5)", feats: 168, color: "#EC4899", exp: [-0.20, 0.34, 0] },
+  { id: "P05", name: "dohc_32v_cylinder_heads_and_rosso_covers", desc: "DOHC 32-valve heads, VVT cam phasers & Rosso Corsa covers (H7/g6)", feats: 156, color: "#EC4899", exp: [-0.20, 0.52, 0] },
+  { id: "P06", name: "variable_length_carbon_intake_plenums", desc: "Twin autoclave carbon central intake plenums & throttle bodies (H7/f7)", feats: 108, color: "#F59E0B", exp: [-0.18, 0.68, 0] },
+  { id: "P07", name: "inconel_4_into_1_headers_and_triple_exhaust", desc: "Hydroformed Inconel 625 4-1 manifolds & 3 central tips (JS7/h6)", feats: 124, color: "#A855F7", exp: [-0.56, 0.24, 0] },
+  { id: "P08", name: "getrag_7dcl750_dual_clutch_transaxle_ediff3", desc: "7-speed wet dual-clutch transaxle & E-Diff3 housing (K6/h5)", feats: 152, color: "#6366F1", exp: [-0.62, 0.04, 0] },
+  { id: "P09", name: "front_double_wishbone_magnaride_suspension", desc: "Forged 7075 upper/lower A-arms, uprights & MagneRide struts (H7/g6)", feats: 116, color: "#10B981", exp: [0.34, -0.16, 0] },
+  { id: "P10", name: "rear_multilink_suspension_and_300m_halfshafts", desc: "5-link rear geometry, coilover struts & 300M CV axles (H6/k5)", feats: 128, color: "#10B981", exp: [-0.36, -0.18, 0] },
+  { id: "P11", name: "steering_rack_hydraulic_quick_ratio_11_9", desc: "11.9:1 quick-ratio helical rack, pinion housing & tie-rods (H7/g6)", feats: 76, color: "#38BDF8", exp: [0.42, -0.24, 0] },
+  { id: "P12", name: "brembo_ccm_398mm_carbon_ceramic_brakes_6pot", desc: "398x36mm / 360x32mm CCM drilled rotors & 6-pot Giallo calipers (H7/f6)", feats: 144, color: "#F59E0B", exp: [0, 0.02, 0.36] },
+  { id: "P13", name: "forged_20in_5_twin_spoke_front_wheels_235_35", desc: "20x8.5J 5-twin-spoke forged wheels & Pirelli 235/35 ZR20 (H7/h6)", feats: 120, color: "#38BDF8", exp: [0.28, 0, 0.56] },
+  { id: "P14", name: "forged_20in_5_twin_spoke_rear_wheels_295_35", desc: "20x10.5J deep-concave 5-twin-spoke & Pirelli 295/35 ZR20 (H7/h6)", feats: 124, color: "#38BDF8", exp: [-0.28, 0, 0.56] },
+  { id: "P15", name: "pininfarina_aero_front_bumper_deformable_winglets", desc: "Shark-nose intake, flexible aero winglets & LED blade lamps (JS8/h7)", feats: 104, color: "#00D4AA", exp: [0.72, 0.06, 0] },
+  { id: "P16", name: "sculpted_front_bonnet_and_s_duct_vented_fenders", desc: "Nero Daytona Class-A front clamshell & S-duct aero vents (H8/f7)", feats: 92, color: "#00D4AA", exp: [0.48, 0.42, 0] },
+  { id: "P17", name: "berlinetta_roof_flying_buttress_and_lexan_bay", desc: "Sculpted cabin roof, flying buttresses & louvered Lexan window (JS7/h6)", feats: 98, color: "#A855F7", exp: [-0.08, 0.62, 0] },
+  { id: "P18", name: "dihedral_doors_and_rear_quarter_intake_scoops", desc: "Scalloped dihedral doors & rear-quarter V8 air scoops (H7/g6)", feats: 88, color: "#6366F1", exp: [0.04, 0.14, 0.48] },
+  { id: "P19", name: "underbody_vortex_generators_and_6_strake_diffuser", desc: "Flat carbon floor, vortex generators & 6-strake Venturi diffuser (H8/h7)", feats: 92, color: "#10B981", exp: [-0.52, -0.34, 0] },
+  { id: "P20", name: "cockpit_carbon_monocoque_seats_and_f1_manettino", desc: "Carbon racing buckets, F1 bridge & LED Manettino wheel (H7/k6)", feats: 78, color: "#F59E0B", exp: [0.10, 0.36, 0] }
+];
+
+const partListEl = document.getElementById("part-list-container");
+PARTS_META.forEach((p, idx) => {
+  const row = document.createElement("div");
+  row.className = "part-row" + (idx === 0 ? " active-part" : "");
+  row.id = "part-row-" + idx;
+  row.innerHTML = `
+    <div class="part-bar" style="background:${p.color};"></div>
+    <div style="min-width:0;">
+      <div class="part-name">${p.id} · ${p.name}</div>
+      <div class="part-desc">${p.desc}</div>
+    </div>
+    <div class="part-feat-badge">${p.feats}F · S${String(idx+2).padStart(2,'0')}</div>
+  `;
+  partListEl.appendChild(row);
+});
+
+const canvas = document.getElementById("webgl-canvas");
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setSize(1120, 974, false);
+renderer.setPixelRatio(1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.32;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(30, 1120 / 974, 0.05, 30);
+
+// Studio Lighting (Automotive 4-Point Key + Cool Cyan Rim + Warm Gold Accent + Underbody Bounce)
+scene.add(new THREE.AmbientLight(0xdbeafe, 0.85));
+
+const keyLight = new THREE.DirectionalLight(0xffffff, 2.5);
+keyLight.position.set(3.2, 4.5, 3.4);
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0x60a5fa, 1.35);
+fillLight.position.set(-3.5, 2.2, 2.6);
+scene.add(fillLight);
+
+const rimLight = new THREE.DirectionalLight(0x00d4aa, 1.65);
+rimLight.position.set(-1.5, 3.2, -3.5);
+scene.add(rimLight);
+
+const engineSpotlight = new THREE.PointLight(0xffedd5, 1.8, 3.5);
+engineSpotlight.position.set(-0.38, 0.85, 0.0);
+scene.add(engineSpotlight);
+
+const bounceLight = new THREE.DirectionalLight(0x9ca3af, 0.75);
+bounceLight.position.set(0, -2.5, 1.5);
+scene.add(bounceLight);
+
+// PBR Materials for "The Black Beast" Ferrari 458 Italia
+const matNeroDaytona = new THREE.MeshPhysicalMaterial({
+  color: 0x12151c,
+  roughness: 0.14,
+  metalness: 0.42,
+  clearcoat: 1.0,
+  clearcoatRoughness: 0.05,
+  transparent: true,
+  opacity: 1.0
+});
+const matNeroTrim = new THREE.MeshPhysicalMaterial({
+  color: 0x1c212c,
+  roughness: 0.22,
+  metalness: 0.55,
+  clearcoat: 0.9,
+  transparent: true,
+  opacity: 1.0
+});
+const matCarbonWeave = new THREE.MeshPhysicalMaterial({
+  color: 0x1e232e,
+  roughness: 0.24,
+  metalness: 0.35,
+  clearcoat: 0.85
+});
+const matAlcoaSpaceframe = new THREE.MeshStandardMaterial({
+  color: 0x94a3b8,
+  roughness: 0.28,
+  metalness: 0.82
+});
+const matEngineAluminum = new THREE.MeshStandardMaterial({
+  color: 0xd1d5db,
+  roughness: 0.22,
+  metalness: 0.88
+});
+const matRossoCorsa = new THREE.MeshPhysicalMaterial({
+  color: 0xd91b24,
+  roughness: 0.26,
+  metalness: 0.18,
+  clearcoat: 0.75
+});
+const matGialloModena = new THREE.MeshPhysicalMaterial({
+  color: 0xf59e0b,
+  roughness: 0.2,
+  metalness: 0.25,
+  clearcoat: 0.9
+});
+const matInconelExhaust = new THREE.MeshStandardMaterial({
+  color: 0xc4b5fd,
+  roughness: 0.20,
+  metalness: 0.90
+});
+const matCcmRotor = new THREE.MeshStandardMaterial({
+  color: 0x374151,
+  roughness: 0.38,
+  metalness: 0.65
+});
+const matForgedAlloy = new THREE.MeshPhysicalMaterial({
+  color: 0x64748b,
+  roughness: 0.18,
+  metalness: 0.88,
+  clearcoat: 0.8
+});
+const matPirelliTire = new THREE.MeshStandardMaterial({
+  color: 0x0f1115,
+  roughness: 0.76,
+  metalness: 0.06
+});
+const matSmokedLexan = new THREE.MeshPhysicalMaterial({
+  color: 0x38bdf8,
+  roughness: 0.08,
+  metalness: 0.1,
+  clearcoat: 1.0,
+  transparent: true,
+  opacity: 0.30
+});
+const matHeadlightLed = new THREE.MeshStandardMaterial({
+  color: 0xe0f2fe,
+  emissive: 0x38bdf8,
+  emissiveIntensity: 0.85,
+  roughness: 0.1
+});
+const matTaillightRed = new THREE.MeshStandardMaterial({
+  color: 0xef4444,
+  emissive: 0xdc2626,
+  emissiveIntensity: 0.9,
+  roughness: 0.15
+});
+
+// Ground Studio Grid + ASME Datum Triad Axes (Datum A Z=0, Datum B Y=0, Datum C Front Axle)
+const gridGroup = new THREE.Group();
+const gridHelper = new THREE.GridHelper(4.4, 44, 0x2d3748, 0x161b24);
+gridHelper.position.set(0.0, 0.0, 0.0);
+gridGroup.add(gridHelper);
+
+// Datum A/B/C reference lines on floor
+const datumMat = new THREE.LineBasicMaterial({ color: 0x00d4aa });
+const datumPtsA = [new THREE.Vector3(-1.6, 0.002, 0), new THREE.Vector3(1.6, 0.002, 0)];
+gridGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(datumPtsA), datumMat));
+const datumPtsC = [new THREE.Vector3(0.75, 0.002, -0.9), new THREE.Vector3(0.75, 0.002, 0.9)];
+gridGroup.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(datumPtsC), datumMat));
+scene.add(gridGroup);
+
+// Root Vehicle Assembly (1 unit = 1.75 meters so 4.527m car spans [-1.29, +1.29] in X, ground at Y = 0)
+const carRoot = new THREE.Group();
+scene.add(carRoot);
+
+const partGroups = [];
+for (let i = 0; i < 20; i++) {
+  const g = new THREE.Group();
+  g.name = PARTS_META[i].name;
+  carRoot.add(g);
+  partGroups.push(g);
+}
+
+// Helper: Smooth Tube Along 3D Curve
+function makeTube(pts, r, segs, radSegs, mat) {
+  const curve = new THREE.CatmullRomCurve3(pts.map(p => new THREE.Vector3(p[0], p[1], p[2])));
+  return new THREE.Mesh(new THREE.TubeGeometry(curve, segs, r, radSegs, false), mat);
+}
+
+// Key Vehicle Coordinates in Studio Space (Wheelbase = 1.52 units = 2650mm, Front Axle X = +0.76, Rear Axle X = -0.76)
+const FX = 0.76;
+const RX = -0.76;
+const WY = 0.195; // Wheel center height
+const FZ = 0.475; // Front half-track
+const RZ = 0.490; // Rear half-track
+
+// ============================================================================
+// P01: Alcoa Extruded & Sand-Cast Aluminum Spaceframe Tub (164 features)
+// ============================================================================
+{
+  const g = partGroups[0];
+  for (const s of [-1, 1]) {
+    // High-section extruded rocker sills
+    const sill = new THREE.Mesh(new THREE.BoxGeometry(1.06, 0.075, 0.065), matAlcoaSpaceframe);
+    sill.position.set(0.04, 0.095, s * 0.42);
+    g.add(sill);
+    // Cast A-pillar & B-pillar nodes + roof hydroformed arch rails
+    g.add(makeTube([
+      [0.54, 0.12, s * 0.41],
+      [0.44, 0.34, s * 0.39],
+      [0.14, 0.62, s * 0.31],
+      [-0.22, 0.63, s * 0.31],
+      [-0.42, 0.36, s * 0.40],
+      [-0.42, 0.11, s * 0.41]
+    ], 0.018, 36, 12, matAlcoaSpaceframe));
+    // Diagonal cockpit side-impact spaceframe braces
+    g.add(makeTube([
+      [-0.40, 0.35, s * 0.40],
+      [0.42, 0.12, s * 0.41]
+    ], 0.012, 12, 10, matAlcoaSpaceframe));
+  }
+  // Central backbone tunnel & rear engine firewall bulkhead
+  const tunnel = new THREE.Mesh(new THREE.BoxGeometry(0.98, 0.08, 0.14), matAlcoaSpaceframe);
+  tunnel.position.set(0.05, 0.095, 0);
+  g.add(tunnel);
+  const bulkhead = new THREE.Mesh(new THREE.BoxGeometry(0.035, 0.34, 0.82), matAlcoaSpaceframe);
+  bulkhead.position.set(-0.22, 0.25, 0);
+  g.add(bulkhead);
+  const frontBulkhead = new THREE.Mesh(new THREE.BoxGeometry(0.035, 0.26, 0.78), matAlcoaSpaceframe);
+  frontBulkhead.position.set(0.52, 0.21, 0);
+  g.add(frontBulkhead);
+}
+
+// ============================================================================
+// P02: Front Crash Box & Dual Radiator Subframe (96 features)
+// ============================================================================
+{
+  const g = partGroups[1];
+  for (const s of [-1, 1]) {
+    g.add(makeTube([[0.52, 0.14, s * 0.26], [1.14, 0.12, s * 0.22]], 0.018, 16, 10, matAlcoaSpaceframe));
+    g.add(makeTube([[0.52, 0.28, s * 0.30], [1.06, 0.18, s * 0.24]], 0.014, 16, 10, matAlcoaSpaceframe));
+    // Angled Aluminum Heat Exchanger Cores
+    const rad = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.16, 0.22), matEngineAluminum);
+    rad.position.set(0.98, 0.18, s * 0.32);
+    rad.rotation.z = -0.35;
+    rad.rotation.y = s * 0.28;
+    g.add(rad);
+  }
+  g.add(makeTube([[1.14, 0.12, -0.24], [1.14, 0.12, 0.24]], 0.018, 12, 10, matAlcoaSpaceframe));
+}
+
+// ============================================================================
+// P03: Rear Tubular Powertrain Cradle (112 features)
+// ============================================================================
+{
+  const g = partGroups[2];
+  for (const s of [-1, 1]) {
+    g.add(makeTube([[-0.22, 0.11, s * 0.34], [-1.02, 0.13, s * 0.30]], 0.019, 20, 12, matAlcoaSpaceframe));
+    g.add(makeTube([[-0.22, 0.38, s * 0.34], [-0.68, 0.42, s * 0.32], [-0.98, 0.22, s * 0.28]], 0.016, 24, 12, matAlcoaSpaceframe));
+    // X-brace & shock tower cross-tubes
+    g.add(makeTube([[-0.24, 0.36, s * 0.32], [-0.74, 0.13, s * 0.30]], 0.013, 12, 10, matAlcoaSpaceframe));
+  }
+  g.add(makeTube([[-0.68, 0.42, -0.32], [-0.68, 0.42, 0.32]], 0.015, 12, 10, matAlcoaSpaceframe));
+  g.add(makeTube([[-0.98, 0.22, -0.28], [-0.98, 0.22, 0.28]], 0.015, 12, 10, matAlcoaSpaceframe));
+}
+
+// ============================================================================
+// P04: F136-FB 4.5L 90° Flat-Plane V8 Shortblock (168 features)
+// ============================================================================
+{
+  const g = partGroups[3];
+  // Deep-skirt V8 crankcase + dry-sump pan
+  const block = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.20, 0.24), matEngineAluminum);
+  block.position.set(-0.46, 0.20, 0);
+  g.add(block);
+  // Left & Right 45-degree inclined cylinder banks with machined cooling ribs
+  for (const s of [-1, 1]) {
+    const bank = new THREE.Mesh(new THREE.BoxGeometry(0.40, 0.16, 0.15), matEngineAluminum);
+    bank.position.set(-0.46, 0.28, s * 0.11);
+    bank.rotation.x = s * (Math.PI / 4);
+    g.add(bank);
+    // 4 Cylinder Bore Sleeves visible in cutaway
+    for (let c = 0; c < 4; c++) {
+      const cyl = new THREE.Mesh(new THREE.CylinderGeometry(0.036, 0.036, 0.17, 20), matAlcoaSpaceframe);
+      cyl.position.set(-0.60 + c * 0.092, 0.29, s * 0.11);
+      cyl.rotation.x = s * (Math.PI / 4);
+      g.add(cyl);
+    }
+  }
+  // Front accessory drive pulleys & serpentine belt
+  for (const [py, pz, pr] of [[0.16, 0, 0.042], [0.24, -0.09, 0.030], [0.24, 0.09, 0.030]]) {
+    const pul = new THREE.Mesh(new THREE.CylinderGeometry(pr, pr, 0.022, 24), matNeroTrim);
+    pul.rotation.z = Math.PI / 2;
+    pul.position.set(-0.24, py, pz);
+    g.add(pul);
+  }
+}
+
+// ============================================================================
+// P05: DOHC 32-Valve Cylinder Heads & Rosso Corsa Valve Covers (156 features)
+// ============================================================================
+{
+  const g = partGroups[4];
+  for (const s of [-1, 1]) {
+    // Iconic Ferrari Rosso Corsa Wrinkle-Red Valve Covers
+    const cover = new THREE.Mesh(new THREE.BoxGeometry(0.41, 0.055, 0.145), matRossoCorsa);
+    cover.position.set(-0.46, 0.355, s * 0.165);
+    cover.rotation.x = s * (Math.PI / 4);
+    g.add(cover);
+    // 4 Ignition Coil Packs & Silver Ferrari Script Striations per bank
+    for (let c = 0; c < 4; c++) {
+      const coil = new THREE.Mesh(new THREE.BoxGeometry(0.045, 0.025, 0.09), matEngineAluminum);
+      coil.position.set(-0.59 + c * 0.088, 0.375, s * 0.18);
+      coil.rotation.x = s * (Math.PI / 4);
+      g.add(coil);
+    }
+  }
+}
+
+// ============================================================================
+// P06: Variable-Length Carbon Intake Plenums & Twin Throttle Bodies (108 features)
+// ============================================================================
+{
+  const g = partGroups[5];
+  for (const s of [-1, 1]) {
+    // Sculpted Autoclave Carbon Plenum Chamber in the V-valley
+    const plenum = makeTube([
+      [-0.27, 0.41, s * 0.055],
+      [-0.45, 0.435, s * 0.062],
+      [-0.65, 0.415, s * 0.052]
+    ], 0.046, 24, 16, matCarbonWeave);
+    g.add(plenum);
+    // 4 Individual Intake Runners bridging plenum to cylinder heads
+    for (let r = 0; r < 4; r++) {
+      const rx = -0.59 + r * 0.088;
+      g.add(makeTube([
+        [rx, 0.42, s * 0.055],
+        [rx, 0.37, s * 0.135]
+      ], 0.015, 10, 10, matEngineAluminum));
+    }
+    // Rear-facing 80mm Drive-By-Wire Throttle Body + Carbon Airbox Duct
+    const tb = new THREE.Mesh(new THREE.CylinderGeometry(0.032, 0.032, 0.06, 20), matEngineAluminum);
+    tb.rotation.z = Math.PI / 2;
+    tb.position.set(-0.69, 0.41, s * 0.052);
+    g.add(tb);
+    g.add(makeTube([
+      [-0.72, 0.41, s * 0.052],
+      [-0.86, 0.39, s * 0.16],
+      [-0.96, 0.36, s * 0.28]
+    ], 0.026, 16, 12, matCarbonWeave));
+  }
+}
+
+// ============================================================================
+// P07: Hydroformed Inconel 4-into-1 Headers & Triple Central Exhaust (124 features)
+// ============================================================================
+{
+  const g = partGroups[6];
+  for (const s of [-1, 1]) {
+    // 4 Equal-Length Primary Tubes per bank merging into collector
+    for (let p = 0; p < 4; p++) {
+      const px = -0.59 + p * 0.088;
+      g.add(makeTube([
+        [px, 0.29, s * 0.21],
+        [px - 0.04, 0.25, s * 0.29],
+        [-0.74, 0.24, s * 0.24],
+        [-0.88, 0.25, s * 0.16]
+      ], 0.013, 18, 10, matInconelExhaust));
+    }
+    // Catalytic converter canister + muffler barrel
+    const cat = new THREE.Mesh(new THREE.CylinderGeometry(0.042, 0.042, 0.22, 20), matInconelExhaust);
+    cat.rotation.z = Math.PI / 2;
+    cat.position.set(-0.96, 0.25, s * 0.15);
+    g.add(cat);
+    // Tailpipe routing to central triple tips
+    g.add(makeTube([
+      [-1.06, 0.25, s * 0.15],
+      [-1.18, 0.21, s * 0.055],
+      [-1.27, 0.195, s * 0.052]
+    ], 0.018, 16, 12, matInconelExhaust));
+  }
+  // Signature Ferrari 458Italia Triple Central Exhaust Tips (-0.052, 0.0, +0.052)
+  for (const [tz, tr] of [[-0.052, 0.023], [0.0, 0.026], [0.052, 0.023]]) {
+    const tip = new THREE.Mesh(new THREE.CylinderGeometry(tr, tr, 0.065, 28, 1, true), matEngineAluminum);
+    tip.rotation.z = Math.PI / 2;
+    tip.position.set(-1.265, 0.195, tz);
+    g.add(tip);
+    const tipRim = new THREE.Mesh(new THREE.TorusGeometry(tr, 0.0035, 12, 28), matInconelExhaust);
+    tipRim.rotation.y = Math.PI / 2;
+    tipRim.position.set(-1.295, 0.195, tz);
+    g.add(tipRim);
+  }
+}
+
+// ============================================================================
+// P08: Getrag 7DCL750 7-Speed Dual-Clutch Transaxle & E-Diff3 (152 features)
+// ============================================================================
+{
+  const g = partGroups[7];
+  const bellhousing = new THREE.Mesh(new THREE.CylinderGeometry(0.11, 0.095, 0.16, 24), matEngineAluminum);
+  bellhousing.rotation.z = Math.PI / 2;
+  bellhousing.position.set(-0.74, 0.18, 0);
+  g.add(bellhousing);
+  const gearCase = new THREE.Mesh(new THREE.CylinderGeometry(0.095, 0.072, 0.34, 24), matEngineAluminum);
+  gearCase.rotation.z = Math.PI / 2;
+  gearCase.position.set(-0.96, 0.18, 0);
+  g.add(gearCase);
+  // Cooling fins along transaxle casing
+  for (let f = 0; f < 10; f++) {
+    const fin = new THREE.Mesh(new THREE.BoxGeometry(0.008, 0.19, 0.21), matAlcoaSpaceframe);
+    fin.position.set(-0.80 - f * 0.032, 0.18, 0);
+    g.add(fin);
+  }
+}
+
+// ============================================================================
+// P09: Front Double-Wishbone & MagneRide Coilover Suspension (116 features)
+// ============================================================================
+{
+  const g = partGroups[8];
+  for (const s of [-1, 1]) {
+    // Upper A-Arm
+    g.add(makeTube([[FX - 0.11, WY + 0.085, s * 0.23], [FX, WY + 0.095, s * 0.42], [FX + 0.11, WY + 0.085, s * 0.23]], 0.009, 16, 10, matEngineAluminum));
+    // Lower A-Arm
+    g.add(makeTube([[FX - 0.13, WY - 0.075, s * 0.21], [FX, WY - 0.085, s * 0.43], [FX + 0.13, WY - 0.075, s * 0.21]], 0.011, 16, 10, matEngineAluminum));
+    // CNC Upright Knuckle
+    const knuckle = new THREE.Mesh(new THREE.CylinderGeometry(0.042, 0.042, 0.18, 16), matAlcoaSpaceframe);
+    knuckle.position.set(FX, WY, s * 0.42);
+    g.add(knuckle);
+    // MagneRide Damper + Giallo Helical Coilover Spring
+    g.add(makeTube([[FX, WY - 0.04, s * 0.38], [FX - 0.03, WY + 0.21, s * 0.26]], 0.012, 12, 12, matNeroTrim));
+    const springPts = [];
+    for (let k = 0; k <= 48; k++) {
+      const t = k / 48;
+      const ang = t * Math.PI * 12;
+      const bx = FX + (-0.03 * t) + 0.022 * Math.cos(ang);
+      const by = (WY - 0.01) + 0.19 * t;
+      const bz = s * (0.37 - 0.10 * t) + 0.022 * Math.sin(ang);
+      springPts.push([bx, by, bz]);
+    }
+    g.add(makeTube(springPts, 0.0045, 96, 8, matGialloModena));
+  }
+}
+
+// ============================================================================
+// P10: Rear Multi-Link Suspension & 300M Hollow Halfshafts (128 features)
+// ============================================================================
+{
+  const g = partGroups[9];
+  for (const s of [-1, 1]) {
+    // Upper & Lower Multi-Link Arms
+    g.add(makeTube([[RX - 0.12, WY + 0.09, s * 0.24], [RX, WY + 0.10, s * 0.44], [RX + 0.12, WY + 0.09, s * 0.24]], 0.010, 16, 10, matEngineAluminum));
+    g.add(makeTube([[RX - 0.14, WY - 0.08, s * 0.22], [RX, WY - 0.09, s * 0.45], [RX + 0.14, WY - 0.08, s * 0.22]], 0.012, 16, 10, matEngineAluminum));
+    // 300M Hollow CV Halfshafts from E-Diff3 to Rear Hubs
+    g.add(makeTube([[RX, WY - 0.01, s * 0.11], [RX, WY, s * 0.45]], 0.016, 12, 12, matInconelExhaust));
+    // Rear Coilover Strut + Red Helical Spring
+    g.add(makeTube([[RX, WY - 0.03, s * 0.39], [RX + 0.04, WY + 0.23, s * 0.28]], 0.013, 12, 12, matNeroTrim));
+    const springPts = [];
+    for (let k = 0; k <= 48; k++) {
+      const t = k / 48;
+      const ang = t * Math.PI * 12;
+      const bx = RX + (0.04 * t) + 0.024 * Math.cos(ang);
+      const by = WY + 0.20 * t;
+      const bz = s * (0.38 - 0.09 * t) + 0.024 * Math.sin(ang);
+      springPts.push([bx, by, bz]);
+    }
+    g.add(makeTube(springPts, 0.005, 96, 8, matRossoCorsa));
+  }
+}
+
+// ============================================================================
+// P11: Hydraulic Quick-Ratio 11.9:1 Steering Rack & Tie-Rods (76 features)
+// ============================================================================
+{
+  const g = partGroups[10];
+  const rackTube = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.56, 20), matEngineAluminum);
+  rackTube.rotation.x = Math.PI / 2;
+  rackTube.position.set(FX + 0.06, WY - 0.03, 0);
+  g.add(rackTube);
+  for (const s of [-1, 1]) {
+    g.add(makeTube([[FX + 0.06, WY - 0.03, s * 0.28], [FX + 0.04, WY - 0.02, s * 0.43]], 0.008, 8, 8, matAlcoaSpaceframe));
+  }
+  // Steering column shaft to cockpit
+  g.add(makeTube([[FX + 0.06, WY - 0.01, 0.18], [0.24, 0.39, 0.19]], 0.010, 14, 10, matAlcoaSpaceframe));
+}
+
+// ============================================================================
+// P12: Brembo CCM 398x36mm Carbon-Ceramic Brakes & 6-Pot Calipers (144 features)
+// ============================================================================
+const rotorSpinners = [];
+{
+  const g = partGroups[11];
+  const wheelCoords = [
+    [FX, WY, FZ, 0.118, 1],
+    [FX, WY, -FZ, 0.118, -1],
+    [RX, WY, RZ, 0.112, 1],
+    [RX, WY, -RZ, 0.112, -1]
+  ];
+  for (const [wx, wy, wz, rRad, side] of wheelCoords) {
+    const rSpin = new THREE.Group();
+    rSpin.position.set(wx, wy, wz - side * 0.018);
+    // CCM Disc Ring
+    const disc = new THREE.Mesh(new THREE.CylinderGeometry(rRad, rRad, 0.018, 48), matCcmRotor);
+    disc.rotation.x = Math.PI / 2;
+    rSpin.add(disc);
+    // Anodized Center Bell Hat + 10 Floating Bobbins
+    const hat = new THREE.Mesh(new THREE.CylinderGeometry(rRad * 0.56, rRad * 0.56, 0.024, 32), matNeroTrim);
+    hat.rotation.x = Math.PI / 2;
+    rSpin.add(hat);
+    // Cross-Drilled Ventilation Holes Pattern
+    for (let h = 0; h < 24; h++) {
+      const ang = (h / 24) * Math.PI * 2;
+      for (const rr of [rRad * 0.70, rRad * 0.85]) {
+        const dot = new THREE.Mesh(new THREE.CylinderGeometry(0.0035, 0.0035, 0.020, 8), matNeroTrim);
+        dot.rotation.x = Math.PI / 2;
+        dot.position.set(Math.cos(ang + rr) * rr, Math.sin(ang + rr) * rr, 0);
+        rSpin.add(dot);
+      }
+    }
+    g.add(rSpin);
+    rotorSpinners.push(rSpin);
+
+    // Fixed Brembo 6-Piston Giallo Modena Monoblock Caliper
+    const calAng = wx > 0 ? -0.35 : 0.35;
+    const cal = new THREE.Mesh(new THREE.BoxGeometry(0.052, 0.105, 0.048), matGialloModena);
+    cal.position.set(wx + Math.cos(calAng) * (rRad * 0.82), wy + Math.sin(calAng) * (rRad * 0.82), wz - side * 0.016);
+    cal.rotation.z = calAng;
+    g.add(cal);
+  }
+}
+
+// ============================================================================
+// P13 & P14: Forged 20-Inch 5-Twin-Spoke Wheels & Pirelli P-Zero Tires (244 features)
+// ============================================================================
+const wheelSpinners = [];
+function buildForgedWheelAndTire(g, wx, wy, wz, tireWidth, side) {
+  const wSpin = new THREE.Group();
+  wSpin.position.set(wx, wy, wz);
+
+  const rimR = 0.145;
+  const tireR = 0.195;
+  // Pirelli P-Zero Low-Profile Tire Torus + Tread Shoulder
+  const tireTubeR = (tireR - rimR) * 0.95;
+  const tire = new THREE.Mesh(new THREE.CylinderGeometry(tireR, tireR, tireWidth, 56, 1, false), matPirelliTire);
+  tire.rotation.x = Math.PI / 2;
+  wSpin.add(tire);
+  // Sidewall Shoulder Bevels
+  for (const zs of [-1, 1]) {
+    const sh = new THREE.Mesh(new THREE.TorusGeometry(tireR - 0.016, 0.018, 16, 56), matPirelliTire);
+    sh.position.z = zs * (tireWidth * 0.44);
+    wSpin.add(sh);
+  }
+  // Outer & Inner Forged Alloy Rim Lip
+  const rimBarrel = new THREE.Mesh(new THREE.CylinderGeometry(rimR, rimR, tireWidth * 0.96, 48, 1, true), matForgedAlloy);
+  rimBarrel.rotation.x = Math.PI / 2;
+  wSpin.add(rimBarrel);
+  const outerLip = new THREE.Mesh(new THREE.TorusGeometry(rimR, 0.007, 16, 48), matEngineAluminum);
+  outerLip.position.z = side * (tireWidth * 0.44);
+  wSpin.add(outerLip);
+
+  // 5 Iconic Ferrari Twin-Spoke Star Branches (10 sculpted blades)
+  for (let sp = 0; sp < 5; sp++) {
+    const baseAng = (sp / 5) * Math.PI * 2;
+    for (const twinOffset of [-0.095, 0.095]) {
+      const ang = baseAng + twinOffset;
+      const spoke = makeTube([
+        [Math.cos(ang * 0.96) * 0.032, Math.sin(ang * 0.96) * 0.032, side * (tireWidth * 0.24)],
+        [Math.cos(ang) * (rimR * 0.55), Math.sin(ang) * (rimR * 0.55), side * (tireWidth * 0.36)],
+        [Math.cos(ang) * (rimR * 0.97), Math.sin(ang) * (rimR * 0.97), side * (tireWidth * 0.42)]
+      ], 0.0065, 12, 8, matEngineAluminum);
+      wSpin.add(spoke);
+    }
+    // Titanium Lug Bolt
+    const lugAng = baseAng + Math.PI / 5;
+    const lug = new THREE.Mesh(new THREE.CylinderGeometry(0.0045, 0.0045, 0.015, 12), matInconelExhaust);
+    lug.rotation.x = Math.PI / 2;
+    lug.position.set(Math.cos(lugAng) * 0.025, Math.sin(lugAng) * 0.025, side * (tireWidth * 0.25));
+    wSpin.add(lug);
+  }
+  // Giallo Modena Cavallino Center Cap
+  const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, 0.012, 24), matGialloModena);
+  cap.rotation.x = Math.PI / 2;
+  cap.position.z = side * (tireWidth * 0.255);
+  wSpin.add(cap);
+
+  g.add(wSpin);
+  wheelSpinners.push(wSpin);
+}
+// P13 Front Wheels
+buildForgedWheelAndTire(partGroups[12], FX, WY, FZ, 0.135, 1);
+buildForgedWheelAndTire(partGroups[12], FX, WY, -FZ, 0.135, -1);
+// P14 Rear Wheels
+buildForgedWheelAndTire(partGroups[13], RX, WY, RZ, 0.165, 1);
+buildForgedWheelAndTire(partGroups[13], RX, WY, -RZ, 0.165, -1);
+
+// Helper: Smooth Bicubic Catmull-Rom Lofted Class-A Surface (interpolates longitudinal & transverse curves)
+matNeroDaytona.side = THREE.DoubleSide;
+matSmokedLexan.side = THREE.DoubleSide;
+matEngineAluminum.side = THREE.DoubleSide;
+matHeadlightLed.side = THREE.DoubleSide;
+
+function createSmoothLoftedSurface(controlGrid, uDivs, vDivs, mat) {
+  // controlGrid: array of M cross-sections, each cross-section is array of N [x,y,z] points
+  const vCurves = controlGrid.map(row => new THREE.CatmullRomCurve3(row.map(p => new THREE.Vector3(p[0], p[1], p[2]))));
+  const sampledRows = vCurves.map(c => c.getPoints(vDivs));
+  const uCurves = [];
+  for (let iv = 0; iv <= vDivs; iv++) {
+    const colPts = sampledRows.map(row => row[iv]);
+    uCurves.push(new THREE.CatmullRomCurve3(colPts));
+  }
+  const grid = [];
+  for (let iu = 0; iu <= uDivs; iu++) {
+    const u = iu / uDivs;
+    const row = [];
+    for (let iv = 0; iv <= vDivs; iv++) {
+      row.push(uCurves[iv].getPoint(u));
+    }
+    grid.push(row);
+  }
+  const positions = [];
+  const indices = [];
+  for (let iu = 0; iu <= uDivs; iu++) {
+    for (let iv = 0; iv <= vDivs; iv++) {
+      const p = grid[iu][iv];
+      positions.push(p.x, p.y, p.z);
+    }
+  }
+  const stride = vDivs + 1;
+  for (let iu = 0; iu < uDivs; iu++) {
+    for (let iv = 0; iv < vDivs; iv++) {
+      const a = iu * stride + iv;
+      const b = (iu + 1) * stride + iv;
+      const c = (iu + 1) * stride + (iv + 1);
+      const d = iu * stride + (iv + 1);
+      indices.push(a, b, d, b, c, d);
+    }
+  }
+  const geom = new THREE.BufferGeometry();
+  geom.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+  geom.setIndex(indices);
+  geom.computeVertexNormals();
+  return new THREE.Mesh(geom, mat);
+}
+
+// ============================================================================
+// P15: Pininfarina Aero Front Bumper, Deformable Winglets & Bi-Xenon LEDs (104 features)
+// ============================================================================
+{
+  const g = partGroups[14];
+  // Smooth sculpted shark-nose front bumper apron & splitter
+  g.add(createSmoothLoftedSurface([
+    [[1.04, 0.068, -0.47], [1.14, 0.068, -0.26], [1.20, 0.068, 0.0], [1.14, 0.068, 0.26], [1.04, 0.068, 0.47]],
+    [[1.10, 0.115, -0.46], [1.22, 0.110, -0.25], [1.28, 0.105, 0.0], [1.22, 0.110, 0.25], [1.10, 0.115, 0.46]],
+    [[1.08, 0.215, -0.44], [1.18, 0.195, -0.23], [1.23, 0.185, 0.0], [1.18, 0.195, 0.23], [1.08, 0.215, 0.44]]
+  ], 24, 36, matNeroDaytona));
+
+  // Twin Silver Deformable Aero Winglets inside the front grille mouth + LED Headlight Blades
+  for (const s of [-1, 1]) {
+    g.add(createSmoothLoftedSurface([
+      [[1.25, 0.105, s * 0.05], [1.22, 0.115, s * 0.20], [1.15, 0.125, s * 0.36]],
+      [[1.21, 0.130, s * 0.06], [1.18, 0.140, s * 0.21], [1.12, 0.145, s * 0.36]]
+    ], 12, 20, matEngineAluminum));
+
+    // Vertical Bi-Xenon + 14-LED Blade Headlight Assembly along front fender crown
+    g.add(createSmoothLoftedSurface([
+      [[1.10, 0.22, s * 0.36], [0.96, 0.29, s * 0.41], [0.82, 0.34, s * 0.43]],
+      [[1.08, 0.23, s * 0.42], [0.94, 0.30, s * 0.46], [0.80, 0.35, s * 0.47]]
+    ], 12, 20, matHeadlightLed));
+  }
+}
+
+// ============================================================================
+// P16: Sculpted Front Bonnet & S-Duct Vented Front Fenders (92 features)
+// ============================================================================
+{
+  const g = partGroups[15];
+  // Smooth concave S-duct central bonnet clamshell
+  g.add(createSmoothLoftedSurface([
+    [[1.22, 0.185, -0.32], [1.23, 0.180, -0.15], [1.23, 0.178, 0.0], [1.23, 0.180, 0.15], [1.22, 0.185, 0.32]],
+    [[0.92, 0.285, -0.35], [0.92, 0.262, -0.16], [0.92, 0.255, 0.0], [0.92, 0.262, 0.16], [0.92, 0.285, 0.35]],
+    [[0.52, 0.365, -0.38], [0.52, 0.348, -0.18], [0.52, 0.342, 0.0], [0.52, 0.348, 0.18], [0.52, 0.365, 0.38]]
+  ], 28, 32, matNeroDaytona));
+
+  // Left & Right Sculpted Front Wheel-Arch Fender Shells (arching cleanly over 20" front wheels)
+  for (const s of [-1, 1]) {
+    g.add(createSmoothLoftedSurface([
+      [[1.08, 0.21, s * 0.33], [1.08, 0.22, s * 0.43], [1.06, 0.12, s * 0.48]],
+      [[0.92, 0.29, s * 0.35], [0.92, 0.36, s * 0.46], [0.92, 0.29, s * 0.52]],
+      [[FX,   0.33, s * 0.36], [FX,   0.40, s * 0.47], [FX,   0.33, s * 0.53]],
+      [[0.58, 0.35, s * 0.37], [0.58, 0.38, s * 0.46], [0.56, 0.28, s * 0.52]],
+      [[0.46, 0.36, s * 0.38], [0.46, 0.37, s * 0.46], [0.46, 0.14, s * 0.49]]
+    ], 32, 20, matNeroDaytona));
+  }
+}
+
+// ============================================================================
+// P17: Berlinetta Roof, Flying Buttresses, Rear Haunches & Lexan V8 Window (98 features)
+// ============================================================================
+{
+  const g = partGroups[16];
+  // Smooth Curved Smoked Glass Windshield
+  g.add(createSmoothLoftedSurface([
+    [[0.52, 0.365, -0.39], [0.53, 0.355, -0.18], [0.54, 0.350, 0.0], [0.53, 0.355, 0.18], [0.52, 0.365, 0.39]],
+    [[0.32, 0.505, -0.36], [0.33, 0.515, -0.17], [0.34, 0.520, 0.0], [0.33, 0.515, 0.17], [0.32, 0.505, 0.36]],
+    [[0.12, 0.610, -0.32], [0.13, 0.625, -0.15], [0.14, 0.630, 0.0], [0.13, 0.625, 0.15], [0.12, 0.610, 0.32]]
+  ], 24, 28, matSmokedLexan));
+
+  // Smooth Double-Bubble Berlinetta Roof Canopy
+  g.add(createSmoothLoftedSurface([
+    [[0.12, 0.610, -0.32], [0.13, 0.628, -0.15], [0.14, 0.622, 0.0], [0.13, 0.628, 0.15], [0.12, 0.610, 0.32]],
+    [[-0.08, 0.615, -0.31], [-0.08, 0.632, -0.15], [-0.08, 0.625, 0.0], [-0.08, 0.632, 0.15], [-0.08, 0.615, 0.31]],
+    [[-0.26, 0.585, -0.29], [-0.26, 0.600, -0.14], [-0.26, 0.592, 0.0], [-0.26, 0.600, 0.14], [-0.26, 0.585, 0.29]]
+  ], 20, 28, matNeroDaytona));
+
+  // Twin Sculpted Flying Buttresses + Muscular Rear Fender Haunches over 20" Rear Wheels
+  for (const s of [-1, 1]) {
+    // Flying buttress sail panel
+    g.add(createSmoothLoftedSurface([
+      [[-0.24, 0.585, s * 0.22], [-0.24, 0.575, s * 0.29], [-0.26, 0.42, s * 0.36]],
+      [[-0.64, 0.495, s * 0.23], [-0.64, 0.485, s * 0.32], [-0.64, 0.41, s * 0.39]],
+      [[-1.02, 0.395, s * 0.24], [-1.02, 0.390, s * 0.33], [-1.02, 0.36, s * 0.39]],
+      [[-1.24, 0.355, s * 0.22], [-1.24, 0.350, s * 0.31], [-1.24, 0.33, s * 0.37]]
+    ], 28, 16, matNeroDaytona));
+
+    // Rear wheel-arch haunch shell
+    g.add(createSmoothLoftedSurface([
+      [[-0.36, 0.39, s * 0.36], [-0.36, 0.38, s * 0.47], [-0.36, 0.14, s * 0.50]],
+      [[-0.56, 0.41, s * 0.38], [-0.56, 0.42, s * 0.49], [-0.56, 0.31, s * 0.54]],
+      [[RX,    0.42, s * 0.39], [RX,    0.44, s * 0.50], [RX,    0.34, s * 0.55]],
+      [[-0.96, 0.40, s * 0.38], [-0.96, 0.41, s * 0.48], [-0.96, 0.29, s * 0.53]],
+      [[-1.24, 0.35, s * 0.34], [-1.24, 0.34, s * 0.42], [-1.22, 0.18, s * 0.45]]
+    ], 32, 20, matNeroDaytona));
+
+    // Iconic Circular LED Taillight Nacelles at rear corners
+    const tailRing = new THREE.Mesh(new THREE.TorusGeometry(0.032, 0.008, 16, 32), matTaillightRed);
+    tailRing.rotation.y = Math.PI / 2;
+    tailRing.position.set(-1.25, 0.34, s * 0.35);
+    g.add(tailRing);
+  }
+
+  // Rear Kamm-tail decklid spoiler bridge between taillights
+  g.add(createSmoothLoftedSurface([
+    [[-1.12, 0.37, -0.24], [-1.14, 0.36, 0.0], [-1.12, 0.37, 0.24]],
+    [[-1.25, 0.35, -0.34], [-1.27, 0.345, 0.0], [-1.25, 0.35, 0.34]],
+    [[-1.24, 0.23, -0.36], [-1.26, 0.225, 0.0], [-1.24, 0.23, 0.36]]
+  ], 16, 24, matNeroDaytona));
+
+  // Louvered Crystal-Clear Lexan Engine Bay Showcase Window (Directly over Rosso Corsa V8!)
+  for (let l = 0; l < 6; l++) {
+    const lx = -0.32 - l * 0.115;
+    const ly = 0.56 - l * 0.032;
+    const louver = new THREE.Mesh(new THREE.BoxGeometry(0.092, 0.005, 0.42), matSmokedLexan);
+    louver.position.set(lx, ly, 0);
+    louver.rotation.z = 0.25;
+    g.add(louver);
+  }
+}
+
+// ============================================================================
+// P18: Dihedral Sculpted Doors & Rear-Quarter Air Intake Scoops (88 features)
+// ============================================================================
+{
+  const g = partGroups[17];
+  for (const s of [-1, 1]) {
+    // Smooth scalloped dihedral door skin + side sill skirt
+    g.add(createSmoothLoftedSurface([
+      [[0.46, 0.36, s * 0.45], [0.46, 0.23, s * 0.48], [0.46, 0.09, s * 0.47]],
+      [[0.12, 0.36, s * 0.43], [0.12, 0.23, s * 0.47], [0.12, 0.09, s * 0.47]],
+      [[-0.18, 0.38, s * 0.41], [-0.18, 0.24, s * 0.46], [-0.18, 0.09, s * 0.47]],
+      [[-0.38, 0.40, s * 0.45], [-0.38, 0.25, s * 0.48], [-0.38, 0.10, s * 0.48]]
+    ], 24, 20, matNeroDaytona));
+
+    // Side window glass
+    g.add(createSmoothLoftedSurface([
+      [[0.44, 0.37, s * 0.42], [0.12, 0.37, s * 0.41], [-0.22, 0.39, s * 0.40]],
+      [[0.28, 0.52, s * 0.35], [0.06, 0.60, s * 0.32], [-0.22, 0.57, s * 0.30]]
+    ], 12, 20, matSmokedLexan));
+
+    // Aerodynamic wing mirror on twin stalks
+    const mirror = new THREE.Mesh(new THREE.BoxGeometry(0.075, 0.032, 0.055), matNeroDaytona);
+    mirror.position.set(0.32, 0.41, s * 0.52);
+    g.add(mirror);
+  }
+}
+
+// ============================================================================
+// P19: Flat Carbon Underbody & 6-Strake Venturi Rear Diffuser (92 features)
+// ============================================================================
+{
+  const g = partGroups[18];
+  const floor = new THREE.Mesh(new THREE.BoxGeometry(2.32, 0.016, 0.90), matCarbonWeave);
+  floor.position.set(0.0, 0.065, 0);
+  g.add(floor);
+  const ramp = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.016, 0.86), matCarbonWeave);
+  ramp.position.set(-1.10, 0.098, 0);
+  ramp.rotation.z = -0.18;
+  g.add(ramp);
+  for (const sz of [-0.35, -0.21, -0.07, 0.07, 0.21, 0.35]) {
+    const strake = new THREE.Mesh(new THREE.BoxGeometry(0.38, 0.072, 0.008), matCarbonWeave);
+    strake.position.set(-1.12, 0.095, sz);
+    strake.rotation.z = -0.16;
+    g.add(strake);
+  }
+}
+
+// ============================================================================
+// P20: Carbon Monocoque Racing Seats & F1 LED Manettino Steering Wheel (78 features)
+// ============================================================================
+{
+  const g = partGroups[19];
+  for (const s of [-1, 1]) {
+    const cushion = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.04, 0.22), matCarbonWeave);
+    cushion.position.set(0.02, 0.14, s * 0.19);
+    g.add(cushion);
+    const backrest = new THREE.Mesh(new THREE.BoxGeometry(0.045, 0.34, 0.21), matCarbonWeave);
+    backrest.position.set(-0.11, 0.29, s * 0.19);
+    backrest.rotation.z = 0.28;
+    g.add(backrest);
+    const bolster = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.12, 0.19), matRossoCorsa);
+    bolster.position.set(-0.14, 0.42, s * 0.19);
+    bolster.rotation.z = 0.28;
+    g.add(bolster);
+  }
+  const wheelRim = new THREE.Mesh(new THREE.TorusGeometry(0.068, 0.011, 14, 32), matCarbonWeave);
+  wheelRim.rotation.y = Math.PI / 2;
+  wheelRim.rotation.z = -0.32;
+  wheelRim.position.set(0.22, 0.39, 0.19);
+  g.add(wheelRim);
+  const manettinoHub = new THREE.Mesh(new THREE.CylinderGeometry(0.026, 0.026, 0.02, 20), matRossoCorsa);
+  manettinoHub.rotation.z = Math.PI / 2 - 0.32;
+  manettinoHub.position.set(0.22, 0.39, 0.19);
+  g.add(manettinoHub);
+}
+
+const INSPECTOR_PRESETS = [
+  {
+    title: "Pininfarina F142 Complete Assembly (20 Parts · 2,340 Features)",
+    refIdx: 0,
+    lodIdx: 3,
+    partIdx: 0,
+    items: [
+      ["YouTube Source ID", "vWIJdsYnO9E (4K)"],
+      ["Watertight 2-Manifold BRep", "20/20 Parts (V-E+F=2)"],
+      ["Editable FeatureTree DAG", "2,340 Nodes"],
+      ["Live WS-RPC Finalized", "24 Signed Calls"],
+      ["ASME Y14.5 Datum Triad", "A (Z=0) | B (Y=0) | C"],
+      ["2D Drawing Readiness", "Score 1.00 (21 Sheets)"]
+    ]
+  },
+  {
+    title: "F136-FB 4.5L Flat-Plane V8 + Inconel Headers (708 Features)",
+    refIdx: 2,
+    lodIdx: 3,
+    partIdx: 3,
+    items: [
+      ["90° Al-Si V8 Cylinder Block", "94.0 x 81.0mm H6/h5"],
+      ["DOHC 32V Rosso Corsa Heads", "12.5:1 Compression"],
+      ["Dual Carbon Intake Plenums", "Variable-Length"],
+      ["Hydroformed Inconel Headers", "4-into-1 + 3 Tips"],
+      ["Getrag 7DCL750 Transaxle", "7-Spd DCT + E-Diff3"],
+      ["Specific Output / Redline", "127 PS/L @ 9,000 RPM"]
+    ]
+  },
+  {
+    title: "Brembo CCM 398mm Brakes + Double-Wishbone (604 Features)",
+    refIdx: 3,
+    lodIdx: 3,
+    partIdx: 11,
+    items: [
+      ["Front CCM Drilled Rotors", "398 x 36mm Floating"],
+      ["Rear CCM Drilled Rotors", "360 x 32mm Floating"],
+      ["Brembo Monoblock Calipers", "6-Pot F / 4-Pot R"],
+      ["20\" Forged 5-Twin-Spoke", "235/35 & 295/35 ZR20"],
+      ["Forged 7075 Wishbone Arms", "MagneRide SCM2"],
+      ["ISO 286-2 Hub Bearing Fit", "H6/k5 Preloaded"]
+    ]
+  },
+  {
+    title: "20-Part SE(3) Exploded View & 21-Sheet 2D Package",
+    refIdx: 1,
+    lodIdx: 3,
+    partIdx: 16,
+    items: [
+      ["All Details Present Audit", "TRUE (0 Missing)"],
+      ["All Features Toleranced", "TRUE (0 Untoleranced)"],
+      ["Worst-Case / RSS 3-Sigma", "0.285 / 0.052 mm"],
+      ["Process Capability Index", "Cpk = 1.68 >= 1.33"],
+      ["Master GA + BOM Balloons", "Sheet 1 (20 Balloons)"],
+      ["Part Detail & Section Sheets", "Sheets 2..21 Ready"]
+    ]
+  }
+];
+
+function applyInspectorPreset(pIdx, activePartOverride, activeLodOverride) {
+  const p = INSPECTOR_PRESETS[pIdx];
+  document.getElementById("inspector-title").textContent = p.title;
+  const listEl = document.getElementById("inspector-list");
+  listEl.innerHTML = p.items.map(it => `<div class="feat-pill"><span>${it[0]}</span><span>${it[1]}</span></div>`).join("");
+  for (let i = 0; i < 4; i++) {
+    document.getElementById("ref-card-" + i).className = "ref-card" + (i === p.refIdx ? " active" : "");
+    const lodMatch = (activeLodOverride !== undefined) ? activeLodOverride : p.lodIdx;
+    document.getElementById("lod-pill-" + i).className = "lod-pill" + (i === lodMatch ? " active" : "");
+  }
+  const hiPart = (activePartOverride !== undefined) ? activePartOverride : p.partIdx;
+  for (let i = 0; i < 20; i++) {
+    document.getElementById("part-row-" + i).className = "part-row" + (i === hiPart ? " active-part" : "");
+  }
+}
+
+window.renderCarFrame = function(frameIdx, totalFrames) {
+  const u = frameIdx / totalFrames;
+  document.getElementById("timeline-bar").style.width = `${(u * 100).toFixed(1)}%`;
+
+  // Continuous kinematic rotation of all 4 forged wheels and CCM rotors
+  const wheelAngle = -frameIdx * 0.14;
+  for (const ws of wheelSpinners) ws.rotation.z = wheelAngle;
+  for (const rs of rotorSpinners) rs.rotation.z = wheelAngle;
+
+  let azim = 0.0;
+  let elev = 0.16;
+  let camDist = 4.35;
+  let targetX = -0.02, targetY = 0.24, targetZ = 0.0;
+  let explode = 0.0;
+  let bodyOpacity = 1.0;
+  let phaseText = "";
+  let vpSub = "";
+
+  if (u < 0.28) {
+    // SCENE 01: Full 360° Studio Turntable Orbit & LOD Progression (toy -> fast -> deep -> max)
+    const s = u / 0.28;
+    azim = s * Math.PI * 2.0;
+    elev = 0.15 + 0.10 * Math.sin(s * Math.PI * 2.0);
+    camDist = 4.25;
+    targetX = -0.02; targetY = 0.24; targetZ = 0.0;
+    explode = 0.0;
+    bodyOpacity = 0.88;
+    const lodStep = s < 0.15 ? 0 : (s < 0.30 ? 1 : (s < 0.45 ? 2 : 3));
+    const lodNames = ["TOY (6P · 99F)", "FAST (12P · 387F)", "DEEP (16P · 1,318F)", "MAX (20P · 2,340F)"];
+    document.getElementById("kpi-lod-val").textContent = lodNames[lodStep];
+    phaseText = "SCENE 01 / 04 · 360° STUDIO TURNTABLE & MULTI-LOD PROGRESSION";
+    vpSub = "YOUTUBE vWIJdsYnO9E -> PININFARINA F142 BERLINETTA · NERO DAYTONA CLEARCOAT · 20 PARTS · 2,340 FEATURES";
+    applyInspectorPreset(0, Math.floor(s * 20) % 20, lodStep);
+  } else if (u < 0.54) {
+    // SCENE 02: Mid-Rear F136-FB 4.5L V8 Engine Bay, Inconel 4-1 Headers & Getrag 7-Spd DCT X-Ray Macro
+    const s = (u - 0.28) / 0.26;
+    azim = -0.65 + s * 1.25;
+    elev = 0.34 + 0.08 * Math.sin(s * Math.PI);
+    camDist = 2.05;
+    targetX = -0.52; targetY = 0.26; targetZ = 0.0;
+    explode = 0.0;
+    bodyOpacity = 0.22;
+    document.getElementById("kpi-lod-val").textContent = "MAX (V8 X-RAY)";
+    phaseText = "SCENE 02 / 04 · F136-FB 4.5L V8, INCONEL HEADERS & 7-SPD DCT MACRO";
+    vpSub = "ROSSO CORSA 32V HEADS · CARBON INTAKE PLENUMS · INCONEL 4-1 MANIFOLDS & TRIPLE EXHAUST · GETRAG 7DCL750";
+    applyInspectorPreset(1, 3 + (Math.floor(s * 5) % 5), 3);
+  } else if (u < 0.74) {
+    // SCENE 03: Forged 20" 5-Twin-Spoke Wheel, Brembo CCM 398mm Brake & Double-Wishbone Macro
+    const s = (u - 0.54) / 0.20;
+    azim = 0.25 + s * 0.75;
+    elev = 0.14 + 0.06 * Math.sin(s * Math.PI);
+    camDist = 1.95;
+    targetX = 0.52; targetY = 0.22; targetZ = 0.18;
+    explode = 0.0;
+    bodyOpacity = 0.28;
+    document.getElementById("kpi-lod-val").textContent = "MAX (CCM & SUSP)";
+    phaseText = "SCENE 03 / 04 · BREMBO CCM 398MM BRAKES & DOUBLE-WISHBONE MACRO";
+    vpSub = "398X36MM DRILLED CARBON-CERAMIC ROTORS · 6-POT GIALLO MODENA CALIPERS · 20IN FORGED 5-TWIN-SPOKE WHEELS";
+    applyInspectorPreset(2, [8, 10, 11, 12, 19][Math.floor(s * 5) % 5], 3);
+  } else {
+    // SCENE 04: 20-Part SE(3) Kinematic Exploded CAD View & 21-Sheet ASME Y14.5 2D Drawing Readiness
+    const s = (u - 0.74) / 0.26;
+    azim = 0.55 + s * 1.15;
+    elev = 0.24 + 0.08 * Math.sin(s * Math.PI);
+    camDist = 4.95;
+    targetX = -0.04; targetY = 0.26; targetZ = 0.0;
+    explode = Math.sin(s * Math.PI) ** 1.35;
+    bodyOpacity = 0.85;
+    document.getElementById("kpi-lod-val").textContent = "MAX (21 2D SHEETS)";
+    phaseText = `SCENE 04 / 04 · 20-PART SE(3) EXPLODED CAD VIEW (e = ${explode.toFixed(2)})`;
+    vpSub = "ALL 20 SUBSYSTEMS DISPLACED ALONG SE(3) AXES · MODEL SELF-AUDIT SCORE 1.00 · 21 ASME Y14.5 SHEETS READY";
+    applyInspectorPreset(3, Math.floor(s * 20) % 20, 3);
+  }
+
+  matNeroDaytona.opacity = bodyOpacity;
+  for (let i = 0; i < 20; i++) {
+    const exp = PARTS_META[i].exp;
+    partGroups[i].position.set(exp[0] * explode, exp[1] * explode, exp[2] * explode);
+  }
+
+  camera.position.set(
+    targetX + camDist * Math.sin(azim) * Math.cos(elev),
+    targetY + camDist * Math.sin(elev),
+    targetZ + camDist * Math.cos(azim) * Math.cos(elev)
+  );
+  camera.lookAt(targetX, targetY, targetZ);
+
+  document.getElementById("scene-phase-pill").textContent = phaseText;
+  document.getElementById("vp-subheading").textContent = vpSub;
+  const azDeg = (((azim * 180 / Math.PI) % 360) + 360) % 360;
+  const elDeg = elev * 180 / Math.PI;
+  document.getElementById("cam-readout").textContent =
+    `AZIM ${azDeg.toFixed(1).padStart(5, '0')}° · ELEV ${elDeg.toFixed(1).padStart(4, '0')}° · EXPLODE ${explode.toFixed(2)}`;
+
+  renderer.render(scene, camera);
+};
+
+window.renderCarFrame(0, 360);
+</script>
+</body>
+</html>
