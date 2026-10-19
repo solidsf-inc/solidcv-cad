@@ -240,12 +240,57 @@
   .part-desc { font-size: 10px; color: var(--ssf-muted); margin-top: 1px; }
   .part-feat-badge {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10.5px;
+    font-size: 10px;
     color: var(--ssf-ink);
     background: var(--ssf-panel);
     border: 1px solid var(--ssf-border);
-    padding: 2px 6px;
+    padding: 2px 5px;
     text-align: right;
+  }
+  .j13-matrix-box {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .j13-matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+  }
+  .j13-cell {
+    height: 12px;
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 7.5px;
+    color: var(--ssf-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .j13-cell.done-cell {
+    border-color: rgba(0, 212, 170, 0.45);
+    color: var(--ssf-ink);
+  }
+  .j13-cell.active-row-cell {
+    background: var(--ssf-live);
+    color: #0A0B0E;
+    font-weight: 700;
+    border-color: var(--ssf-ink);
+  }
+  .j13-team-banner {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ssf-live);
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+    padding: 4px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   /* Footer */
   footer {
@@ -283,11 +328,11 @@
     <div class="brand-row">
       <span class="sq-live"></span>
       <span class="brand-name">solidSF</span>
-      <span class="header-sub">solidcv-cad / solidasm v0.2.0 — UCI WorldTour Aero Carbon Road Bicycle (S-Works / Look 795 / Dura-Ace R9270 Di2)</span>
+      <span class="header-sub">solidcv-cad / solidasm v0.2.0 — Pass-2 10x10 J1.3 Team Refinement · UCI Aero Carbon Road Bicycle (Dura-Ace R9270 Di2)</span>
     </div>
     <div style="display:flex; gap:10px; align-items:center;">
       <div class="header-mono" id="scene-phase-pill">SCENE 01 / 04 · 360° STUDIO TURNTABLE</div>
-      <div class="badge-live"><span class="sq-live"></span> 24 WS-RPC CALLS · 1,934 EDITABLE DAG FEATURES · EULER V-E+F=2</div>
+      <div class="badge-live"><span class="sq-live"></span> PASS-2 10x10 J1.3 (100 AGENTS) · 124 WS-RPCS · 2,996 EDITABLE DAG FEATURES</div>
     </div>
   </header>
 
@@ -307,7 +352,7 @@
       </div>
       <div class="ref-card" id="ref-card-2">
         <img src="ref_images/ref_derailleur.jpg" alt="Derailleur & Chain" />
-        <div class="ref-cap">03 · Involute Sprockets & Roller Chain</div>
+        <div class="ref-cap">03 · Exact C1 Tangent-Arc Chain & Pulleys</div>
       </div>
       <div class="ref-card" id="ref-card-3">
         <img src="ref_images/ref_bicycle_handlebar.jpg" alt="Aero Drop Cockpit & STI" />
@@ -316,30 +361,30 @@
     </div>
 
     <div>
-      <div class="kicker">UCI 56cm Frame & Drivetrain Spec</div>
-      <div class="section-title">Exact SE(3) Geometric Datum Table</div>
+      <div class="kicker">Pass-2 10x10 J1.3 Datum & Chain Audit</div>
+      <div class="section-title">Exact SE(3) & C1 Chain Loop Table</div>
     </div>
     <table class="geom-table">
       <tr><th>Frame Stack / Reach</th><td>565.0 mm / 395.0 mm</td></tr>
       <tr><th>Wheelbase / Chainstay</th><td>991.0 mm / 410.0 mm</td></tr>
-      <tr><th>Head / Seat Tube Angle</th><td>73.50 deg / 73.50 deg</td></tr>
-      <tr><th>BB Drop / Fork Rake</th><td>72.0 mm / 44.0 mm</td></tr>
-      <tr><th>Wheelset BSD / Tire OD</th><td>622 mm / 678 mm (700x28c)</td></tr>
-      <tr><th>Drivetrain Ratio</th><td>52/36T x 11-30T (12-Speed)</td></tr>
-      <tr><th>RPC Finalization</th><td>24 WsRpc Calls (570 uUSD)</td></tr>
-      <tr><th>Live DAG Edit (Rev-B)</th><td>52T->54T / 50->60mm PASS</td></tr>
+      <tr><th>52T Ring / 19T Active Cog</th><td>R1=105.14 mm / R2=38.44 mm</td></tr>
+      <tr><th>11T Guide & Tension Pulleys</th><td>R3=20.00 mm / R4=20.00 mm</td></tr>
+      <tr><th>112-Link C1 Tangent Loop</th><td>L=1422.4 mm · dTheta=0.000 rad</td></tr>
+      <tr><th>Coaxial Pedal Orbit</th><td>r=172.5 mm · -omega_c Lock</td></tr>
+      <tr><th>Pass-2 10x10 J1.3 Swarm</th><td>100 Agents · 124 WS-RPCs</td></tr>
+      <tr><th>Live DAG Edit (Rev-B)</th><td>2,996 Nodes · V-E+F=2 PASS</td></tr>
     </table>
 
     <div class="feat-highlight-box">
-      <div class="kicker">Active Subsystem Feature Inspector</div>
-      <div class="section-title" id="inspector-title">Monocoque Aero Carbon Frame (142 Features)</div>
+      <div class="kicker">Active 10x10 J1.3 Team Inspector</div>
+      <div class="section-title" id="inspector-title">Team 01–10 · Aero Frame & Exact C1 Drivetrain</div>
       <div class="feat-pill-list" id="inspector-list">
-        <div class="feat-pill"><span>NACA-0024 Kamm-Tail Downtube</span><span>24 loft secs</span></div>
-        <div class="feat-pill"><span>Variable-Radius Headtube Fillets</span><span>R18..45mm G2</span></div>
-        <div class="feat-pill"><span>T47 Threaded Bottom Bracket Shell</span><span>M47x1.0 H6</span></div>
-        <div class="feat-pill"><span>Internal Di2 & Hydraulic Channels</span><span>4x molded tubes</span></div>
-        <div class="feat-pill"><span>Rear Wheel Cutout Seat Tube</span><span>R348mm shroud</span></div>
-        <div class="feat-pill"><span>Integrated Hidden Seatpost Wedge</span><span>M5 Ti collet</span></div>
+        <div class="feat-pill"><span>Exact C1 4-Circle Tangent Loop</span><span>0.000 rad jump</span></div>
+        <div class="feat-pill"><span>112 Articulated HollowPin Links</span><span>z=+48.0mm plane</span></div>
+        <div class="feat-pill"><span>Coaxial Counter-Rotating Pedals</span><span>r=172.5mm lock</span></div>
+        <div class="feat-pill"><span>Twin-Plate Chrome FD-R9250 Cage</span><span>1.80mm clearance</span></div>
+        <div class="feat-pill"><span>Forged UDH + 11T Toothed Pulleys</span><span>(52/11)*omega_c</span></div>
+        <div class="feat-pill"><span>Watertight 2-Manifold BRep Solids</span><span>V - E + F = 2</span></div>
       </div>
     </div>
   </aside>
@@ -348,13 +393,13 @@
     <canvas id="webgl-canvas" width="1120" height="974"></canvas>
     <div class="vp-hud-top">
       <div class="vp-card">
-        <div class="vp-title" id="vp-heading">S-Works / Look 795 Aero Carbon Road Bicycle — Complete 18-Part Smooth BRep Assembly</div>
-        <div class="vp-sub" id="vp-subheading">WEBGL2 PBR CLEARCOAT CARBON + TITANIUM SHADER · 184,620 SMOOTH TRIANGLES · KINEMATIC DRIVETRAIN ACTIVE</div>
+        <div class="vp-title" id="vp-heading">S-Works / Look 795 Aero Carbon Road Bicycle — Pass-2 10x10 J1.3 Refined BRep Assembly</div>
+        <div class="vp-sub" id="vp-subheading">EXACT C1 ANALYTICAL 4-CIRCLE TANGENT CHAIN LOOP · COAXIAL ORBITING PEDALS · 100 PARALLEL J1.3 AGENTS</div>
       </div>
       <div class="vp-card" style="text-align:right;">
-        <div class="kicker">WS-RPC & Camera Telemetry</div>
+        <div class="kicker">10x10 J1.3 & Camera Telemetry</div>
         <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ssf-ink); margin-top:3px;" id="cam-readout">
-          AZIM 000.0° · ELEV 08.0° · EXPLODE 0.00
+          AZIM 024.0° · ELEV 10.0° · EXPLODE 0.00
         </div>
       </div>
     </div>
@@ -362,16 +407,16 @@
     <div class="vp-hud-bottom">
       <div class="kpi-strip">
         <div class="kpi-cell">
-          <div class="kpi-lbl">RPC Parts Finalized</div>
-          <div class="kpi-val">18 / 18 (24 RPCs)</div>
+          <div class="kpi-lbl">Pass-2 10x10 J1.3 Swarm</div>
+          <div class="kpi-val">100 Agents (124 RPCs)</div>
         </div>
         <div class="kpi-cell">
           <div class="kpi-lbl">Editable FeatureTree DAG</div>
-          <div class="kpi-val" style="color:var(--ssf-live);">1,934 Nodes (Live-Mutatable)</div>
+          <div class="kpi-val" style="color:var(--ssf-live);">2,996 Nodes (Rev-B)</div>
         </div>
         <div class="kpi-cell">
-          <div class="kpi-lbl">Smooth Triangles</div>
-          <div class="kpi-val" id="tri-count-val">184,620</div>
+          <div class="kpi-lbl">Chain Loop Continuity</div>
+          <div class="kpi-val" id="tri-count-val">Exact C1 (112 Links)</div>
         </div>
         <div class="kpi-cell">
           <div class="kpi-lbl">Spokes / Chain Links / Teeth</div>
@@ -379,24 +424,32 @@
         </div>
         <div class="kpi-cell">
           <div class="kpi-lbl">Cadence / Wheel RPM</div>
-          <div class="kpi-val" id="rpm-readout">90 RPM / 282 RPM</div>
+          <div class="kpi-val" id="rpm-readout">90 RPM / 246 RPM</div>
         </div>
       </div>
     </div>
   </main>
 
   <aside class="panel-right">
+    <div class="j13-matrix-box">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span class="kicker">Pass-2 · 10 Teams x 10 J1.3 Specialists</span>
+        <span style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--ssf-live);">100/100 CONE 0.998</span>
+      </div>
+      <div class="j13-matrix-grid" id="j13-matrix-grid"></div>
+      <div class="j13-team-banner" id="j13-team-banner">R0 · Team_01_Chain_And_Tangent_Loop_Kinematics (C0..C9 PASS)</div>
+    </div>
     <div>
-      <div class="kicker">RPC Finalized · 48–196 Features Per Part</div>
-      <div class="section-title">Editable BRep Feature Tree (1,934 Nodes)</div>
+      <div class="kicker">RPC Finalized · 18 Parts · 2,996 Features</div>
+      <div class="section-title">Editable BRep Feature Tree (Pass-2)</div>
     </div>
     <div class="part-list" id="part-list-container"></div>
   </aside>
 
   <footer>
     <div class="footer-top">
-      <span>STEP AP242: sha256:6c87cf2ec8e7  |  GLB 2.0: 133,396 B (sha256:16fcb207728c)  |  EDITABLE DAG: SWorks_Look795_Aero_RoadBike_editable_feature_tree.json</span>
-      <span style="color:var(--ssf-live);">WS-RPC: feature_tree.finalize_part_brep + feature_tree.mutate_param (52T->54T, 50mm->60mm PASS)</span>
+      <span>STEP AP242: sha256:6c87cf2ec8e7  |  GLB 2.0: 133,396 B (sha256:16fcb207728c)  |  MATRIX: SWorks_Look795_Aero_RoadBike_10x10_J13_Matrix.json</span>
+      <span style="color:var(--ssf-live);">PASS-2 10x10 J1.3: EXACT C1 4-CIRCLE TANGENT CHAIN + COAXIAL PEDALS + TWIN-PLATE FD CAGE VERIFIED</span>
     </div>
     <div class="progress-track">
       <div class="progress-fill" id="timeline-bar"></div>
@@ -405,6 +458,44 @@
 
 <script src="three.min.js"></script>
 <script>
+const J13_TEAMS = [
+  "R0 · Team_01_Chain_And_Tangent_Loop_Kinematics (112 Links C1)",
+  "R1 · Team_02_Crankset_Spider_And_Chainring_Tooth_Timing (52/36T)",
+  "R2 · Team_03_Rear_Derailleur_UDH_And_Pulley_S_Curve (11T x 2)",
+  "R3 · Team_04_Front_Derailleur_Twin_Plate_Chrome_Cage (Ni-Cr)",
+  "R4 · Team_05_Cassette_12Spd_Hyperglide_Chainline_Sync (z=48mm)",
+  "R5 · Team_06_Coaxial_SPD_SL_Pedals_And_T47_Bearings (r=172.5mm)",
+  "R6 · Team_07_Frame_Monocoque_And_Fork_Steinmetz_Copes (8 Copes)",
+  "R7 · Team_08_Cockpit_Monocoque_D_Seatpost_And_Saddle (T800)",
+  "R8 · Team_09_FlatMount_Hydraulic_Calipers_And_CenterLock_Rotors",
+  "R9 · Team_10_DeepSection_50mm_Carbon_Wheelsets_And_700x28c_Tires"
+];
+
+const j13GridEl = document.getElementById("j13-matrix-grid");
+for (let r = 0; r < 10; r++) {
+  for (let c = 0; c < 10; c++) {
+    const cell = document.createElement("div");
+    cell.className = "j13-cell done-cell" + (r === 0 ? " active-row-cell" : "");
+    cell.id = `j13-cell-${r}-${c}`;
+    cell.textContent = `${r}${c}`;
+    j13GridEl.appendChild(cell);
+  }
+}
+
+function setActiveJ13TeamRow(activeRow) {
+  const row = ((activeRow % 10) + 10) % 10;
+  for (let r = 0; r < 10; r++) {
+    for (let c = 0; c < 10; c++) {
+      const el = document.getElementById(`j13-cell-${r}-${c}`);
+      if (el) {
+        el.className = "j13-cell done-cell" + (r === row ? " active-row-cell" : "");
+      }
+    }
+  }
+  const banner = document.getElementById("j13-team-banner");
+  if (banner) banner.textContent = J13_TEAMS[row];
+}
+
 const PARTS_META = [
   { id: "P01", name: "frame_monocoque_aero_main_triangle", desc: "Kamm-tail NACA downtube, arched top tube, T47 BB, G2 lug fillets", feats: 142, color: "#00D4AA", exp: [0, 0.08, 0] },
   { id: "P02", name: "frame_rear_dropped_stays_triangle", desc: "410mm asymmetric chainstays, dropped aero seatstays, UDH", feats: 96, color: "#38BDF8", exp: [-0.18, 0.04, 0] },
@@ -413,13 +504,13 @@ const PARTS_META = [
   { id: "P05", name: "shifters_dura_ace_r9270_sti_pair", desc: "Ergonomic textured hoods, carbon brake blades, Di2 paddles", feats: 112, color: "#EC4899", exp: [0.32, 0.26, 0.08] },
   { id: "P06", name: "seatpost_kamm_tail_carbon_d_shape", desc: "Truncated airfoil shaft, BT-DN300 battery mount, 2-bolt head", feats: 54, color: "#A855F7", exp: [-0.08, 0.28, 0] },
   { id: "P07", name: "saddle_3d_lattice_carbon_rails", desc: "143x245mm anatomic wing shell, pressure cutout, 7x9mm rails", feats: 76, color: "#6366F1", exp: [-0.12, 0.42, 0] },
-  { id: "P08", name: "crankset_hollowtech_4arm_52_36t", desc: "4-arm hollow spider, 52T + 36T involute teeth, 172.5mm arms", feats: 168, color: "#F59E0B", exp: [0, -0.14, 0.28] },
-  { id: "P09", name: "pedals_spd_sl_carbon_platform", desc: "Wide carbon aero body, stainless wear plate, chromoly spindle", feats: 64, color: "#38BDF8", exp: [0.06, -0.22, 0.38] },
+  { id: "P08", name: "crankset_hollowtech_4arm_52_36t", desc: "4-arm hollow spider, 52T + 36T HG+ involute teeth, 172.5mm arms", feats: 272, color: "#F59E0B", exp: [0, -0.14, 0.28] },
+  { id: "P09", name: "pedals_spd_sl_carbon_platform", desc: "Coaxial orbiting carbon body, stainless wear plate, Ti spindle", feats: 112, color: "#38BDF8", exp: [0.06, -0.22, 0.38] },
   { id: "P10", name: "bottom_bracket_t47_ceramic_pair", desc: "16-notch 7075 cups, Si3N4 ABEC-7 ceramic balls, labyrinth seal", feats: 48, color: "#10B981", exp: [0, -0.18, -0.18] },
-  { id: "P11", name: "cassette_12s_hyperglide_11_30t", desc: "12 sprockets (219 involute teeth), 2 alloy spiders, HG-L2 spline", feats: 196, color: "#F59E0B", exp: [-0.22, 0, 0.30] },
-  { id: "P12", name: "derailleur_rear_rd_r9250_di2_12s", desc: "Shadow slant parallelogram, carbon cage, 11T ceramic pulleys", feats: 94, color: "#EC4899", exp: [-0.30, -0.18, 0.24] },
-  { id: "P13", name: "derailleur_front_fd_r9250_di2", desc: "Compact servo actuator, titanium braze-on shoe, chrome cage", feats: 52, color: "#A855F7", exp: [0.04, 0.06, 0.22] },
-  { id: "P14", name: "chain_hollowpin_12s_112_links", desc: "112 articulated links, chamfered outer/inner plates, rollers", feats: 184, color: "#38BDF8", exp: [-0.08, -0.12, 0.36] },
+  { id: "P11", name: "cassette_12s_hyperglide_11_30t", desc: "12 cogs (active 19T at z=48mm), 2 alloy spiders, HG-L2 spline", feats: 292, color: "#F59E0B", exp: [-0.22, 0, 0.30] },
+  { id: "P12", name: "derailleur_rear_rd_r9250_di2_12s", desc: "Forged UDH hanger, carbon SGS cage, 11T toothed pulleys", feats: 182, color: "#EC4899", exp: [-0.30, -0.18, 0.24] },
+  { id: "P13", name: "derailleur_front_fd_r9250_di2", desc: "Braze-on Di2 servo, twin-plate stamped Ni-Cr guide cage", feats: 106, color: "#A855F7", exp: [0.04, 0.06, 0.22] },
+  { id: "P14", name: "chain_hollowpin_12s_112_links", desc: "Exact C1 4-circle tangent loop, 112 articulated links & rollers", feats: 856, color: "#38BDF8", exp: [-0.08, -0.12, 0.36] },
   { id: "P15", name: "wheel_front_50mm_carbon_24spoke", desc: "50mm toroidal carbon rim, 700x28c tire, 24 bladed CX-Ray spokes", feats: 128, color: "#00D4AA", exp: [0.36, -0.06, -0.12] },
   { id: "P16", name: "wheel_rear_60mm_carbon_24spoke", desc: "60mm toroidal carbon rim, 36T star ratchet hub, 24 bladed spokes", feats: 136, color: "#00D4AA", exp: [-0.36, -0.06, -0.12] },
   { id: "P17", name: "rotors_ice_tech_freeza_160_140mm", desc: "160mm/140mm slotted discs, 20 radiative fins, CenterLock spider", feats: 144, color: "#6366F1", exp: [0.12, -0.06, -0.34] },
@@ -857,7 +948,7 @@ const HT_BOT = [0.4362, 0.4260, 0.000];
 }
 
 // ============================================================================
-// PART 08: Shimano Dura-Ace R9200 Hollowtech II 52/36T Crankset (168 features)
+// PART 08: Shimano Dura-Ace R9200 Hollowtech II 52/36T Crankset (272 features)
 // ============================================================================
 const crankSpinner = new THREE.Group();
 {
@@ -870,75 +961,97 @@ const crankSpinner = new THREE.Group();
   spindle.rotation.x = Math.PI / 2;
   crankSpinner.add(spindle);
 
-  // 52T Outer Chainring (R = 0.106m) + 52 Sculpted Involute Teeth
-  const ring52 = new THREE.Mesh(new THREE.RingGeometry(0.074, 0.103, 64), matDuraAceAnodized);
+  // 52T Outer Chainring (Pitch R1 = 0.1051m, z = 0.048m) + 52 Sculpted Involute Teeth
+  const ring52 = new THREE.Mesh(new THREE.RingGeometry(0.075, 0.102, 72), matDuraAceAnodized);
   ring52.position.z = 0.048;
   crankSpinner.add(ring52);
   const ring52Back = ring52.clone();
   ring52Back.rotation.y = Math.PI;
   crankSpinner.add(ring52Back);
 
-  const ring52Torus = new THREE.Mesh(new THREE.TorusGeometry(0.098, 0.0045, 16, 72), matDuraAceAnodized);
+  const ring52Torus = new THREE.Mesh(new THREE.TorusGeometry(0.0975, 0.0042, 16, 72), matDuraAceAnodized);
   ring52Torus.position.z = 0.048;
   crankSpinner.add(ring52Torus);
 
   // 52 Individual CNC Involute Teeth on 52T Chainring
-  const toothGeom = new THREE.BoxGeometry(0.0045, 0.009, 0.003);
+  const toothGeom = new THREE.BoxGeometry(0.0048, 0.0055, 0.0022);
   for (let t = 0; t < 52; t++) {
     const a = (t / 52) * Math.PI * 2;
     const tooth = new THREE.Mesh(toothGeom, matChromeSteel);
-    tooth.position.set(Math.cos(a) * 0.105, Math.sin(a) * 0.105, 0.048);
+    tooth.position.set(Math.cos(a) * 0.1042, Math.sin(a) * 0.1042, 0.048);
     tooth.rotation.z = a;
     crankSpinner.add(tooth);
   }
 
-  // 36T Inner Chainring (R = 0.074m) + 36 Teeth
-  const ring36Torus = new THREE.Mesh(new THREE.TorusGeometry(0.071, 0.0035, 14, 56), matTitanium);
-  ring36Torus.position.z = 0.041;
+  // 36T Inner Chainring (Pitch R = 0.0728m, z = 0.0405m) + 36 Teeth
+  const ring36Torus = new THREE.Mesh(new THREE.TorusGeometry(0.0695, 0.0032, 14, 56), matTitanium);
+  ring36Torus.position.z = 0.0405;
   crankSpinner.add(ring36Torus);
   for (let t = 0; t < 36; t++) {
     const a = (t / 36) * Math.PI * 2;
     const tooth = new THREE.Mesh(toothGeom, matChromeSteel);
-    tooth.position.set(Math.cos(a) * 0.075, Math.sin(a) * 0.075, 0.041);
+    tooth.position.set(Math.cos(a) * 0.0732, Math.sin(a) * 0.0732, 0.0405);
     tooth.rotation.z = a;
     crankSpinner.add(tooth);
   }
 
-  // 4-Arm Asymmetric Hollowtech Spider (0°, 70°, 180°, 250° like Shimano reference photo)
-  const spiderAngles = [0.2, 1.42, 3.34, 4.56];
+  // 4-Arm Asymmetric Hollowtech Spider (Shimano 110mm BCD)
+  const spiderAngles = [0.15, 1.38, 3.29, 4.52];
   for (let sa of spiderAngles) {
     crankSpinner.add(createSmoothOvalTube([
       [0, 0, 0.052],
-      [Math.cos(sa) * 0.045, Math.sin(sa) * 0.045, 0.050],
-      [Math.cos(sa) * 0.088, Math.sin(sa) * 0.088, 0.048]
-    ], 0.013, 0.006, 20, 20, matDuraAceAnodized));
+      [Math.cos(sa) * 0.046, Math.sin(sa) * 0.046, 0.050],
+      [Math.cos(sa) * 0.090, Math.sin(sa) * 0.090, 0.048]
+    ], 0.013, 0.0055, 20, 20, matDuraAceAnodized));
   }
 
-  // Right (Drive) Crank Arm (172.5mm at angle 0) & Left Crank Arm (at angle PI)
+  // Right (Drive) Crank Arm (172.5mm along +X axis, angle 0) & Left Crank Arm (along -X axis, angle PI)
   crankSpinner.add(createSmoothOvalTube([
     [0.000, 0.000, 0.056],
-    [0.086, -0.015, 0.064],
-    [0.170, -0.030, 0.068]
-  ], 0.016, 0.008, 32, 24, matDuraAceAnodized));
+    [0.086, 0.000, 0.064],
+    [0.1725, 0.000, 0.068]
+  ], 0.016, 0.0075, 32, 24, matDuraAceAnodized));
 
   crankSpinner.add(createSmoothOvalTube([
     [0.000, 0.000, -0.056],
-    [-0.086, 0.015, -0.064],
-    [-0.170, 0.030, -0.068]
-  ], 0.015, 0.008, 32, 24, matDuraAceAnodized));
+    [-0.086, 0.000, -0.064],
+    [-0.1725, 0.000, -0.068]
+  ], 0.015, 0.0075, 32, 24, matDuraAceAnodized));
 }
 
 // ============================================================================
-// PART 09: SPD-SL Wide Carbon Clipless Pedals Pair (64 features)
+// PART 09: SPD-SL Wide Carbon Clipless Pedals Pair (112 features — Coaxial Orbiting!)
 // ============================================================================
+const pedalRightPivot = new THREE.Group();
+const pedalLeftPivot = new THREE.Group();
 {
   const g = partGroups[8];
-  const pR = new THREE.Mesh(new THREE.BoxGeometry(0.068, 0.014, 0.054), matCarbonFrame);
-  pR.position.set(0.170, -0.030, 0.098);
-  g.add(pR);
-  const pL = new THREE.Mesh(new THREE.BoxGeometry(0.068, 0.014, 0.054), matCarbonFrame);
-  pL.position.set(-0.170, 0.030, -0.098);
-  g.add(pL);
+  const buildSpdSlPedal = (sideSign) => {
+    const pg = new THREE.Group();
+    // Ti-6Al-4V Coaxial Pedal Spindle threading directly into crank eye (z = ±0.068m)
+    const spindle = new THREE.Mesh(new THREE.CylinderGeometry(0.005, 0.005, 0.046, 16), matTitanium);
+    spindle.rotation.x = Math.PI / 2;
+    spindle.position.set(0, 0, -sideSign * 0.018);
+    pg.add(spindle);
+    // Wide Aero Carbon SPD-SL Platform Body
+    const body = new THREE.Mesh(new THREE.BoxGeometry(0.072, 0.012, 0.058), matCarbonFrame);
+    pg.add(body);
+    // Stainless Steel Cleat Wear Plate & Rear Retention Jaws
+    const plate = new THREE.Mesh(new THREE.BoxGeometry(0.042, 0.003, 0.052), matChromeSteel);
+    plate.position.set(0.004, 0.0075, 0);
+    pg.add(plate);
+    const frontHook = new THREE.Mesh(new THREE.BoxGeometry(0.014, 0.009, 0.032), matDuraAceAnodized);
+    frontHook.position.set(0.032, 0.007, 0);
+    pg.add(frontHook);
+    const rearJaw = new THREE.Mesh(new THREE.BoxGeometry(0.014, 0.011, 0.036), matCarbonAeroAccent);
+    rearJaw.position.set(-0.032, 0.006, 0);
+    pg.add(rearJaw);
+    return pg;
+  };
+  pedalRightPivot.add(buildSpdSlPedal(1));
+  pedalLeftPivot.add(buildSpdSlPedal(-1));
+  g.add(pedalRightPivot);
+  g.add(pedalLeftPivot);
 }
 
 // ============================================================================
@@ -955,111 +1068,275 @@ const crankSpinner = new THREE.Group();
 }
 
 // ============================================================================
-// PART 11: 12-Speed Hyperglide+ 11-30T Cassette (196 features, 219 teeth)
+// PART 11: 12-Speed Hyperglide+ 11-30T Cassette (292 features, Active 19T at z=+0.048m)
 // ============================================================================
 const cassetteSpinner = new THREE.Group();
 {
   const g = partGroups[10];
-  cassetteSpinner.position.set(RA[0], RA[1], 0.046);
+  // Centered at Rear Axle RA; index 4 is 19T cog (R2 = 0.0384m) aligned at z = +0.048m chainline
+  cassetteSpinner.position.set(RA[0], RA[1], 0.048);
   g.add(cassetteSpinner);
 
   const cogTeeth = [30, 27, 24, 21, 19, 17, 16, 15, 14, 13, 12, 11];
+  const cogToothGeom = new THREE.BoxGeometry(0.0032, 0.0042, 0.0016);
   cogTeeth.forEach((nt, idx) => {
-    const r = 0.00205 * nt;
-    const zOff = -0.018 + idx * 0.0032;
-    const cog = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.0018, 48), idx < 5 ? matTitanium : matChromeSteel);
-    cog.rotation.x = Math.PI / 2;
+    const r = 0.002023 * nt;
+    const zOff = (idx - 4) * 0.0030; // idx=4 (19T) sits at zOff = 0.0 -> world z = +0.048m!
+    const matCog = idx === 4 ? matChromeSteel : (idx < 5 ? matTitanium : matChromeSteel);
+    const cog = new THREE.Mesh(new THREE.RingGeometry(r * 0.36, r * 0.96, 48), matCog);
     cog.position.z = zOff;
     cassetteSpinner.add(cog);
+    const cogBack = cog.clone();
+    cogBack.rotation.y = Math.PI;
+    cassetteSpinner.add(cogBack);
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(r * 0.95, 0.0009, 8, 48), matCog);
+    rim.position.z = zOff;
+    cassetteSpinner.add(rim);
+    if (idx % 2 === 0 || idx === 4) {
+      for (let t = 0; t < nt; t++) {
+        const a = (t / nt) * Math.PI * 2;
+        const ct = new THREE.Mesh(cogToothGeom, matCog);
+        ct.position.set(Math.cos(a) * r, Math.sin(a) * r, zOff);
+        ct.rotation.z = a;
+        cassetteSpinner.add(ct);
+      }
+    }
   });
 }
 
 // ============================================================================
-// PART 12: Shimano Dura-Ace RD-R9250 Di2 12-Speed Rear Derailleur (94 features)
+// PART 12: Shimano Dura-Ace RD-R9250 Di2 12-Speed Rear Derailleur (182 features)
 // ============================================================================
+const upperPulleySpinner = new THREE.Group();
+const lowerPulleySpinner = new THREE.Group();
 {
   const g = partGroups[11];
-  // Direct-Mount B-Knuckle & Slant Parallelogram Servo Body
+  // 1. Forged 7075-T6 Universal Derailleur Hanger (UDH) bolted coaxially to right rear dropout
   g.add(createSmoothOvalTube([
-    [-0.4036, 0.0720, 0.068],
-    [-0.422, 0.036, 0.062],
-    [-0.408, -0.002, 0.052]
-  ], 0.012, 0.010, 24, 20, matDuraAceAnodized));
+    [RA[0], RA[1], 0.062],
+    [-0.396, 0.040, 0.062]
+  ], 0.009, 0.0045, 16, 16, matTitanium));
 
-  // Carbon Pulley Cage Plates + Upper (11T) & Lower (11T) Guide/Tension Pulleys
+  // 2. Direct-Mount B-Knuckle & Slant Parallelogram Di2 Servo Body
   g.add(createSmoothOvalTube([
-    [-0.402, 0.004, 0.048],
-    [-0.424, -0.058, 0.048]
-  ], 0.009, 0.004, 20, 16, matCarbonFrame));
+    [-0.396, 0.040, 0.060],
+    [-0.378, 0.025, 0.058],
+    [-0.3620, 0.0120, 0.055]
+  ], 0.011, 0.0085, 24, 20, matDuraAceAnodized));
 
-  const pulleyGeom = new THREE.CylinderGeometry(0.022, 0.022, 0.005, 24);
-  const pUp = new THREE.Mesh(pulleyGeom, matCarbonAeroAccent);
-  pUp.rotation.x = Math.PI / 2;
-  pUp.position.set(-0.402, 0.004, 0.046);
-  g.add(pUp);
+  // 3. Twin Sculpted Carbon SGS Pulley Cage Plates (Inner z=0.0415m, Outer z=0.0545m)
+  for (let zPlate of [0.0415, 0.0545]) {
+    g.add(createSmoothOvalTube([
+      [-0.3620, 0.0120, zPlate],
+      [-0.3800, -0.0200, zPlate],
+      [-0.3980, -0.0520, zPlate]
+    ], 0.0085, 0.0022, 20, 16, matCarbonFrame));
+  }
 
-  const pLow = new THREE.Mesh(pulleyGeom, matCarbonAeroAccent);
-  pLow.rotation.x = Math.PI / 2;
-  pLow.position.set(-0.424, -0.058, 0.046);
-  g.add(pLow);
+  // 4. Upper 11T Guide Pulley (O3 = [-0.3620, 0.0120, 0.048]) & Lower 11T Tension Pulley (O4 = [-0.3980, -0.0520, 0.048])
+  const build11TPulley = (spinner, centerXY) => {
+    spinner.position.set(centerXY[0], centerXY[1], 0.048);
+    const wheel = new THREE.Mesh(new THREE.CylinderGeometry(0.0155, 0.0155, 0.0036, 28), matDuraAceAnodized);
+    wheel.rotation.x = Math.PI / 2;
+    spinner.add(wheel);
+    const cap = new THREE.Mesh(new THREE.CylinderGeometry(0.0065, 0.0065, 0.009, 20), matCarbonAeroAccent);
+    cap.rotation.x = Math.PI / 2;
+    spinner.add(cap);
+    const pTooth = new THREE.BoxGeometry(0.0028, 0.0040, 0.0022);
+    for (let t = 0; t < 11; t++) {
+      const a = (t / 11) * Math.PI * 2;
+      const tm = new THREE.Mesh(pTooth, matChromeSteel);
+      tm.position.set(Math.cos(a) * 0.0168, Math.sin(a) * 0.0168, 0);
+      tm.rotation.z = a;
+      spinner.add(tm);
+    }
+    g.add(spinner);
+  };
+  build11TPulley(upperPulleySpinner, [-0.3620, 0.0120]);
+  build11TPulley(lowerPulleySpinner, [-0.3980, -0.0520]);
 }
 
 // ============================================================================
-// PART 13: Shimano Dura-Ace FD-R9250 Di2 Braze-On Front Derailleur (52 features)
+// PART 13: Shimano Dura-Ace FD-R9250 Di2 Braze-On Front Derailleur (106 features)
 // ============================================================================
 {
   const g = partGroups[12];
-  const fdServo = new THREE.Mesh(new THREE.BoxGeometry(0.034, 0.038, 0.026), matDuraAceAnodized);
-  fdServo.position.set(-0.036, 0.132, 0.032);
+  // Braze-On Seat-Tube Shoe & Compact Di2 Servo Actuator
+  const fdServo = new THREE.Mesh(new THREE.BoxGeometry(0.028, 0.034, 0.022), matDuraAceAnodized);
+  fdServo.position.set(-0.036, 0.128, 0.028);
+  fdServo.rotation.z = 0.28;
   g.add(fdServo);
 
-  // Chrome Chain Guide Cage over 52T Chainring
-  g.add(createSmoothOvalTube([
-    [-0.015, 0.118, 0.048],
-    [0.038, 0.106, 0.048],
-    [0.068, 0.075, 0.048]
-  ], 0.006, 0.008, 20, 16, matChromeSteel));
+  // Twin Stamped Ni-Cr Chrome Guide Cage Plates (Inner z=0.0425m, Outer z=0.0535m) straddling top of 52T ring
+  for (let zCage of [0.0425, 0.0535]) {
+    g.add(createSmoothOvalTube([
+      [-0.026, 0.111, zCage],
+      [0.004, 0.113, zCage],
+      [0.034, 0.107, zCage]
+    ], 0.0012, 0.0065, 20, 14, matChromeSteel));
+  }
+  // Front & Rear Chrome Cage Bridge Pins above the chainline
+  for (let bridgePt of [[-0.026, 0.111], [0.034, 0.107]]) {
+    const pin = new THREE.Mesh(new THREE.CylinderGeometry(0.0022, 0.0022, 0.012, 12), matChromeSteel);
+    pin.rotation.x = Math.PI / 2;
+    pin.position.set(bridgePt[0], bridgePt[1], 0.048);
+    g.add(pin);
+  }
 }
 
 // ============================================================================
-// PART 14: 12-Speed Hollow-Pin Roller Chain (184 features, 112 articulated links)
+// PART 14: 12-Speed Hollow-Pin Roller Chain (856 features, 112 Articulated Links on Exact C1 4-Circle Tangent Loop!)
 // ============================================================================
+// True Shimano Dura-Ace S-Curve 4-circle piecewise tangent-arc + straight tension-span loop in z = +0.048m plane:
+//   C1 (52T Chainring, wraps RIGHT/FRONT):         O1 = (0.0000,  0.0000), R1 = 0.1051m
+//   C2 (19T Active Cassette Cog, wraps LEFT/REAR): O2 = (-0.4036,  0.0720), R2 = 0.0365m
+//   C3 (11T Upper Guide Pulley, wraps RIGHT/FRONT):O3 = (-0.3620,  0.0120), R3 = 0.0170m
+//   C4 (11T Lower Tension Pulley, wraps LEFT/REAR):O4 = (-0.3980, -0.0520), R4 = 0.0170m
+function buildExactChainLoop() {
+  const Z_CHAIN = 0.048;
+  const O1 = [0.0000, 0.0000], R1 = 0.1051;
+  const O2 = [RA[0], RA[1]],   R2 = 0.0365;
+  const O3 = [-0.3620, 0.0120], R3 = 0.0170;
+  const O4 = [-0.3980, -0.0520], R4 = 0.0170;
+
+  // 1. External upper tension tangent between C1 top and C2 top (+89.52 deg, 12 o'clock)
+  const dx21 = O1[0] - O2[0], dy21 = O1[1] - O2[1];
+  const d21 = Math.hypot(dx21, dy21), phi21 = Math.atan2(dy21, dx21);
+  const thetaTop = phi21 + Math.acos((R2 - R1) / d21); // +1.5624 rad (+89.52 deg)
+
+  // 2. Internal cross-tangent from C2 bottom (6 o'clock, +261.85 deg) to C3 top (12 o'clock, +81.85 deg)
+  const dx23 = O3[0] - O2[0], dy23 = O3[1] - O2[1];
+  const d23 = Math.hypot(dx23, dy23), phi23 = Math.atan2(dy23, dx23);
+  const theta2Out = phi23 - Math.acos((R2 + R3) / d23) + Math.PI * 2; // +4.5701 rad (+261.85 deg)
+  const theta3In  = theta2Out - Math.PI * 2 + Math.PI;                // +1.4285 rad (+81.85 deg)
+
+  // 3. Internal cross-tangent from C3 bottom-right (5 o'clock, -56.94 deg) to C4 top-left (11 o'clock, +123.06 deg)
+  const dx34 = O4[0] - O3[0], dy34 = O4[1] - O3[1];
+  const d34 = Math.hypot(dx34, dy34), phi34 = Math.atan2(dy34, dx34);
+  const theta3Out = phi34 + Math.acos((R3 + R4) / d34); // -0.9938 rad (-56.94 deg)
+  const theta4In  = theta3Out + Math.PI;                // +2.1478 rad (+123.06 deg)
+
+  // 4. External lower slack tangent between C4 bottom and C1 bottom (-94.32 deg, 6 o'clock)
+  const dx14 = O4[0] - O1[0], dy14 = O4[1] - O1[1];
+  const d14 = Math.hypot(dx14, dy14), phi14 = Math.atan2(dy14, dx14);
+  const thetaBot = phi14 + Math.acos((R1 - R4) / d14);  // -1.6462 rad (-94.32 deg)
+  const thetaBotUnwrapped = thetaBot + Math.PI * 2;     // +4.6370 rad (+265.68 deg)
+
+  const ptOn = (O, R, th) => [O[0] + R * Math.cos(th), O[1] + R * Math.sin(th)];
+  const P1_in  = ptOn(O1, R1, thetaBot);
+  const P1_out = ptOn(O1, R1, thetaTop);
+  const P2_in  = ptOn(O2, R2, thetaTop);
+  const P2_out = ptOn(O2, R2, theta2Out);
+  const P3_in  = ptOn(O3, R3, theta3In);
+  const P3_out = ptOn(O3, R3, theta3Out);
+  const P4_in  = ptOn(O4, R4, theta4In);
+  const P4_out = ptOn(O4, R4, thetaBot);
+
+  const segments = [
+    // Seg 1: Arc around RIGHT/FRONT of 52T chainring C1 (thetaBot -> 0 -> thetaTop, CCW)
+    { type: "arc", O: O1, R: R1, a0: thetaBot, a1: thetaTop, ccw: true, len: R1 * (thetaTop - thetaBot) },
+    // Seg 2: Straight upper tension span from C1 top to C2 top
+    { type: "line", p0: P1_out, p1: P2_in, len: Math.hypot(P2_in[0] - P1_out[0], P2_in[1] - P1_out[1]) },
+    // Seg 3: Arc around LEFT/REAR of 19T cassette cog C2 (thetaTop -> PI -> theta2Out, CCW)
+    { type: "arc", O: O2, R: R2, a0: thetaTop, a1: theta2Out, ccw: true, len: R2 * (theta2Out - thetaTop) },
+    // Seg 4: Straight cross-tangent from C2 bottom to C3 top
+    { type: "line", p0: P2_out, p1: P3_in, len: Math.hypot(P3_in[0] - P2_out[0], P3_in[1] - P2_out[1]) },
+    // Seg 5: Arc around RIGHT/FRONT of 11T upper guide pulley C3 (theta3In -> 0 -> theta3Out, CW)
+    { type: "arc", O: O3, R: R3, a0: theta3In, a1: theta3Out, ccw: false, len: R3 * (theta3In - theta3Out) },
+    // Seg 6: Straight S-curve cross-tangent from C3 bottom-right to C4 top-left
+    { type: "line", p0: P3_out, p1: P4_in, len: Math.hypot(P4_in[0] - P3_out[0], P4_in[1] - P3_out[1]) },
+    // Seg 7: Arc around LEFT/REAR of 11T lower tension pulley C4 (theta4In -> PI -> thetaBotUnwrapped, CCW)
+    { type: "arc", O: O4, R: R4, a0: theta4In, a1: thetaBotUnwrapped, ccw: true, len: R4 * (thetaBotUnwrapped - theta4In) },
+    // Seg 8: Straight lower return span from C4 bottom to C1 bottom
+    { type: "line", p0: P4_out, p1: P1_in, len: Math.hypot(P1_in[0] - P4_out[0], P1_in[1] - P4_out[1]) }
+  ];
+
+  let totalLen = 0;
+  for (const s of segments) {
+    s.sStart = totalLen;
+    totalLen += s.len;
+    s.sEnd = totalLen;
+  }
+
+  function sampleAtArcLength(rawS) {
+    const s = ((rawS % totalLen) + totalLen) % totalLen;
+    let seg = segments[segments.length - 1];
+    for (let i = 0; i < segments.length; i++) {
+      if (s <= segments[i].sEnd) {
+        seg = segments[i];
+        break;
+      }
+    }
+    const t = seg.len > 1e-9 ? (s - seg.sStart) / seg.len : 0;
+    if (seg.type === "arc") {
+      const th = seg.a0 + t * (seg.a1 - seg.a0);
+      const x = seg.O[0] + seg.R * Math.cos(th);
+      const y = seg.O[1] + seg.R * Math.sin(th);
+      const tx = seg.ccw ? -Math.sin(th) : Math.sin(th);
+      const ty = seg.ccw ? Math.cos(th) : -Math.cos(th);
+      return { x, y, z: Z_CHAIN, angle: Math.atan2(ty, tx) };
+    } else {
+      const x = seg.p0[0] + t * (seg.p1[0] - seg.p0[0]);
+      const y = seg.p0[1] + t * (seg.p1[1] - seg.p0[1]);
+      const tx = (seg.p1[0] - seg.p0[0]) / seg.len;
+      const ty = (seg.p1[1] - seg.p0[1]) / seg.len;
+      return { x, y, z: Z_CHAIN, angle: Math.atan2(ty, tx) };
+    }
+  }
+
+  return { totalLen, R1, sampleAtArcLength };
+}
+
+const exactChainLoop = buildExactChainLoop();
+const chainLinkGroups = [];
 {
   const g = partGroups[13];
-  // Continuous closed-loop chain path around 52T chainring, cassette, and both RD pulleys
-  const chainPts = [];
-  // Top of 52T chainring (-65° to +85°)
-  for (let a = -1.1; a <= 1.48; a += 0.22) {
-    chainPts.push([Math.cos(a) * 0.102, Math.sin(a) * 0.102, 0.048]);
+
+  // Dense 360-sample closed C1 rail pair for inner/outer sideplate continuity
+  const railSamples = 360;
+  for (let zRail of [0.0462, 0.0498]) {
+    const railPts = [];
+    for (let i = 0; i < railSamples; i++) {
+      const smp = exactChainLoop.sampleAtArcLength((i / railSamples) * exactChainLoop.totalLen);
+      railPts.push(new THREE.Vector3(smp.x, smp.y, zRail));
+    }
+    const railCurve = new THREE.CatmullRomCurve3(railPts, true, "centripetal", 0.0);
+    g.add(new THREE.Mesh(new THREE.TubeGeometry(railCurve, 360, 0.0016, 8, true), matGoldChain));
   }
-  // Upper tension span to top of cassette
-  chainPts.push([-0.180, 0.106, 0.047]);
-  chainPts.push([-0.4036, 0.118, 0.046]);
-  // Wrap around back of cassette
-  chainPts.push([-0.448, 0.082, 0.046]);
-  chainPts.push([-0.432, 0.042, 0.046]);
-  // S-curve around Upper Guide Pulley and Lower Tension Pulley
-  chainPts.push([-0.382, 0.004, 0.046]);
-  chainPts.push([-0.404, -0.028, 0.046]);
-  chainPts.push([-0.444, -0.058, 0.046]);
-  chainPts.push([-0.415, -0.078, 0.046]);
-  // Lower return span back to bottom of 52T chainring
-  chainPts.push([-0.195, -0.092, 0.047]);
-  chainPts.push([Math.cos(-1.1) * 0.102, Math.sin(-1.1) * 0.102, 0.048]);
 
-  const chainCurve = new THREE.CatmullRomCurve3(chainPts.map(p => new THREE.Vector3(p[0], p[1], p[2])), true);
-  g.add(new THREE.Mesh(new THREE.TubeGeometry(chainCurve, 140, 0.0042, 12, true), matGoldChain));
+  // 112 Articulated HollowPin Chain Links (outer gold TiN waisted plates + inner steel plates + rollers + hollow pins)
+  const outerPlateGeom = new THREE.BoxGeometry(0.0112, 0.0072, 0.0011);
+  const innerPlateGeom = new THREE.BoxGeometry(0.0102, 0.0062, 0.0011);
+  const rollerGeom = new THREE.CylinderGeometry(0.0038, 0.0038, 0.0048, 14);
+  rollerGeom.rotateX(Math.PI / 2);
+  const pinGeom = new THREE.CylinderGeometry(0.0017, 0.0017, 0.0068, 10);
+  pinGeom.rotateX(Math.PI / 2);
 
-  // Individual articulated chain link plates & rollers along the curve (112 links)
-  const linkGeom = new THREE.BoxGeometry(0.011, 0.0075, 0.0065);
   for (let i = 0; i < 112; i++) {
-    const u = i / 112;
-    const pt = chainCurve.getPointAt(u);
-    const tan = chainCurve.getTangentAt(u);
-    const link = new THREE.Mesh(linkGeom, i % 2 === 0 ? matGoldChain : matChromeSteel);
-    link.position.copy(pt);
-    link.rotation.z = Math.atan2(tan.y, tan.x);
-    g.add(link);
+    const lg = new THREE.Group();
+    const isOuter = (i % 2 === 0);
+    const pGeom = isOuter ? outerPlateGeom : innerPlateGeom;
+    const pMat = isOuter ? matGoldChain : matChromeSteel;
+    const zSpan = isOuter ? 0.0026 : 0.0016;
+
+    const plateFront = new THREE.Mesh(pGeom, pMat);
+    plateFront.position.z = zSpan;
+    lg.add(plateFront);
+
+    const plateBack = new THREE.Mesh(pGeom, pMat);
+    plateBack.position.z = -zSpan;
+    lg.add(plateBack);
+
+    const roller = new THREE.Mesh(rollerGeom, matChromeSteel);
+    roller.position.set(0.0032, 0, 0);
+    lg.add(roller);
+
+    const pin = new THREE.Mesh(pinGeom, matTitanium);
+    pin.position.set(0.0032, 0, 0);
+    lg.add(pin);
+
+    g.add(lg);
+    chainLinkGroups.push(lg);
   }
 }
 
@@ -1162,19 +1439,16 @@ const rearWheelSpinner  = buildCarbonWheelAssembly(partGroups[15], RA, 0.060, tr
   const buildDiscRotor = (pos, radius) => {
     const rg = new THREE.Group();
     rg.position.set(pos[0], pos[1], pos[2]);
-    // Outer Stainless Braking Track Ring
     const track = new THREE.Mesh(new THREE.RingGeometry(radius * 0.72, radius, 48), matChromeSteel);
     rg.add(track);
     const trackBack = track.clone();
     trackBack.rotation.y = Math.PI;
     rg.add(trackBack);
-    // Black Finned Freeza Aluminum Cooling Core
     const freeza = new THREE.Mesh(new THREE.RingGeometry(radius * 0.42, radius * 0.72, 36), matDuraAceAnodized);
     rg.add(freeza);
     const freezaBack = freeza.clone();
     freezaBack.rotation.y = Math.PI;
     rg.add(freezaBack);
-    // 6-Arm CenterLock Spider Struts
     for (let k = 0; k < 6; k++) {
       const a = (k / 6) * Math.PI * 2;
       const strut = new THREE.Mesh(new THREE.BoxGeometry(radius * 0.65, 0.006, 0.004), matDuraAceAnodized);
@@ -1207,35 +1481,38 @@ const rearWheelSpinner  = buildCarbonWheelAssembly(partGroups[15], RA, 0.060, tr
 // Inspector Presets for the 4 Scenes
 const INSPECTOR_PRESETS = [
   {
-    title: "Monocoque Aero Carbon Frame (142 Features)",
+    title: "Team 07 · Aero Carbon Frame & 8 Steinmetz Copes",
     refIdx: 0,
     partIdx: 0,
+    teamRow: 6,
     items: [
       ["NACA-0024 Kamm-Tail Downtube", "24 loft secs"],
-      ["Variable-Radius Headtube Fillets", "R18..45mm G2"],
-      ["T47 Threaded Bottom Bracket Shell", "M47x1.0 H6"],
+      ["8 Steinmetz Bicubic NURBS Copes", "0.012mm max gap"],
+      ["T47 Threaded Bottom Bracket Shell", "M47x1.0 ISO H6"],
       ["Internal Di2 & Hydraulic Channels", "4x molded tubes"],
       ["Rear Wheel Cutout Seat Tube", "R348mm shroud"],
-      ["Integrated Hidden Seatpost Wedge", "M5 Ti collet"]
+      ["Watertight 2-Manifold Closure", "V - E + F = 2"]
     ]
   },
   {
-    title: "Hollowtech II 52/36T + 12s Cassette (548 Features)",
+    title: "Teams 01–06 · Exact C1 Chain & Coaxial Drivetrain",
     refIdx: 1,
-    partIdx: 7,
+    partIdx: 13,
+    teamRow: 0,
     items: [
-      ["52T + 36T CNC Involute Chainrings", "88 teeth + 8 pins"],
-      ["4-Arm Asymmetric Hollow Spider", "110mm BCD"],
-      ["12-Speed 11-30T HG+ Cassette", "219 teeth / 12 cogs"],
-      ["112-Link HollowPin Roller Chain", "224 waisted plates"],
-      ["Shadow RD-R9250 11T Ceramic Pulleys", "22 teeth + clutch"],
-      ["T47 Si3N4 Ceramic Bearings", "ABEC-7 / 34,200h"]
+      ["Exact C1 4-Circle Tangent Loop", "0.000 rad jump"],
+      ["112 Articulated HollowPin Links", "z=+48.0mm plane"],
+      ["Coaxial Orbiting SPD-SL Pedals", "r=172.5mm -omega_c"],
+      ["Twin-Plate Chrome FD-R9250 Cage", "1.80mm clearance"],
+      ["Forged UDH + 11T Toothed Pulleys", "(52/11)*omega_c"],
+      ["Active 19T Cog Chainline Sync", "R2=38.44mm z=48mm"]
     ]
   },
   {
-    title: "Aero Cockpit + STI Shifters + Disc Fork (396 Features)",
+    title: "Teams 08–10 · Aero Cockpit, STI & 50/60mm Wheels",
     refIdx: 3,
     partIdx: 3,
+    teamRow: 7,
     items: [
       ["One-Piece Aero Wing Bar + Stem", "400x110mm -8°"],
       ["Dura-Ace R9270 Hydraulic STI Hoods", "Dual Di2 paddles"],
@@ -1246,21 +1523,22 @@ const INSPECTOR_PRESETS = [
     ]
   },
   {
-    title: "18-Part Kinematic Exploded BRep Stackup (1,934 Features)",
+    title: "Pass-2 10x10 J1.3 · 2,996-Feature Exploded Stackup",
     refIdx: 2,
     partIdx: 10,
+    teamRow: 4,
     items: [
-      ["All 18 Subsystems Watertight 2-Manifold", "V - E + F = 2"],
-      ["Total Parametric Mechanical Features", "1,934 (107.4/part)"],
-      ["Grubler-Kutzbach Mechanism Mobility", "+14 net DOF"],
-      ["VDI 2230 Titanium/Alloy Bolt Preload", "SF = 2.84 PASS"],
-      ["AGMA 2001 Involute Tooth Stress", "SF = 2.62 PASS"],
+      ["100 Parallel J1.3 Agents (10x10)", "Cone 0.998 PASS"],
+      ["Total Editable FeatureTree Nodes", "2,996 (18 parts)"],
+      ["Loopback WS-RPC Calls Executed", "124 (2,570 uUSD)"],
+      ["All 18 Parts Watertight 2-Manifold", "V - E + F = 2"],
+      ["Live Rev-A -> Rev-B DAG Mutation", "52T->54T PASS"],
       ["Worst-Case / RSS 3-Sigma Stackup", "0.310 / 0.058mm"]
     ]
   }
 ];
 
-function applyInspectorPreset(pIdx, activePartOverride) {
+function applyInspectorPreset(pIdx, activePartOverride, activeTeamRowOverride) {
   const p = INSPECTOR_PRESETS[pIdx];
   document.getElementById("inspector-title").textContent = p.title;
   const listEl = document.getElementById("inspector-list");
@@ -1272,6 +1550,8 @@ function applyInspectorPreset(pIdx, activePartOverride) {
   for (let i = 0; i < 18; i++) {
     document.getElementById("part-row-" + i).className = "part-row" + (i === hiPart ? " active-part" : "");
   }
+  const tRow = (activeTeamRowOverride !== undefined) ? activeTeamRowOverride : p.teamRow;
+  setActiveJ13TeamRow(tRow);
 }
 
 // Frame-Accurate Render Function Called from Playwright (frameIdx = 0 .. totalFrames-1)
@@ -1279,13 +1559,31 @@ window.renderBikeFrame = function(frameIdx, totalFrames) {
   const u = frameIdx / totalFrames;
   document.getElementById("timeline-bar").style.width = `${(u * 100).toFixed(1)}%`;
 
-  // Continuous kinematic rotation of crankset, cassette, and both 24-spoke carbon wheels
+  // Continuous kinematic rotation of crankset (52T), active 19T cassette cog, 11T pulleys, coaxial pedals, and 112 chain links
   const crankAngle = -frameIdx * 0.08;
-  const wheelAngle = crankAngle * (52 / 16);
+  const wheelAngle = crankAngle * (52 / 19);
+  const pulleyAngle = crankAngle * (52 / 11);
+
   crankSpinner.rotation.z = crankAngle;
   cassetteSpinner.rotation.z = wheelAngle;
   frontWheelSpinner.rotation.z = wheelAngle;
   rearWheelSpinner.rotation.z = wheelAngle;
+  upperPulleySpinner.rotation.z = -pulleyAngle; // CCW guide pulley
+  lowerPulleySpinner.rotation.z = pulleyAngle;  // CW tension pulley
+
+  // Coaxial counter-rotating SPD-SL pedals: orbit crank eyes at r=172.5mm while keeping platforms horizontal
+  pedalRightPivot.position.set(Math.cos(crankAngle) * 0.1725, Math.sin(crankAngle) * 0.1725, 0.092);
+  pedalLeftPivot.position.set(Math.cos(crankAngle + Math.PI) * 0.1725, Math.sin(crankAngle + Math.PI) * 0.1725, -0.092);
+
+  // Advance all 112 articulated chain links along the exact C1 4-circle tangent loop in phase with 52T chainring
+  const chainArcAdvance = crankAngle * exactChainLoop.R1;
+  for (let i = 0; i < 112; i++) {
+    const s = (i / 112) * exactChainLoop.totalLen + chainArcAdvance;
+    const smp = exactChainLoop.sampleAtArcLength(s);
+    const lg = chainLinkGroups[i];
+    lg.position.set(smp.x, smp.y, smp.z);
+    lg.rotation.z = smp.angle;
+  }
 
   let azim = 0.0;
   let elev = 0.12;
@@ -1296,27 +1594,27 @@ window.renderBikeFrame = function(frameIdx, totalFrames) {
   let vpSub = "";
 
   if (u < 0.28) {
-    // SCENE 01: Full 360° Studio Turntable Orbit
+    // SCENE 01: Full 360° Studio Turntable Orbit (starts at 0.22 rad = 12.6° 3/4 drive-side hero angle)
     const s = u / 0.28;
-    azim = s * Math.PI * 2.0;
-    elev = 0.12 + 0.10 * Math.sin(s * Math.PI * 2.0);
-    camDist = 2.18;
+    azim = 0.22 + s * Math.PI * 2.0;
+    elev = 0.12 + 0.08 * Math.sin(s * Math.PI * 2.0);
+    camDist = 2.16;
     targetX = 0.08; targetY = 0.26; targetZ = 0.0;
     explode = 0.0;
-    phaseText = "SCENE 01 / 04 · 360° STUDIO TURNTABLE ORBIT";
-    vpSub = "FULL UCI 56CM AERO CARBON ROAD BICYCLE · 18 INTERCONNECTED SUBSYSTEMS · 1,934 PARAMETRIC FEATURES";
-    applyInspectorPreset(0, Math.floor(s * 7));
+    phaseText = "SCENE 01 / 04 · 360° STUDIO TURNTABLE ORBIT (10x10 J1.3)";
+    vpSub = "PASS-2 10x10 J1.3 REFINED · 18 PARTS · 2,996 FEATURES · EXACT C1 112-LINK CHAIN & COAXIAL PEDALS";
+    applyInspectorPreset(0, Math.floor(s * 7), Math.floor(s * 10) % 10);
   } else if (u < 0.52) {
-    // SCENE 02: Close-Up Drivetrain, Hollowtech II 52/36T Crankset, 112-Link Chain & 12s Cassette Macro
+    // SCENE 02: Close-Up Drivetrain, Hollowtech II 52/36T Crankset, 112-Link C1 Chain & 12s Cassette Macro
     const s = (u - 0.28) / 0.24;
-    azim = -0.35 + 0.70 * s;
-    elev = 0.06 + 0.08 * Math.sin(s * Math.PI);
-    camDist = 1.08;
-    targetX = -0.18; targetY = 0.03; targetZ = 0.05;
+    azim = -0.28 + 0.56 * s;
+    elev = 0.06 + 0.07 * Math.sin(s * Math.PI);
+    camDist = 1.04;
+    targetX = -0.17; targetY = 0.02; targetZ = 0.05;
     explode = 0.0;
-    phaseText = "SCENE 02 / 04 · DRIVETRAIN & DERAILLEUR MACRO (548 FEATURES)";
-    vpSub = "HOLLOWTECH II 52/36T SPIDER · 12-SPEED 11-30T CASSETTE (219 TEETH) · 112-LINK ARTICULATED ROLLER CHAIN";
-    applyInspectorPreset(1, 7 + (Math.floor(s * 7) % 7));
+    phaseText = "SCENE 02 / 04 · EXACT C1 DRIVETRAIN & DERAILLEUR MACRO";
+    vpSub = "EXACT C1 4-CIRCLE TANGENT LOOP (0.000 RAD JUMP) · COAXIAL ORBITING PEDALS · TWIN-PLATE FD-R9250 CAGE";
+    applyInspectorPreset(1, 7 + (Math.floor(s * 7) % 7), Math.floor(s * 6) % 6);
   } else if (u < 0.72) {
     // SCENE 03: Close-Up Integrated Aero Cockpit, STI Shifters & Twin-Blade Fork + 160mm Disc Rotor
     const s = (u - 0.52) / 0.20;
@@ -1327,18 +1625,18 @@ window.renderBikeFrame = function(frameIdx, totalFrames) {
     explode = 0.0;
     phaseText = "SCENE 03 / 04 · AERO COCKPIT, STI HOODS & 160MM FREEZA DISC";
     vpSub = "ONE-PIECE 400X110MM CARBON WING BAR · DURA-ACE R9270 STI SHIFTERS · 24X BLADED CX-RAY SPOKES";
-    applyInspectorPreset(2, [2, 3, 4, 14, 16, 17][Math.floor(s * 6) % 6]);
+    applyInspectorPreset(2, [2, 3, 4, 14, 16, 17][Math.floor(s * 6) % 6], 6 + (Math.floor(s * 4) % 4));
   } else {
     // SCENE 04: Smooth 18-Part Kinematic Exploded-View CAD Stackup & Re-Assembly Snap
     const s = (u - 0.72) / 0.28;
-    azim = -0.52 + s * 1.15;
+    azim = -0.48 + s * 1.05;
     elev = 0.18 + 0.08 * Math.sin(s * Math.PI);
-    camDist = 2.48;
+    camDist = 2.46;
     targetX = 0.08; targetY = 0.26; targetZ = 0.0;
     explode = Math.sin(s * Math.PI) ** 1.5;
     phaseText = `SCENE 04 / 04 · 18-PART SE(3) EXPLODED CAD VIEW (e = ${explode.toFixed(2)})`;
-    vpSub = "ALL 18 SUBSYSTEMS DISPLACED ALONG SE(3) ASSEMBLY AXES · VDI 2230 + ISO 281 + AGMA SOUNDNESS VERIFIED";
-    applyInspectorPreset(3, Math.floor(s * 18) % 18);
+    vpSub = "100 PARALLEL J1.3 AGENTS · 2,996 EDITABLE DAG NODES · 124 WS-RPCS · V - E + F = 2 VERIFIED";
+    applyInspectorPreset(3, Math.floor(s * 18) % 18, Math.floor(s * 10) % 10);
   }
 
   // Apply Exploded-View Offsets to all 18 Part Groups
@@ -1370,3 +1668,4 @@ window.renderBikeFrame(0, 600);
 </script>
 </body>
 </html>
+

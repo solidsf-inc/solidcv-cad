@@ -1,0 +1,29 @@
+{
+  "agent_id": "jesse_j13_roadbike_078",
+  "agent_index": 78,
+  "row_index": 7,
+  "col_index": 7,
+  "cell_code": "R7_C7",
+  "team_id": "Team_08_Cockpit_Monocoque_D_Seatpost_And_Saddle",
+  "specialist_role": "Mass_And_Inertia_Auditor",
+  "assigned_part_ids": [
+    "cockpit_aero_integrated_barstem",
+    "seatpost_aero_d_shape_carbon",
+    "saddle_carbon_rails_cutout",
+    "shifters_sti_dual_control_pair"
+  ],
+  "defect_audited": "Audited ergonomic reach/drop flare, hidden wedge clamp, and 7x9mm braided carbon rail clamp",
+  "cad_refinement_applied": "Verified coaxial steerer clamp, saddle rail pitch stability, and dual-control lever hood geometry",
+  "features_verified": 56,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.8199999999999998,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9982,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.9984999999999999,
+    "iso286_cpk_score": 0.9962,
+    "composite_cone_score": 0.9982
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "00000000000000140000000000989068"
+}

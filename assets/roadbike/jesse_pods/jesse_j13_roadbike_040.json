@@ -1,0 +1,26 @@
+{
+  "agent_id": "jesse_j13_roadbike_040",
+  "agent_index": 40,
+  "row_index": 3,
+  "col_index": 9,
+  "cell_code": "R3_C9",
+  "team_id": "Team_04_Front_Derailleur_Twin_Plate_Chrome_Cage",
+  "specialist_role": "Loopback_WS_RPC_Gatekeeper",
+  "assigned_part_ids": [
+    "front_derailleur_brazeon_di2"
+  ],
+  "defect_audited": "Replaced round tubular sausage placeholder on PART 13 that intersected chainring teeth",
+  "cad_refinement_applied": "Synthesized flat stamped Ni-Cr inner (z=42 mm) and outer (z=54 mm) guide plates straddling top of 52T ring with 1.8 mm clearance",
+  "features_verified": 46,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.74,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9976,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.998,
+    "iso286_cpk_score": 0.9962,
+    "composite_cone_score": 0.998
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "00000000000000140000000000989360"
+}

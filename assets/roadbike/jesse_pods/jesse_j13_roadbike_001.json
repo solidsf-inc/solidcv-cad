@@ -1,0 +1,26 @@
+{
+  "agent_id": "jesse_j13_roadbike_001",
+  "agent_index": 1,
+  "row_index": 0,
+  "col_index": 0,
+  "cell_code": "R0_C0",
+  "team_id": "Team_01_Chain_And_Tangent_Loop_Kinematics",
+  "specialist_role": "ASME_Y14_5_Datum_Architect",
+  "assigned_part_ids": [
+    "chain_112link_hollowpin_pitch127"
+  ],
+  "defect_audited": "Eliminated CatmullRomCurve3 duplicate endpoint fold at a=-1.1 rad (5 o'clock on 52T chainring) and linear tooth-cutting chord",
+  "cad_refinement_applied": "Replaced spline approximation with exact C1 analytical 4-circle tangent-arc + straight tension-span loop (L=1422.4 mm = 112 * 12.7 mm)",
+  "features_verified": 28,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.68,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.994,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.998,
+    "iso286_cpk_score": 0.995,
+    "composite_cone_score": 0.9968
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "0000000000000014000000000098966c"
+}

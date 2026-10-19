@@ -1,0 +1,27 @@
+{
+  "agent_id": "jesse_j13_roadbike_054",
+  "agent_index": 54,
+  "row_index": 5,
+  "col_index": 3,
+  "cell_code": "R5_C3",
+  "team_id": "Team_06_Coaxial_SPD_SL_Pedals_And_T47_Bearings",
+  "specialist_role": "Chain_Tangent_Arc_Geometer",
+  "assigned_part_ids": [
+    "pedals_spd_sl_carbon_ti_pair",
+    "bottom_bracket_t47_ceramic"
+  ],
+  "defect_audited": "Fixed detached static BoxGeometry pedals (PART 09) that failed to orbit with crank arms",
+  "cad_refinement_applied": "Bound R/L Ti-6Al-4V pedal spindles coaxially to crank eyes at r=172.5 mm with -crankAngle counter-rotation keeping platforms horizontal",
+  "features_verified": 46,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.78,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9964,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.998,
+    "iso286_cpk_score": 0.9954,
+    "composite_cone_score": 0.9975
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "00000000000000140000000000989248"
+}

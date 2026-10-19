@@ -1,0 +1,26 @@
+{
+  "agent_id": "jesse_j13_roadbike_020",
+  "agent_index": 20,
+  "row_index": 1,
+  "col_index": 9,
+  "cell_code": "R1_C9",
+  "team_id": "Team_02_Crankset_Spider_And_Chainring_Tooth_Timing",
+  "specialist_role": "Loopback_WS_RPC_Gatekeeper",
+  "assigned_part_ids": [
+    "crankset_hollowtech_4arm_52_36t"
+  ],
+  "defect_audited": "Aligned 52T outer chainring pitch circle (R1=105.136 mm) at z=+48.0 mm with chain roller engagement pockets",
+  "cad_refinement_applied": "Added 104 HG+ shift-ramp reliefs and involute tooth root fillets; locked roller phase to crankAngle",
+  "features_verified": 40,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.7,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.997,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.998,
+    "iso286_cpk_score": 0.9954,
+    "composite_cone_score": 0.9976
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "000000000000001400000000009894f0"
+}

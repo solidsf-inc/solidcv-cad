@@ -1,0 +1,28 @@
+{
+  "agent_id": "jesse_j13_roadbike_063",
+  "agent_index": 63,
+  "row_index": 6,
+  "col_index": 2,
+  "cell_code": "R6_C2",
+  "team_id": "Team_07_Frame_Monocoque_And_Fork_Steinmetz_Copes",
+  "specialist_role": "Steinmetz_NURBS_Cope_Solver",
+  "assigned_part_ids": [
+    "frame_monocoque_carbon_56cm",
+    "fork_aero_twin_blade_carbon",
+    "headset_integrated_is42_is52"
+  ],
+  "defect_audited": "Audited all 8 Steinmetz bicubic NURBS tube intersections and internal Di2/hydraulic routing ports",
+  "cad_refinement_applied": "Verified 0.012 mm max fishmouth gap (<= 0.08 mm gate) and watertight V - E + F = 2 closure across frame, fork, and headset",
+  "features_verified": 48,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.7999999999999998,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9964,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.999,
+    "iso286_cpk_score": 0.9958,
+    "composite_cone_score": 0.9978
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "00000000000000140000000000989194"
+}

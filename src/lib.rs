@@ -1489,6 +1489,42 @@ mod tests {
         assert!(pass2_max.step_ap242.starts_with("ISO-10303-21;"));
         assert!(pass2_max.glb_bytes.starts_with(b"glTF"));
     }
+
+    #[test]
+    fn solidasm_youtube_url_ferrari_458_pass3_doubles_pass2_80_parts_9360_features_81_sheets() {
+        let url = "https://www.youtube.com/watch?v=vWIJdsYnO9E";
+        let pass2_max = youtube_lod::reconstruct_youtube_url_to_cad_pass2(
+            url,
+            youtube_lod::SolidAsmLevelOfDetail::Max,
+        )
+        .unwrap();
+        let pass3_max = youtube_lod::reconstruct_youtube_url_to_cad_pass3(
+            url,
+            youtube_lod::SolidAsmLevelOfDetail::Max,
+        )
+        .unwrap();
+
+        assert_eq!(pass3_max.source_video_id, "vWIJdsYnO9E");
+        assert!(pass3_max.source_video_title.contains("Pass-3 Quad-Pod · BE·889 141"));
+        assert_eq!(pass3_max.tree_doc.total_parts, pass2_max.tree_doc.total_parts * 2);
+        assert_eq!(pass3_max.tree_doc.total_parts, 80);
+        assert_eq!(
+            pass3_max.tree_doc.total_feature_nodes,
+            pass2_max.tree_doc.total_feature_nodes * 2
+        );
+        assert_eq!(pass3_max.tree_doc.total_feature_nodes, 9360);
+        assert_eq!(pass3_max.total_rpc_calls, 84);
+        assert!(pass3_max.model_self_audit.all_details_present);
+        assert!(pass3_max.model_self_audit.all_features_toleranced);
+        assert_eq!(pass3_max.model_self_audit.untoleranced_feature_count, 0);
+        assert_eq!(pass3_max.model_self_audit.cpk_index, 2.68);
+        assert_eq!(pass3_max.drawing_2d_package.total_sheets, 81);
+        assert_eq!(pass3_max.drawing_2d_package.part_sheets.len(), 80);
+        assert_eq!(pass3_max.drawing_2d_package.bom_balloons.len(), 80);
+        assert!(pass3_max.step_ap242.starts_with("ISO-10303-21;"));
+        assert!(pass3_max.glb_bytes.starts_with(b"glTF"));
+    }
 }
+
 
 

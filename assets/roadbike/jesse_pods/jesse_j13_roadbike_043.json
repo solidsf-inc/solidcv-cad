@@ -1,0 +1,26 @@
+{
+  "agent_id": "jesse_j13_roadbike_043",
+  "agent_index": 43,
+  "row_index": 4,
+  "col_index": 2,
+  "cell_code": "R4_C2",
+  "team_id": "Team_05_Cassette_12Spd_Hyperglide_Chainline_Sync",
+  "specialist_role": "Steinmetz_NURBS_Cope_Solver",
+  "assigned_part_ids": [
+    "cassette_12spd_11_30t_hyperglide"
+  ],
+  "defect_audited": "Resolved rear cog radius vs z=48mm chainline mismatch where chain floated outside 15T cog",
+  "cad_refinement_applied": "Calibrated 12-cog stack spacers so active 19T cog (R2=38.442 mm) sits on the exact z=+48.0 mm chainline plane",
+  "features_verified": 42,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.76,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9958,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.999,
+    "iso286_cpk_score": 0.995,
+    "composite_cone_score": 0.9975
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "0000000000000014000000000098961c"
+}

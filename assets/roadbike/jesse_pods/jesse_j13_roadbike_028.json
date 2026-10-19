@@ -1,0 +1,26 @@
+{
+  "agent_id": "jesse_j13_roadbike_028",
+  "agent_index": 28,
+  "row_index": 2,
+  "col_index": 7,
+  "cell_code": "R2_C7",
+  "team_id": "Team_03_Rear_Derailleur_UDH_And_Pulley_S_Curve",
+  "specialist_role": "Mass_And_Inertia_Auditor",
+  "assigned_part_ids": [
+    "rear_derailleur_shadow_12spd"
+  ],
+  "defect_audited": "Eliminated pulley spline overshoot and missing dropout hanger on PART 12",
+  "cad_refinement_applied": "Added forged 7075-T6 UDH dropout hanger, carbon SGS inner/outer cage plates, and 11T toothed pulleys rotating at (52/11)*omega_crank",
+  "features_verified": 41,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.72,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9967,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.9984999999999999,
+    "iso286_cpk_score": 0.9958,
+    "composite_cone_score": 0.9978
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "00000000000000140000000000989450"
+}

@@ -1,0 +1,27 @@
+{
+  "agent_id": "jesse_j13_roadbike_088",
+  "agent_index": 88,
+  "row_index": 8,
+  "col_index": 7,
+  "cell_code": "R8_C7",
+  "team_id": "Team_09_FlatMount_Hydraulic_Calipers_And_CenterLock_Rotors",
+  "specialist_role": "Mass_And_Inertia_Auditor",
+  "assigned_part_ids": [
+    "rotors_centerlock_160_140_pair",
+    "calipers_flatmount_hydraulic_pair"
+  ],
+  "defect_audited": "Audited rotor slot axial runout and hydraulic caliper pad-to-disc clearance",
+  "cad_refinement_applied": "Verified 0.35 mm per-side ceramic piston clearance andRev-A -> Rev-B 160mm->180mm live DAG parameter mutation",
+  "features_verified": 59,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.8399999999999999,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9984999999999999,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.9984999999999999,
+    "iso286_cpk_score": 0.995,
+    "composite_cone_score": 0.998
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "00000000000000140000000000988fa0"
+}

@@ -1,0 +1,27 @@
+{
+  "agent_id": "jesse_j13_roadbike_091",
+  "agent_index": 91,
+  "row_index": 9,
+  "col_index": 0,
+  "cell_code": "R9_C0",
+  "team_id": "Team_10_DeepSection_50mm_Carbon_Wheelsets_And_700x28c_Tires",
+  "specialist_role": "ASME_Y14_5_Datum_Architect",
+  "assigned_part_ids": [
+    "wheelset_50mm_deep_carbon_24h",
+    "tires_tubeless_700x28c_pair"
+  ],
+  "defect_audited": "Audited 24-spoke 2-cross bracing angles, 12x100/12x142 E-Thru hubs, and Scene 01 hero camera framing",
+  "cad_refinement_applied": "Verified wheel angular velocity coupling omega_w = (52/19)*omega_crank and updated Scene 01 keyframe to 3/4 drive-side profile",
+  "features_verified": 55,
+  "euler_characteristic": 2,
+  "cpk_verified": 1.8599999999999999,
+  "reality_cone": {
+    "visual_defect_elimination_score": 0.9967,
+    "brep_manifold_closure_score": 1.0,
+    "se3_kinematic_lock_score": 0.998,
+    "iso286_cpk_score": 0.9954,
+    "composite_cone_score": 0.9975
+  },
+  "credits_charged_microusd": 20,
+  "rpc_receipt_sha256": "00000000000000140000000000988f64"
+}
