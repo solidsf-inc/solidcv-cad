@@ -1,0 +1,9 @@
+solidSF solidasm v0.1.0 IGES 5.3 Rational NURBS + BRep (alcoa_extruded_cS0000001
+1H,,1H;,18Hsolidasm_part_brep,16Hsolidasm_prt.igs,8Hsolidasm,7HsolidSF,,G0000001
+     128       1       0       1       0       0       0       000000001D0000001
+     128       0       0       1       0                        NURBS_S1D0000002
+     186       2       0       1       0       0       0       000000001D0000003
+     186       0       0       1       0                        BREPSOL1D0000004
+128,3,3,3,3,0,0,0,0,0,0.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0;                  P0000001
+186,1,1,104,208,106;                                                    P0000002
+S      1G      1D      4P      2                                        T0000001

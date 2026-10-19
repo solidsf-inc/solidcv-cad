@@ -1,0 +1,293 @@
+{
+  "assembly_id": "Ferrari_458_Italia_F142_vWIJdsYnO9E_MAX",
+  "total_unique_parts": 20,
+  "total_fasteners_and_joints": 148,
+  "total_mass_kg": 980.7,
+  "center_of_mass_m": [
+    -0.215,
+    0.0,
+    0.365
+  ],
+  "items": [
+    {
+      "item_number": 1,
+      "part_id": "alcoa_extruded_cast_spaceframe_tub",
+      "subsystem": "chassis_monocoque",
+      "material_spec": "Alcoa_6061_T6_Extrusions_AlSi7Mg_Vacural_Cast_Nodes",
+      "quantity": 1,
+      "mass_kg": 194.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "item_number": 2,
+      "part_id": "front_crash_box_and_radiator_subframe",
+      "subsystem": "front_structure",
+      "material_spec": "Hydroformed_6082_T6_Aluminum_Dual_Radiator_Cradle",
+      "quantity": 1,
+      "mass_kg": 34.5,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.65,
+        0.0,
+        0.08
+      ]
+    },
+    {
+      "item_number": 3,
+      "part_id": "rear_tubular_powertrain_cradle",
+      "subsystem": "rear_structure",
+      "material_spec": "TIG_Welded_Al_6061_T6_Spaceframe_Cradle_Cast_Shock_Towers",
+      "quantity": 1,
+      "mass_kg": 48.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.55,
+        0.0,
+        0.12
+      ]
+    },
+    {
+      "item_number": 4,
+      "part_id": "f136_fb_4_5l_flatplane_v8_shortblock",
+      "subsystem": "powertrain_v8",
+      "material_spec": "AlSi9Cu3_Sand_Cast_90deg_V8_Block_Forged_4340_Flatplane_Crank",
+      "quantity": 1,
+      "mass_kg": 136.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.3,
+        0.0,
+        0.52
+      ]
+    },
+    {
+      "item_number": 5,
+      "part_id": "dohc_32v_cylinder_heads_and_rosso_covers",
+      "subsystem": "powertrain_v8",
+      "material_spec": "AlSi7Mg_T6_5Axis_CNC_Ported_Heads_Rosso_Corsa_Magnesium_Covers",
+      "quantity": 1,
+      "mass_kg": 42.5,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.3,
+        0.0,
+        0.84
+      ]
+    },
+    {
+      "item_number": 6,
+      "part_id": "variable_length_carbon_intake_plenum",
+      "subsystem": "induction_exhaust",
+      "material_spec": "Autoclave_Prepreg_Twill_Carbon_Dual_78mm_Throttle_Plenum",
+      "quantity": 1,
+      "mass_kg": 11.8,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.28,
+        0.0,
+        1.12
+      ]
+    },
+    {
+      "item_number": 7,
+      "part_id": "inconel_4_into_1_headers_and_triple_exhaust",
+      "subsystem": "induction_exhaust",
+      "material_spec": "Inconel_625_Hydroformed_Equal_Length_Headers_Triple_Center_Exit",
+      "quantity": 1,
+      "mass_kg": 26.4,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.88,
+        0.0,
+        0.36
+      ]
+    },
+    {
+      "item_number": 8,
+      "part_id": "getrag_7dcl750_dual_clutch_transaxle_ediff3",
+      "subsystem": "drivetrain_dct",
+      "material_spec": "Die_Cast_AZ91D_Magnesium_Housing_Shot_Peened_20MnCr5_Gears",
+      "quantity": 1,
+      "mass_kg": 92.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.74,
+        0.0,
+        -0.18
+      ]
+    },
+    {
+      "item_number": 9,
+      "part_id": "front_double_wishbone_magnaride_suspension",
+      "subsystem": "suspension_front",
+      "material_spec": "Forged_2014_T6_Aluminum_Wishbones_SCM_MagnaRide_Damper",
+      "quantity": 1,
+      "mass_kg": 38.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.42,
+        0.58,
+        -0.14
+      ]
+    },
+    {
+      "item_number": 10,
+      "part_id": "rear_multilink_suspension_and_300m_halfshafts",
+      "subsystem": "suspension_rear",
+      "material_spec": "Forged_7075_T6_Hollow_Uprights_5Link_Arms_300M_CV_Shafts",
+      "quantity": 1,
+      "mass_kg": 46.5,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.46,
+        -0.58,
+        -0.14
+      ]
+    },
+    {
+      "item_number": 11,
+      "part_id": "steering_rack_hydraulic_quick_ratio_11_9",
+      "subsystem": "steering_system",
+      "material_spec": "CNC_7075_T6_Rack_Housing_Case_Hardened_Helical_Pinion",
+      "quantity": 1,
+      "mass_kg": 14.2,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.34,
+        0.0,
+        -0.26
+      ]
+    },
+    {
+      "item_number": 12,
+      "part_id": "brembo_ccm_398mm_carbon_ceramic_brakes_6piston",
+      "subsystem": "braking_ccm",
+      "material_spec": "Brembo_CCM_Carbon_Silicon_Carbide_Discs_Forged_6Piston_Calipers",
+      "quantity": 1,
+      "mass_kg": 32.8,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.36,
+        0.74,
+        0.0
+      ]
+    },
+    {
+      "item_number": 13,
+      "part_id": "forged_20in_5_twin_spoke_front_wheels_235_35_zr20",
+      "subsystem": "wheelset_front",
+      "material_spec": "APP_Forged_6061_T6_Nero_Opaco_8_5Jx20_Pirelli_PZero_235_35",
+      "quantity": 1,
+      "mass_kg": 41.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.48,
+        0.96,
+        0.0
+      ]
+    },
+    {
+      "item_number": 14,
+      "part_id": "forged_20in_5_twin_spoke_rear_wheels_295_35_zr20",
+      "subsystem": "wheelset_rear",
+      "material_spec": "APP_Forged_6061_T6_Nero_Opaco_10_5Jx20_Pirelli_PZero_295_35",
+      "quantity": 1,
+      "mass_kg": 47.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.48,
+        -0.96,
+        0.0
+      ]
+    },
+    {
+      "item_number": 15,
+      "part_id": "pininfarina_aero_front_bumper_deformable_winglets",
+      "subsystem": "body_aero",
+      "material_spec": "Autoclave_Carbon_Nose_Cone_Aeroelastic_Deformable_Winglets",
+      "quantity": 1,
+      "mass_kg": 16.5,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.92,
+        0.0,
+        0.04
+      ]
+    },
+    {
+      "item_number": 16,
+      "part_id": "sculpted_front_bonnet_and_s_duct_vented_fenders",
+      "subsystem": "body_exterior",
+      "material_spec": "Superplastic_Formed_5083_Aluminum_Nero_Daytona_Class_A_Surface",
+      "quantity": 1,
+      "mass_kg": 24.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.52,
+        0.0,
+        0.56
+      ]
+    },
+    {
+      "item_number": 17,
+      "part_id": "berlinetta_roof_flying_buttress_and_lexan_engine_bay",
+      "subsystem": "body_exterior",
+      "material_spec": "Al_6016_T4_Roof_Flying_Buttresses_Vented_Lexan_Engine_Cover",
+      "quantity": 1,
+      "mass_kg": 31.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.0,
+        0.0,
+        0.94
+      ]
+    },
+    {
+      "item_number": 18,
+      "part_id": "dihedral_doors_and_rear_quarter_intake_scoops",
+      "subsystem": "body_exterior",
+      "material_spec": "Stamped_6016_T4_Aluminum_Doors_Side_Impact_Beams",
+      "quantity": 1,
+      "mass_kg": 44.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.0,
+        0.82,
+        0.14
+      ]
+    },
+    {
+      "item_number": 19,
+      "part_id": "underbody_vortex_generators_and_6_strake_diffuser",
+      "subsystem": "body_aero",
+      "material_spec": "Autoclave_Carbon_Flat_Underfloor_6_Strake_Venturi_Diffuser",
+      "quantity": 1,
+      "mass_kg": 22.5,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        -0.72,
+        0.0,
+        -0.44
+      ]
+    },
+    {
+      "item_number": 20,
+      "part_id": "cockpit_carbon_monocoque_seats_and_f1_manettino_wheel",
+      "subsystem": "interior_cockpit",
+      "material_spec": "Toray_T800_Carbon_Racing_Shells_Alcantara_LED_Manettino_Wheel",
+      "quantity": 1,
+      "mass_kg": 38.0,
+      "fastener_or_weld_spec": "Ti6Al4V_M10x1.25_ISO_286_H7_g6",
+      "exploded_view_offset_m": [
+        0.12,
+        0.0,
+        0.72
+      ]
+    }
+  ]
+}

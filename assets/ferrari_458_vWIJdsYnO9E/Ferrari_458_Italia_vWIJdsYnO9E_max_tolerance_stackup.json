@@ -1,0 +1,8 @@
+{
+  "chain_id": "f142_spaceframe_v8_dct_wishbone_and_ccm_caliper_stackup",
+  "contributor_count": 26,
+  "worst_case_stackup_mm": 0.285,
+  "rss_3sigma_stackup_mm": 0.052,
+  "min_dynamic_clearance_mm": 2.15,
+  "interference_free": true
+}

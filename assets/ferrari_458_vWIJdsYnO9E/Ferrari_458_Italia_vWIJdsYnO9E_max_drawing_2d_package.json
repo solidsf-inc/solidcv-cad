@@ -1,0 +1,1926 @@
+{
+  "schema": "solidsf.drawing.package_2d.v1",
+  "drafting_standards": [
+    "ASME_Y14.5_2018",
+    "ASME_Y14.3_Third_Angle_Projection",
+    "ISO_286_2_Limits_And_Fits",
+    "ISO_2768_mK_General_Tolerances",
+    "ISO_1302_Surface_Texture"
+  ],
+  "ready_for_production_release": true,
+  "drawing_package_tier": "Full_Production_2D_Drawing_Package_ASME_Y14_5",
+  "total_sheets": 21,
+  "assembly_master_sheet_id": "DWG-vWIJdsYnO9E-ASM-000",
+  "assembly_views": [
+    "FRONT_ORTHO",
+    "TOP_ORTHO",
+    "LEFT_SIDE_PROFILE_ORTHO",
+    "SECTION_A_A_V8_AND_7DCL750_TRANSAXLE_CENTERLINE",
+    "DETAIL_C_BREMBO_CCM_AND_DOUBLE_WISHBONE_UPRIGHT",
+    "ISOMETRIC_EXPLODED_20_PART_BOM_BALLOONS"
+  ],
+  "bom_balloons": [
+    {
+      "balloon_number": 1,
+      "part_id": "alcoa_extruded_cast_spaceframe_tub",
+      "subsystem": "chassis_monocoque",
+      "quantity": 1,
+      "anchor_world_m": [
+        0.0,
+        0.0,
+        0.28
+      ],
+      "sheet_zone": "A1"
+    },
+    {
+      "balloon_number": 2,
+      "part_id": "front_crash_box_and_radiator_subframe",
+      "subsystem": "front_structure",
+      "quantity": 1,
+      "anchor_world_m": [
+        1.58,
+        0.0,
+        0.31
+      ],
+      "sheet_zone": "B2"
+    },
+    {
+      "balloon_number": 3,
+      "part_id": "rear_tubular_powertrain_cradle",
+      "subsystem": "rear_structure",
+      "quantity": 1,
+      "anchor_world_m": [
+        -0.92,
+        0.0,
+        0.34
+      ],
+      "sheet_zone": "C3"
+    },
+    {
+      "balloon_number": 4,
+      "part_id": "f136_fb_4_5l_flatplane_v8_shortblock",
+      "subsystem": "powertrain_v8",
+      "quantity": 1,
+      "anchor_world_m": [
+        -0.58,
+        0.0,
+        0.36
+      ],
+      "sheet_zone": "D4"
+    },
+    {
+      "balloon_number": 5,
+      "part_id": "dohc_32v_cylinder_heads_and_rosso_covers",
+      "subsystem": "powertrain_v8",
+      "quantity": 1,
+      "anchor_world_m": [
+        -0.58,
+        0.0,
+        0.62
+      ],
+      "sheet_zone": "A5"
+    },
+    {
+      "balloon_number": 6,
+      "part_id": "variable_length_carbon_intake_plenum",
+      "subsystem": "induction_exhaust",
+      "quantity": 1,
+      "anchor_world_m": [
+        -0.56,
+        0.0,
+        0.78
+      ],
+      "sheet_zone": "B6"
+    },
+    {
+      "balloon_number": 7,
+      "part_id": "inconel_4_into_1_headers_and_triple_exhaust",
+      "subsystem": "induction_exhaust",
+      "quantity": 1,
+      "anchor_world_m": [
+        -1.18,
+        0.0,
+        0.42
+      ],
+      "sheet_zone": "C1"
+    },
+    {
+      "balloon_number": 8,
+      "part_id": "getrag_7dcl750_dual_clutch_transaxle_ediff3",
+      "subsystem": "drivetrain_dct",
+      "quantity": 1,
+      "anchor_world_m": [
+        -1.12,
+        0.0,
+        0.29
+      ],
+      "sheet_zone": "D2"
+    },
+    {
+      "balloon_number": 9,
+      "part_id": "front_double_wishbone_magnaride_suspension",
+      "subsystem": "suspension_front",
+      "quantity": 1,
+      "anchor_world_m": [
+        1.32,
+        0.0,
+        0.28
+      ],
+      "sheet_zone": "A3"
+    },
+    {
+      "balloon_number": 10,
+      "part_id": "rear_multilink_suspension_and_300m_halfshafts",
+      "subsystem": "suspension_rear",
+      "quantity": 1,
+      "anchor_world_m": [
+        -1.02,
+        0.0,
+        0.29
+      ],
+      "sheet_zone": "B4"
+    },
+    {
+      "balloon_number": 11,
+      "part_id": "steering_rack_hydraulic_quick_ratio_11_9",
+      "subsystem": "steering_system",
+      "quantity": 1,
+      "anchor_world_m": [
+        1.18,
+        0.0,
+        0.24
+      ],
+      "sheet_zone": "C5"
+    },
+    {
+      "balloon_number": 12,
+      "part_id": "brembo_ccm_398mm_carbon_ceramic_brakes_6piston",
+      "subsystem": "braking_ccm",
+      "quantity": 1,
+      "anchor_world_m": [
+        1.32,
+        0.78,
+        0.33
+      ],
+      "sheet_zone": "D6"
+    },
+    {
+      "balloon_number": 13,
+      "part_id": "forged_20in_5_twin_spoke_front_wheels_235_35_zr20",
+      "subsystem": "wheelset_front",
+      "quantity": 1,
+      "anchor_world_m": [
+        1.32,
+        0.836,
+        0.335
+      ],
+      "sheet_zone": "A1"
+    },
+    {
+      "balloon_number": 14,
+      "part_id": "forged_20in_5_twin_spoke_rear_wheels_295_35_zr20",
+      "subsystem": "wheelset_rear",
+      "quantity": 1,
+      "anchor_world_m": [
+        -1.02,
+        -0.803,
+        0.348
+      ],
+      "sheet_zone": "B2"
+    },
+    {
+      "balloon_number": 15,
+      "part_id": "pininfarina_aero_front_bumper_deformable_winglets",
+      "subsystem": "body_aero",
+      "quantity": 1,
+      "anchor_world_m": [
+        1.96,
+        0.0,
+        0.26
+      ],
+      "sheet_zone": "C3"
+    },
+    {
+      "balloon_number": 16,
+      "part_id": "sculpted_front_bonnet_and_s_duct_vented_fenders",
+      "subsystem": "body_exterior",
+      "quantity": 1,
+      "anchor_world_m": [
+        1.34,
+        0.0,
+        0.68
+      ],
+      "sheet_zone": "D4"
+    },
+    {
+      "balloon_number": 17,
+      "part_id": "berlinetta_roof_flying_buttress_and_lexan_engine_bay",
+      "subsystem": "body_exterior",
+      "quantity": 1,
+      "anchor_world_m": [
+        -0.24,
+        0.0,
+        1.04
+      ],
+      "sheet_zone": "A5"
+    },
+    {
+      "balloon_number": 18,
+      "part_id": "dihedral_doors_and_rear_quarter_intake_scoops",
+      "subsystem": "body_exterior",
+      "quantity": 1,
+      "anchor_world_m": [
+        0.18,
+        0.91,
+        0.58
+      ],
+      "sheet_zone": "B6"
+    },
+    {
+      "balloon_number": 19,
+      "part_id": "underbody_vortex_generators_and_6_strake_diffuser",
+      "subsystem": "body_aero",
+      "quantity": 1,
+      "anchor_world_m": [
+        -1.42,
+        0.0,
+        0.19
+      ],
+      "sheet_zone": "C1"
+    },
+    {
+      "balloon_number": 20,
+      "part_id": "cockpit_carbon_monocoque_seats_and_f1_manettino_wheel",
+      "subsystem": "interior_cockpit",
+      "quantity": 1,
+      "anchor_world_m": [
+        0.12,
+        0.0,
+        0.54
+      ],
+      "sheet_zone": "D2"
+    }
+  ],
+  "part_sheets": [
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P01",
+      "sheet_number": 2,
+      "total_sheets": 21,
+      "part_id": "alcoa_extruded_cast_spaceframe_tub",
+      "title": "alcoa_extruded_cast_spaceframe_tub — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Alcoa_6061_T6_Extrusions_AlSi7Mg_Vacural_Cast_Nodes",
+      "surface_finish_ra_um": 1.6,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_01_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "alcoa_extruded_cast_spaceframe_tub_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_01_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "alcoa_extruded_cast_spaceframe_tub_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_01_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "alcoa_extruded_cast_spaceframe_tub_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_01_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "2650.0 ±0.05 mm",
+          "nominal_mm": 2650.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_01_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø124.0 H7/p6_Dowel_Locational_Press",
+          "nominal_mm": 124.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/p6_Dowel_Locational_Press",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P02",
+      "sheet_number": 3,
+      "total_sheets": 21,
+      "part_id": "front_crash_box_and_radiator_subframe",
+      "title": "front_crash_box_and_radiator_subframe — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Hydroformed_6082_T6_Aluminum_Dual_Radiator_Cradle",
+      "surface_finish_ra_um": 1.6,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_02_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "front_crash_box_and_radiator_subframe_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_02_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "front_crash_box_and_radiator_subframe_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_02_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "front_crash_box_and_radiator_subframe_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_02_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "780.0 ±0.05 mm",
+          "nominal_mm": 780.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_02_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø88.0 H7/h6_Subframe_Spigot",
+          "nominal_mm": 88.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/h6_Subframe_Spigot",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P03",
+      "sheet_number": 4,
+      "total_sheets": 21,
+      "part_id": "rear_tubular_powertrain_cradle",
+      "title": "rear_tubular_powertrain_cradle — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "TIG_Welded_Al_6061_T6_Spaceframe_Cradle_Cast_Shock_Towers",
+      "surface_finish_ra_um": 0.8,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_03_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "rear_tubular_powertrain_cradle_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_03_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "rear_tubular_powertrain_cradle_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_03_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "rear_tubular_powertrain_cradle_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_03_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1120.0 ±0.05 mm",
+          "nominal_mm": 1120.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_03_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø104.0 H7/g6_Shock_Tower_Bore",
+          "nominal_mm": 104.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/g6_Shock_Tower_Bore",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P04",
+      "sheet_number": 5,
+      "total_sheets": 21,
+      "part_id": "f136_fb_4_5l_flatplane_v8_shortblock",
+      "title": "f136_fb_4_5l_flatplane_v8_shortblock — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "AlSi9Cu3_Sand_Cast_90deg_V8_Block_Forged_4340_Flatplane_Crank",
+      "surface_finish_ra_um": 0.2,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_04_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "f136_fb_4_5l_flatplane_v8_shortblock_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_04_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "f136_fb_4_5l_flatplane_v8_shortblock_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_04_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "f136_fb_4_5l_flatplane_v8_shortblock_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_04_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "620.0 ±0.05 mm",
+          "nominal_mm": 620.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_04_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø68.0 H6/h5_Main_Bearing_Tunnel",
+          "nominal_mm": 68.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H6/h5_Main_Bearing_Tunnel",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P05",
+      "sheet_number": 6,
+      "total_sheets": 21,
+      "part_id": "dohc_32v_cylinder_heads_and_rosso_covers",
+      "title": "dohc_32v_cylinder_heads_and_rosso_covers — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "AlSi7Mg_T6_5Axis_CNC_Ported_Heads_Rosso_Corsa_Magnesium_Covers",
+      "surface_finish_ra_um": 0.4,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_05_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "dohc_32v_cylinder_heads_and_rosso_covers_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_05_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "dohc_32v_cylinder_heads_and_rosso_covers_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_05_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "dohc_32v_cylinder_heads_and_rosso_covers_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_05_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "580.0 ±0.05 mm",
+          "nominal_mm": 580.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_05_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø72.0 H7/g6_Cam_Journal_Bore",
+          "nominal_mm": 72.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/g6_Cam_Journal_Bore",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P06",
+      "sheet_number": 7,
+      "total_sheets": 21,
+      "part_id": "variable_length_carbon_intake_plenum",
+      "title": "variable_length_carbon_intake_plenum — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Autoclave_Prepreg_Twill_Carbon_Dual_78mm_Throttle_Plenum",
+      "surface_finish_ra_um": 0.8,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_06_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "variable_length_carbon_intake_plenum_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_06_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "variable_length_carbon_intake_plenum_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_06_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "variable_length_carbon_intake_plenum_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_06_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "540.0 ±0.05 mm",
+          "nominal_mm": 540.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_06_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø56.0 H7/f7_Throttle_Spigot",
+          "nominal_mm": 56.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/f7_Throttle_Spigot",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P07",
+      "sheet_number": 8,
+      "total_sheets": 21,
+      "part_id": "inconel_4_into_1_headers_and_triple_exhaust",
+      "title": "inconel_4_into_1_headers_and_triple_exhaust — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Inconel_625_Hydroformed_Equal_Length_Headers_Triple_Center_Exit",
+      "surface_finish_ra_um": 0.8,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_07_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "inconel_4_into_1_headers_and_triple_exhaust_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_07_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "inconel_4_into_1_headers_and_triple_exhaust_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_07_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "inconel_4_into_1_headers_and_triple_exhaust_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_07_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "940.0 ±0.05 mm",
+          "nominal_mm": 940.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_07_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø52.0 JS7/h6_V_Band_Flange",
+          "nominal_mm": 52.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "JS7/h6_V_Band_Flange",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P08",
+      "sheet_number": 9,
+      "total_sheets": 21,
+      "part_id": "getrag_7dcl750_dual_clutch_transaxle_ediff3",
+      "title": "getrag_7dcl750_dual_clutch_transaxle_ediff3 — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Die_Cast_AZ91D_Magnesium_Housing_Shot_Peened_20MnCr5_Gears",
+      "surface_finish_ra_um": 0.4,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_08_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "getrag_7dcl750_dual_clutch_transaxle_ediff3_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_08_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "getrag_7dcl750_dual_clutch_transaxle_ediff3_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_08_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "getrag_7dcl750_dual_clutch_transaxle_ediff3_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_08_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "680.0 ±0.05 mm",
+          "nominal_mm": 680.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_08_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø58.0 K6/h5_Taper_Roller_Pinion_Seat",
+          "nominal_mm": 58.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "K6/h5_Taper_Roller_Pinion_Seat",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P09",
+      "sheet_number": 10,
+      "total_sheets": 21,
+      "part_id": "front_double_wishbone_magnaride_suspension",
+      "title": "front_double_wishbone_magnaride_suspension — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Forged_2014_T6_Aluminum_Wishbones_SCM_MagnaRide_Damper",
+      "surface_finish_ra_um": 0.4,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_09_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "front_double_wishbone_magnaride_suspension_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_09_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "front_double_wishbone_magnaride_suspension_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_09_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "front_double_wishbone_magnaride_suspension_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_09_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1670.0 ±0.05 mm",
+          "nominal_mm": 1670.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_09_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø48.0 H7/g6_Spherical_Uniball_Housing",
+          "nominal_mm": 48.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/g6_Spherical_Uniball_Housing",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P10",
+      "sheet_number": 11,
+      "total_sheets": 21,
+      "part_id": "rear_multilink_suspension_and_300m_halfshafts",
+      "title": "rear_multilink_suspension_and_300m_halfshafts — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Forged_7075_T6_Hollow_Uprights_5Link_Arms_300M_CV_Shafts",
+      "surface_finish_ra_um": 0.4,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_10_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "rear_multilink_suspension_and_300m_halfshafts_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_10_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "rear_multilink_suspension_and_300m_halfshafts_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_10_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "rear_multilink_suspension_and_300m_halfshafts_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_10_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1610.0 ±0.05 mm",
+          "nominal_mm": 1610.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_10_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø52.0 H6/k5_Hub_Spline_And_Bearing",
+          "nominal_mm": 52.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H6/k5_Hub_Spline_And_Bearing",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P11",
+      "sheet_number": 12,
+      "total_sheets": 21,
+      "part_id": "steering_rack_hydraulic_quick_ratio_11_9",
+      "title": "steering_rack_hydraulic_quick_ratio_11_9 — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "CNC_7075_T6_Rack_Housing_Case_Hardened_Helical_Pinion",
+      "surface_finish_ra_um": 0.4,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_11_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "steering_rack_hydraulic_quick_ratio_11_9_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_11_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "steering_rack_hydraulic_quick_ratio_11_9_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_11_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "steering_rack_hydraulic_quick_ratio_11_9_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_11_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1240.0 ±0.05 mm",
+          "nominal_mm": 1240.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_11_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø18.0 H7/g6_Rack_Guide_Yoke",
+          "nominal_mm": 18.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/g6_Rack_Guide_Yoke",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P12",
+      "sheet_number": 13,
+      "total_sheets": 21,
+      "part_id": "brembo_ccm_398mm_carbon_ceramic_brakes_6piston",
+      "title": "brembo_ccm_398mm_carbon_ceramic_brakes_6piston — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Brembo_CCM_Carbon_Silicon_Carbide_Discs_Forged_6Piston_Calipers",
+      "surface_finish_ra_um": 0.4,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_12_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "brembo_ccm_398mm_carbon_ceramic_brakes_6piston_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_12_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "brembo_ccm_398mm_carbon_ceramic_brakes_6piston_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_12_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "brembo_ccm_398mm_carbon_ceramic_brakes_6piston_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_12_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "140.0 ±0.05 mm",
+          "nominal_mm": 140.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_12_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø39.8 H7/f6_Caliper_Radial_Mount_Bore",
+          "nominal_mm": 39.8,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/f6_Caliper_Radial_Mount_Bore",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P13",
+      "sheet_number": 14,
+      "total_sheets": 21,
+      "part_id": "forged_20in_5_twin_spoke_front_wheels_235_35_zr20",
+      "title": "forged_20in_5_twin_spoke_front_wheels_235_35_zr20 — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "APP_Forged_6061_T6_Nero_Opaco_8_5Jx20_Pirelli_PZero_235_35",
+      "surface_finish_ra_um": 0.8,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_13_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "forged_20in_5_twin_spoke_front_wheels_235_35_zr20_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_13_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "forged_20in_5_twin_spoke_front_wheels_235_35_zr20_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_13_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "forged_20in_5_twin_spoke_front_wheels_235_35_zr20_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_13_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "235.0 ±0.05 mm",
+          "nominal_mm": 235.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_13_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø67.0 H7/h6_67_1mm_Hubcentric_Spigot",
+          "nominal_mm": 67.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/h6_67_1mm_Hubcentric_Spigot",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P14",
+      "sheet_number": 15,
+      "total_sheets": 21,
+      "part_id": "forged_20in_5_twin_spoke_rear_wheels_295_35_zr20",
+      "title": "forged_20in_5_twin_spoke_rear_wheels_295_35_zr20 — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "APP_Forged_6061_T6_Nero_Opaco_10_5Jx20_Pirelli_PZero_295_35",
+      "surface_finish_ra_um": 0.8,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_14_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "forged_20in_5_twin_spoke_rear_wheels_295_35_zr20_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_14_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "forged_20in_5_twin_spoke_rear_wheels_295_35_zr20_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_14_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "forged_20in_5_twin_spoke_rear_wheels_295_35_zr20_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_14_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "295.0 ±0.05 mm",
+          "nominal_mm": 295.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_14_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø69.6 H7/h6_67_1mm_Hubcentric_Spigot",
+          "nominal_mm": 69.6,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/h6_67_1mm_Hubcentric_Spigot",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P15",
+      "sheet_number": 16,
+      "total_sheets": 21,
+      "part_id": "pininfarina_aero_front_bumper_deformable_winglets",
+      "title": "pininfarina_aero_front_bumper_deformable_winglets — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Autoclave_Carbon_Nose_Cone_Aeroelastic_Deformable_Winglets",
+      "surface_finish_ra_um": 0.4,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_15_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "pininfarina_aero_front_bumper_deformable_winglets_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_15_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "pininfarina_aero_front_bumper_deformable_winglets_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_15_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "pininfarina_aero_front_bumper_deformable_winglets_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_15_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "640.0 ±0.05 mm",
+          "nominal_mm": 640.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_15_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø96.0 JS8/h7_Body_Panel_Flush_Datum",
+          "nominal_mm": 96.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "JS8/h7_Body_Panel_Flush_Datum",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P16",
+      "sheet_number": 17,
+      "total_sheets": 21,
+      "part_id": "sculpted_front_bonnet_and_s_duct_vented_fenders",
+      "title": "sculpted_front_bonnet_and_s_duct_vented_fenders — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Superplastic_Formed_5083_Aluminum_Nero_Daytona_Class_A_Surface",
+      "surface_finish_ra_um": 0.2,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_16_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "sculpted_front_bonnet_and_s_duct_vented_fenders_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_16_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "sculpted_front_bonnet_and_s_duct_vented_fenders_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_16_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "sculpted_front_bonnet_and_s_duct_vented_fenders_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_16_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1180.0 ±0.05 mm",
+          "nominal_mm": 1180.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_16_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø108.0 H8/f7_Hinge_And_Striker_Pin",
+          "nominal_mm": 108.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H8/f7_Hinge_And_Striker_Pin",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P17",
+      "sheet_number": 18,
+      "total_sheets": 21,
+      "part_id": "berlinetta_roof_flying_buttress_and_lexan_engine_bay",
+      "title": "berlinetta_roof_flying_buttress_and_lexan_engine_bay — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Al_6016_T4_Roof_Flying_Buttresses_Vented_Lexan_Engine_Cover",
+      "surface_finish_ra_um": 0.2,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_17_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "berlinetta_roof_flying_buttress_and_lexan_engine_bay_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_17_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "berlinetta_roof_flying_buttress_and_lexan_engine_bay_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_17_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "berlinetta_roof_flying_buttress_and_lexan_engine_bay_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_17_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1860.0 ±0.05 mm",
+          "nominal_mm": 1860.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_17_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø116.0 JS7/h6_Structural_Bond_Flange",
+          "nominal_mm": 116.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "JS7/h6_Structural_Bond_Flange",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P18",
+      "sheet_number": 19,
+      "total_sheets": 21,
+      "part_id": "dihedral_doors_and_rear_quarter_intake_scoops",
+      "title": "dihedral_doors_and_rear_quarter_intake_scoops — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Stamped_6016_T4_Aluminum_Doors_Side_Impact_Beams",
+      "surface_finish_ra_um": 0.2,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_18_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "dihedral_doors_and_rear_quarter_intake_scoops_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_18_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "dihedral_doors_and_rear_quarter_intake_scoops_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_18_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "dihedral_doors_and_rear_quarter_intake_scoops_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_18_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1320.0 ±0.05 mm",
+          "nominal_mm": 1320.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_18_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø84.0 H7/g6_Door_Hinge_Pivot_Pin",
+          "nominal_mm": 84.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/g6_Door_Hinge_Pivot_Pin",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P19",
+      "sheet_number": 20,
+      "total_sheets": 21,
+      "part_id": "underbody_vortex_generators_and_6_strake_diffuser",
+      "title": "underbody_vortex_generators_and_6_strake_diffuser — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Autoclave_Carbon_Flat_Underfloor_6_Strake_Venturi_Diffuser",
+      "surface_finish_ra_um": 0.8,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_19_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "underbody_vortex_generators_and_6_strake_diffuser_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_19_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "underbody_vortex_generators_and_6_strake_diffuser_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_19_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "underbody_vortex_generators_and_6_strake_diffuser_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_19_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1540.0 ±0.05 mm",
+          "nominal_mm": 1540.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_19_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø112.0 H8/h7_Aero_Floor_Fastener_Boss",
+          "nominal_mm": 112.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H8/h7_Aero_Floor_Fastener_Boss",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    },
+    {
+      "sheet_id": "DWG-vWIJdsYnO9E-P20",
+      "sheet_number": 21,
+      "total_sheets": 21,
+      "part_id": "cockpit_carbon_monocoque_seats_and_f1_manettino_wheel",
+      "title": "cockpit_carbon_monocoque_seats_and_f1_manettino_wheel — Detail & GD&T Drawing",
+      "sheet_format": "ISO_A1_841x594_mm",
+      "projection_standard": "ASME_Y14.3_Third_Angle",
+      "general_tolerance_standard": "ISO_2768_mK + ASME_Y14.5_2018",
+      "scale": "1:2",
+      "material_spec": "Toray_T800_Carbon_Racing_Shells_Alcantara_LED_Manettino_Wheel",
+      "surface_finish_ra_um": 0.8,
+      "orthographic_and_section_views": [
+        "FRONT_ORTHO",
+        "TOP_ORTHO",
+        "RIGHT_SIDE_ORTHO",
+        "SECTION_A_A_CENTERLINE",
+        "DETAIL_B_BEARING_SEAT_AND_CHAMFER",
+        "ISOMETRIC_SHADED_REFERENCE"
+      ],
+      "datum_feature_symbols": [
+        "A",
+        "B",
+        "C"
+      ],
+      "gdt_feature_control_frames": [
+        {
+          "fcf_id": "FCF_20_01",
+          "characteristic_symbol": "⌖",
+          "characteristic_type": "POSITION_MMC",
+          "tolerance_zone_mm": 0.02,
+          "material_condition_modifier": "MMC",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "cockpit_carbon_monocoque_seats_and_f1_manettino_wheel_primary_mating_bores"
+        },
+        {
+          "fcf_id": "FCF_20_02",
+          "characteristic_symbol": "⊥",
+          "characteristic_type": "PERPENDICULARITY",
+          "tolerance_zone_mm": 0.015,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": null,
+          "target_feature_name": "cockpit_carbon_monocoque_seats_and_f1_manettino_wheel_datum_mounting_face"
+        },
+        {
+          "fcf_id": "FCF_20_03",
+          "characteristic_symbol": "⌒",
+          "characteristic_type": "PROFILE_OF_A_SURFACE",
+          "tolerance_zone_mm": 0.08,
+          "material_condition_modifier": "RFS",
+          "primary_datum": "A",
+          "secondary_datum": "B",
+          "tertiary_datum": "C",
+          "target_feature_name": "cockpit_carbon_monocoque_seats_and_f1_manettino_wheel_nurbs_outer_envelope"
+        }
+      ],
+      "toleranced_dimensions": [
+        {
+          "dim_id": "DIM_20_LEN",
+          "dimension_type": "LINEAR_OVERALL_ENVELOPE",
+          "callout_label": "1050.0 ±0.05 mm",
+          "nominal_mm": 1050.0,
+          "upper_dev_mm": 0.05,
+          "lower_dev_mm": -0.05,
+          "iso_286_fit_class": null,
+          "inspection_gauge": "CMM_Zeiss_Contura_Bridge"
+        },
+        {
+          "dim_id": "DIM_20_BORE",
+          "dimension_type": "ISO_286_CYLINDRICAL_FIT",
+          "callout_label": "Ø92.0 H7/k6_Steering_Column_Spline",
+          "nominal_mm": 92.0,
+          "upper_dev_mm": 0.018,
+          "lower_dev_mm": 0.0,
+          "iso_286_fit_class": "H7/k6_Steering_Column_Spline",
+          "inspection_gauge": "Air_Gauge_And_Go_NoGo_Plug"
+        }
+      ]
+    }
+  ]
+}
