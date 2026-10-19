@@ -1,0 +1,8 @@
+{
+  "chain_id": "roadbike_t47_bb_chainline_and_flatmount_disc_stackup",
+  "contributor_count": 14,
+  "worst_case_stackup_mm": 0.31,
+  "rss_3sigma_stackup_mm": 0.058,
+  "min_dynamic_clearance_mm": 1.792,
+  "interference_free": true
+}

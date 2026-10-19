@@ -1,0 +1,265 @@
+{
+  "assembly_id": "SWorks_Look795_Aero_RoadBike_DuraAce_R9270",
+  "total_unique_parts": 18,
+  "total_fasteners_and_joints": 42,
+  "total_mass_kg": 6.96,
+  "center_of_mass_m": [
+    0.042,
+    0.245,
+    0.002
+  ],
+  "items": [
+    {
+      "item_number": 1,
+      "part_id": "frame_monocoque_aero_main_triangle",
+      "subsystem": "monocoque_frame",
+      "material_spec": "Toray_T1100G_M40X_High_Modulus_UD_Carbon",
+      "quantity": 1,
+      "mass_kg": 0.79,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.0,
+        0.08,
+        0.0
+      ]
+    },
+    {
+      "item_number": 2,
+      "part_id": "frame_rear_dropped_stays_triangle",
+      "subsystem": "rear_triangle",
+      "material_spec": "Toray_T1100G_UD_Carbon_Syntactic_Dropout",
+      "quantity": 1,
+      "mass_kg": 0.31,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.18,
+        0.04,
+        0.0
+      ]
+    },
+    {
+      "item_number": 3,
+      "part_id": "fork_aero_twin_blade_carbon_disc",
+      "subsystem": "front_fork",
+      "material_spec": "Toray_T1100G_Twin_NACA_Airfoil_Carbon",
+      "quantity": 1,
+      "mass_kg": 0.365,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.18,
+        -0.08,
+        0.0
+      ]
+    },
+    {
+      "item_number": 4,
+      "part_id": "cockpit_integrated_aero_bar_stem",
+      "subsystem": "aero_cockpit",
+      "material_spec": "Toray_T800_Monocoque_Aero_Carbon_BarStem",
+      "quantity": 1,
+      "mass_kg": 0.32,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.22,
+        0.24,
+        0.0
+      ]
+    },
+    {
+      "item_number": 5,
+      "part_id": "shifters_dura_ace_r9270_sti_pair",
+      "subsystem": "sti_controls",
+      "material_spec": "CFRP_Lever_Ti_Clamp_Elastomer_Hood",
+      "quantity": 1,
+      "mass_kg": 0.35,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.32,
+        0.26,
+        0.08
+      ]
+    },
+    {
+      "item_number": 6,
+      "part_id": "seatpost_kamm_tail_carbon_d_shape",
+      "subsystem": "seat_cluster",
+      "material_spec": "Toray_T800_D_Profile_Carbon_7075_Head",
+      "quantity": 1,
+      "mass_kg": 0.165,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.08,
+        0.28,
+        0.0
+      ]
+    },
+    {
+      "item_number": 7,
+      "part_id": "saddle_3d_lattice_carbon_rails",
+      "subsystem": "seat_cluster",
+      "material_spec": "Carbon_UD_Shell_7x9mm_Rails_EPU_Lattice",
+      "quantity": 1,
+      "mass_kg": 0.145,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.12,
+        0.42,
+        0.0
+      ]
+    },
+    {
+      "item_number": 8,
+      "part_id": "crankset_hollowtech_4arm_52_36t",
+      "subsystem": "drivetrain",
+      "material_spec": "Hollow_Forged_7075_T6_Anodized_Black",
+      "quantity": 1,
+      "mass_kg": 0.69,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.0,
+        -0.14,
+        0.28
+      ]
+    },
+    {
+      "item_number": 9,
+      "part_id": "pedals_spd_sl_carbon_platform",
+      "subsystem": "drivetrain",
+      "material_spec": "CFRP_Body_4140_Chromoly_Spindle",
+      "quantity": 1,
+      "mass_kg": 0.228,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.06,
+        -0.22,
+        0.38
+      ]
+    },
+    {
+      "item_number": 10,
+      "part_id": "bottom_bracket_t47_ceramic_pair",
+      "subsystem": "drivetrain",
+      "material_spec": "Al_7075_T6_Cups_Si3N4_Grade3_Ceramic",
+      "quantity": 1,
+      "mass_kg": 0.088,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.0,
+        -0.18,
+        -0.18
+      ]
+    },
+    {
+      "item_number": 11,
+      "part_id": "cassette_12s_hyperglide_11_30t",
+      "subsystem": "drivetrain",
+      "material_spec": "Ti_6Al_4V_Large_Cogs_CroMo_Nickel_Plated",
+      "quantity": 1,
+      "mass_kg": 0.223,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.22,
+        0.0,
+        0.3
+      ]
+    },
+    {
+      "item_number": 12,
+      "part_id": "derailleur_rear_rd_r9250_di2_12s",
+      "subsystem": "drivetrain",
+      "material_spec": "Forged_7075_Linkage_CFRP_Pulley_Cage",
+      "quantity": 1,
+      "mass_kg": 0.215,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.3,
+        -0.18,
+        0.24
+      ]
+    },
+    {
+      "item_number": 13,
+      "part_id": "derailleur_front_fd_r9250_di2",
+      "subsystem": "drivetrain",
+      "material_spec": "Al_7075_Servo_Chrome_Plated_Guide_Cage",
+      "quantity": 1,
+      "mass_kg": 0.096,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.04,
+        0.06,
+        0.22
+      ]
+    },
+    {
+      "item_number": 14,
+      "part_id": "chain_hollowpin_12s_112_links",
+      "subsystem": "drivetrain",
+      "material_spec": "Chromized_Hardened_Steel_SIL_TEC_Coated",
+      "quantity": 1,
+      "mass_kg": 0.242,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.08,
+        -0.12,
+        0.36
+      ]
+    },
+    {
+      "item_number": 15,
+      "part_id": "wheel_front_50mm_carbon_24spoke",
+      "subsystem": "wheelset",
+      "material_spec": "Toray_T800_Rim_Sapim_CX_Ray_700x28c_Tire",
+      "quantity": 1,
+      "mass_kg": 0.985,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.36,
+        -0.06,
+        -0.12
+      ]
+    },
+    {
+      "item_number": 16,
+      "part_id": "wheel_rear_60mm_carbon_24spoke",
+      "subsystem": "wheelset",
+      "material_spec": "Toray_T800_Rim_36T_Star_Ratchet_700x28c",
+      "quantity": 1,
+      "mass_kg": 1.254,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.36,
+        -0.06,
+        -0.12
+      ]
+    },
+    {
+      "item_number": 17,
+      "part_id": "rotors_ice_tech_freeza_160_140mm",
+      "subsystem": "braking_system",
+      "material_spec": "SUS410_Stainless_Al_Core_Sandwich_CenterLock",
+      "quantity": 1,
+      "mass_kg": 0.214,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        0.12,
+        -0.06,
+        -0.34
+      ]
+    },
+    {
+      "item_number": 18,
+      "part_id": "calipers_flat_mount_2piston_pair",
+      "subsystem": "braking_system",
+      "material_spec": "Monobody_Forged_Magnesium_Ceramic_Pistons",
+      "quantity": 1,
+      "mass_kg": 0.275,
+      "fastener_or_weld_spec": "Torx_T25_Ti6Al4V_or_Autoclave_Carbon_CoCure",
+      "exploded_view_offset_m": [
+        -0.12,
+        0.06,
+        -0.28
+      ]
+    }
+  ]
+}

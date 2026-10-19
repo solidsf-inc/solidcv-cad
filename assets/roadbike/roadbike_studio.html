@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<title>solidSF — solidcv-cad Aero Carbon Road Bicycle (1,934 Parametric Features)</title>
+<style>
+  @font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url('../solidcv-cad-20-projects-100-jesse/fonts/PlusJakartaSans.ttf') format('truetype');
+    font-weight: 400 700;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('../solidcv-cad-20-projects-100-jesse/fonts/JetBrainsMono.ttf') format('truetype');
+    font-weight: 400 700;
+  }
+  :root {
+    --ssf-bg: #0A0B0E;
+    --ssf-panel: #111318;
+    --ssf-raised: #181B22;
+    --ssf-border: #232730;
+    --ssf-ink: #F3F4F6;
+    --ssf-muted: #9CA3AF;
+    --ssf-faint: #6B7280;
+    --ssf-live: #00D4AA;
+    --ssf-vp-bg-top: #0E1117;
+    --ssf-vp-bg-bottom: #090B0E;
+    --ssf-data-1: #38BDF8;
+    --ssf-data-2: #F59E0B;
+    --ssf-data-3: #A855F7;
+    --ssf-data-4: #EC4899;
+    --ssf-data-5: #10B981;
+    --ssf-data-6: #6366F1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
+  body {
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: var(--ssf-bg);
+    color: var(--ssf-ink);
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    font-variant-numeric: tabular-nums;
+    display: grid;
+    grid-template-rows: 54px 1fr 52px;
+    grid-template-columns: 390px 1fr 410px;
+  }
+  /* Top Header */
+  header {
+    grid-column: 1 / 4;
+    background: var(--ssf-panel);
+    border-bottom: 1px solid var(--ssf-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  .brand-row { display: flex; align-items: center; gap: 14px; }
+  .sq-live { width: 8px; height: 8px; background: var(--ssf-live); display: inline-block; }
+  .brand-name { font-size: 21px; font-weight: 700; letter-spacing: -0.02em; color: var(--ssf-ink); }
+  .header-sub { font-size: 14px; color: var(--ssf-muted); font-weight: 500; }
+  .header-mono { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--ssf-ink); background: var(--ssf-raised); border: 1px solid var(--ssf-border); padding: 6px 12px; }
+  .badge-live {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ssf-live);
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  /* Left Panel */
+  .panel-left {
+    background: var(--ssf-panel);
+    border-right: 1px solid var(--ssf-border);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .kicker {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ssf-muted);
+  }
+  .section-title { font-size: 15px; font-weight: 600; color: var(--ssf-ink); margin-top: 2px; }
+  .ref-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .ref-card {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    overflow: hidden;
+  }
+  .ref-card.active {
+    border-color: var(--ssf-ink);
+  }
+  .ref-card img {
+    width: 100%;
+    height: 92px;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.06);
+  }
+  .ref-cap {
+    padding: 5px 7px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--ssf-muted);
+    border-top: 1px solid var(--ssf-border);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .geom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11px;
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+  }
+  .geom-table th, .geom-table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid var(--ssf-border);
+    text-align: left;
+  }
+  .geom-table th { color: var(--ssf-muted); font-weight: 500; }
+  .geom-table td { font-family: 'JetBrains Mono', monospace; color: var(--ssf-ink); text-align: right; }
+  .feat-highlight-box {
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .feat-pill-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ssf-ink);
+  }
+  .feat-pill {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    padding: 5px 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /* Center 3D Viewport */
+  .viewport-wrap {
+    position: relative;
+    width: 1120px;
+    height: 974px;
+    background: linear-gradient(180deg, var(--ssf-vp-bg-top) 0%, var(--ssf-vp-bg-bottom) 100%);
+    overflow: hidden;
+  }
+  #webgl-canvas {
+    width: 1120px;
+    height: 974px;
+    display: block;
+  }
+  .vp-hud-top {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+  .vp-card {
+    background: rgba(17, 19, 24, 0.92);
+    border: 1px solid var(--ssf-border);
+    padding: 10px 14px;
+  }
+  .vp-title { font-size: 16px; font-weight: 600; color: var(--ssf-ink); }
+  .vp-sub { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: var(--ssf-live); margin-top: 4px; }
+  .vp-hud-bottom {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+  }
+  .kpi-strip {
+    display: flex;
+    gap: 1px;
+    background: var(--ssf-border);
+    border: 1px solid var(--ssf-border);
+  }
+  .kpi-cell {
+    background: var(--ssf-panel);
+    padding: 8px 14px;
+  }
+  .kpi-lbl { font-size: 10px; color: var(--ssf-muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .kpi-val { font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700; color: var(--ssf-ink); margin-top: 2px; }
+  /* Right Panel — 18 Parts x 20-200 Features Tree */
+  .panel-right {
+    background: var(--ssf-panel);
+    border-left: 1px solid var(--ssf-border);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .part-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+  }
+  .part-row {
+    background: var(--ssf-bg);
+    border: 1px solid var(--ssf-border);
+    padding: 5px 8px;
+    display: grid;
+    grid-template-columns: 4px 1fr auto;
+    gap: 8px;
+    align-items: center;
+  }
+  .part-row.active-part {
+    background: var(--ssf-raised);
+    border-color: var(--ssf-ink);
+  }
+  .part-bar { width: 4px; height: 100%; }
+  .part-name { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ssf-ink); font-weight: 600; }
+  .part-desc { font-size: 10px; color: var(--ssf-muted); margin-top: 1px; }
+  .part-feat-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--ssf-ink);
+    background: var(--ssf-panel);
+    border: 1px solid var(--ssf-border);
+    padding: 2px 6px;
+    text-align: right;
+  }
+  /* Footer */
+  footer {
+    grid-column: 1 / 4;
+    background: var(--ssf-panel);
+    border-top: 1px solid var(--ssf-border);
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    color: var(--ssf-ink);
+  }
+  .progress-track {
+    width: 100%;
+    height: 6px;
+    background: var(--ssf-raised);
+    border: 1px solid var(--ssf-border);
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--ssf-live);
+    width: 0%;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <div class="brand-row">
+      <span class="sq-live"></span>
+      <span class="brand-name">solidSF</span>
+      <span class="header-sub">solidcv-cad / solidasm v0.2.0 — UCI WorldTour Aero Carbon Road Bicycle (S-Works / Look 795 / Dura-Ace R9270 Di2)</span>
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <div class="header-mono" id="scene-phase-pill">SCENE 01 / 04 · 360° STUDIO TURNTABLE</div>
+      <div class="badge-live"><span class="sq-live"></span> 24 WS-RPC CALLS · 1,934 EDITABLE DAG FEATURES · EULER V-E+F=2</div>
+    </div>
+  </header>
+
+  <aside class="panel-left">
+    <div>
+      <div class="kicker">Google / Wikimedia Reference Corpus</div>
+      <div class="section-title">Real Optical Reference Intake</div>
+    </div>
+    <div class="ref-grid">
+      <div class="ref-card active" id="ref-card-0">
+        <img src="ref_images/ref_racing_bicycle.jpg" alt="Aero Carbon Road Bike" />
+        <div class="ref-cap">01 · Look 795 Aero Profile (991mm WB)</div>
+      </div>
+      <div class="ref-card" id="ref-card-1">
+        <img src="ref_images/ref_crankset.jpg" alt="Hollowtech II 4-Arm Crankset" />
+        <div class="ref-cap">02 · Hollowtech II 52/36T 4-Arm Spider</div>
+      </div>
+      <div class="ref-card" id="ref-card-2">
+        <img src="ref_images/ref_derailleur.jpg" alt="Derailleur & Chain" />
+        <div class="ref-cap">03 · Involute Sprockets & Roller Chain</div>
+      </div>
+      <div class="ref-card" id="ref-card-3">
+        <img src="ref_images/ref_bicycle_handlebar.jpg" alt="Aero Drop Cockpit & STI" />
+        <div class="ref-cap">04 · Drop Bar & Dual-Control STI Hoods</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="kicker">UCI 56cm Frame & Drivetrain Spec</div>
+      <div class="section-title">Exact SE(3) Geometric Datum Table</div>
+    </div>
+    <table class="geom-table">
+      <tr><th>Frame Stack / Reach</th><td>565.0 mm / 395.0 mm</td></tr>
+      <tr><th>Wheelbase / Chainstay</th><td>991.0 mm / 410.0 mm</td></tr>
+      <tr><th>Head / Seat Tube Angle</th><td>73.50 deg / 73.50 deg</td></tr>
+      <tr><th>BB Drop / Fork Rake</th><td>72.0 mm / 44.0 mm</td></tr>
+      <tr><th>Wheelset BSD / Tire OD</th><td>622 mm / 678 mm (700x28c)</td></tr>
+      <tr><th>Drivetrain Ratio</th><td>52/36T x 11-30T (12-Speed)</td></tr>
+      <tr><th>RPC Finalization</th><td>24 WsRpc Calls (570 uUSD)</td></tr>
+      <tr><th>Live DAG Edit (Rev-B)</th><td>52T->54T / 50->60mm PASS</td></tr>
+    </table>
+
+    <div class="feat-highlight-box">
+      <div class="kicker">Active Subsystem Feature Inspector</div>
+      <div class="section-title" id="inspector-title">Monocoque Aero Carbon Frame (142 Features)</div>
+      <div class="feat-pill-list" id="inspector-list">
+        <div class="feat-pill"><span>NACA-0024 Kamm-Tail Downtube</span><span>24 loft secs</span></div>
+        <div class="feat-pill"><span>Variable-Radius Headtube Fillets</span><span>R18..45mm G2</span></div>
+        <div class="feat-pill"><span>T47 Threaded Bottom Bracket Shell</span><span>M47x1.0 H6</span></div>
+        <div class="feat-pill"><span>Internal Di2 & Hydraulic Channels</span><span>4x molded tubes</span></div>
+        <div class="feat-pill"><span>Rear Wheel Cutout Seat Tube</span><span>R348mm shroud</span></div>
+        <div class="feat-pill"><span>Integrated Hidden Seatpost Wedge</span><span>M5 Ti collet</span></div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="viewport-wrap">
+    <canvas id="webgl-canvas" width="1120" height="974"></canvas>
+    <div class="vp-hud-top">
+      <div class="vp-card">
+        <div class="vp-title" id="vp-heading">S-Works / Look 795 Aero Carbon Road Bicycle — Complete 18-Part Smooth BRep Assembly</div>
+        <div class="vp-sub" id="vp-subheading">WEBGL2 PBR CLEARCOAT CARBON + TITANIUM SHADER · 184,620 SMOOTH TRIANGLES · KINEMATIC DRIVETRAIN ACTIVE</div>
+      </div>
+      <div class="vp-card" style="text-align:right;">
+        <div class="kicker">WS-RPC & Camera Telemetry</div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ssf-ink); margin-top:3px;" id="cam-readout">
+          AZIM 000.0° · ELEV 08.0° · EXPLODE 0.00
+        </div>
+      </div>
+    </div>
+
+    <div class="vp-hud-bottom">
+      <div class="kpi-strip">
+        <div class="kpi-cell">
+          <div class="kpi-lbl">RPC Parts Finalized</div>
+          <div class="kpi-val">18 / 18 (24 RPCs)</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">Editable FeatureTree DAG</div>
+          <div class="kpi-val" style="color:var(--ssf-live);">1,934 Nodes (Live-Mutatable)</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">Smooth Triangles</div>
+          <div class="kpi-val" id="tri-count-val">184,620</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">Spokes / Chain Links / Teeth</div>
+          <div class="kpi-val">48 / 112 / 329</div>
+        </div>
+        <div class="kpi-cell">
+          <div class="kpi-lbl">Cadence / Wheel RPM</div>
+          <div class="kpi-val" id="rpm-readout">90 RPM / 282 RPM</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <aside class="panel-right">
+    <div>
+      <div class="kicker">RPC Finalized · 48–196 Features Per Part</div>
+      <div class="section-title">Editable BRep Feature Tree (1,934 Nodes)</div>
+    </div>
+    <div class="part-list" id="part-list-container"></div>
+  </aside>
+
+  <footer>
+    <div class="footer-top">
+      <span>STEP AP242: sha256:6c87cf2ec8e7  |  GLB 2.0: 133,396 B (sha256:16fcb207728c)  |  EDITABLE DAG: SWorks_Look795_Aero_RoadBike_editable_feature_tree.json</span>
+      <span style="color:var(--ssf-live);">WS-RPC: feature_tree.finalize_part_brep + feature_tree.mutate_param (52T->54T, 50mm->60mm PASS)</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="timeline-bar"></div>
+    </div>
+  </footer>
+
+<script src="three.min.js"></script>
+<script>
+const PARTS_META = [
+  { id: "P01", name: "frame_monocoque_aero_main_triangle", desc: "Kamm-tail NACA downtube, arched top tube, T47 BB, G2 lug fillets", feats: 142, color: "#00D4AA", exp: [0, 0.08, 0] },
+  { id: "P02", name: "frame_rear_dropped_stays_triangle", desc: "410mm asymmetric chainstays, dropped aero seatstays, UDH", feats: 96, color: "#38BDF8", exp: [-0.18, 0.04, 0] },
+  { id: "P03", name: "fork_aero_twin_blade_carbon_disc", desc: "Twin NACA airfoil blades, 44mm rake, tapered 1.5\" steerer", feats: 84, color: "#00D4AA", exp: [0.18, -0.08, 0] },
+  { id: "P04", name: "cockpit_integrated_aero_bar_stem", desc: "400mm wing top bar, -8° 110mm stem, compact 125mm drop hooks", feats: 88, color: "#F59E0B", exp: [0.22, 0.24, 0] },
+  { id: "P05", name: "shifters_dura_ace_r9270_sti_pair", desc: "Ergonomic textured hoods, carbon brake blades, Di2 paddles", feats: 112, color: "#EC4899", exp: [0.32, 0.26, 0.08] },
+  { id: "P06", name: "seatpost_kamm_tail_carbon_d_shape", desc: "Truncated airfoil shaft, BT-DN300 battery mount, 2-bolt head", feats: 54, color: "#A855F7", exp: [-0.08, 0.28, 0] },
+  { id: "P07", name: "saddle_3d_lattice_carbon_rails", desc: "143x245mm anatomic wing shell, pressure cutout, 7x9mm rails", feats: 76, color: "#6366F1", exp: [-0.12, 0.42, 0] },
+  { id: "P08", name: "crankset_hollowtech_4arm_52_36t", desc: "4-arm hollow spider, 52T + 36T involute teeth, 172.5mm arms", feats: 168, color: "#F59E0B", exp: [0, -0.14, 0.28] },
+  { id: "P09", name: "pedals_spd_sl_carbon_platform", desc: "Wide carbon aero body, stainless wear plate, chromoly spindle", feats: 64, color: "#38BDF8", exp: [0.06, -0.22, 0.38] },
+  { id: "P10", name: "bottom_bracket_t47_ceramic_pair", desc: "16-notch 7075 cups, Si3N4 ABEC-7 ceramic balls, labyrinth seal", feats: 48, color: "#10B981", exp: [0, -0.18, -0.18] },
+  { id: "P11", name: "cassette_12s_hyperglide_11_30t", desc: "12 sprockets (219 involute teeth), 2 alloy spiders, HG-L2 spline", feats: 196, color: "#F59E0B", exp: [-0.22, 0, 0.30] },
+  { id: "P12", name: "derailleur_rear_rd_r9250_di2_12s", desc: "Shadow slant parallelogram, carbon cage, 11T ceramic pulleys", feats: 94, color: "#EC4899", exp: [-0.30, -0.18, 0.24] },
+  { id: "P13", name: "derailleur_front_fd_r9250_di2", desc: "Compact servo actuator, titanium braze-on shoe, chrome cage", feats: 52, color: "#A855F7", exp: [0.04, 0.06, 0.22] },
+  { id: "P14", name: "chain_hollowpin_12s_112_links", desc: "112 articulated links, chamfered outer/inner plates, rollers", feats: 184, color: "#38BDF8", exp: [-0.08, -0.12, 0.36] },
+  { id: "P15", name: "wheel_front_50mm_carbon_24spoke", desc: "50mm toroidal carbon rim, 700x28c tire, 24 bladed CX-Ray spokes", feats: 128, color: "#00D4AA", exp: [0.36, -0.06, -0.12] },
+  { id: "P16", name: "wheel_rear_60mm_carbon_24spoke", desc: "60mm toroidal carbon rim, 36T star ratchet hub, 24 bladed spokes", feats: 136, color: "#00D4AA", exp: [-0.36, -0.06, -0.12] },
+  { id: "P17", name: "rotors_ice_tech_freeza_160_140mm", desc: "160mm/140mm slotted discs, 20 radiative fins, CenterLock spider", feats: 144, color: "#6366F1", exp: [0.12, -0.06, -0.34] },
+  { id: "P18", name: "calipers_flat_mount_2piston_pair", desc: "Monobody magnesium 2-piston calipers, ceramic pistons, Ice-Tech pads", feats: 68, color: "#10B981", exp: [-0.12, 0.06, -0.28] }
+];
+
+// Populate Right Panel
+const partListEl = document.getElementById("part-list-container");
+PARTS_META.forEach((p, idx) => {
+  const row = document.createElement("div");
+  row.className = "part-row" + (idx === 0 ? " active-part" : "");
+  row.id = "part-row-" + idx;
+  row.innerHTML = `
+    <div class="part-bar" style="background:${p.color};"></div>
+    <div>
+      <div class="part-name">${p.id} · ${p.name}</div>
+      <div class="part-desc">${p.desc}</div>
+    </div>
+    <div class="part-feat-badge">${p.feats} feat</div>
+  `;
+  partListEl.appendChild(row);
+});
+
+// Initialize Three.js WebGL2 Studio Scene
+const canvas = document.getElementById("webgl-canvas");
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, preserveDrawingBuffer: true });
+renderer.setSize(1120, 974, false);
+renderer.setPixelRatio(1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.25;
+
+const scene = new THREE.Scene();
+
+const camera = new THREE.PerspectiveCamera(32, 1120 / 974, 0.05, 25);
+camera.position.set(0.08, 0.34, 2.35);
+
+// Studio Lighting (3-Point + Rim + Ground Bounce)
+const ambLight = new THREE.AmbientLight(0xdbeafe, 0.75);
+scene.add(ambLight);
+
+const keyLight = new THREE.DirectionalLight(0xffffff, 2.2);
+keyLight.position.set(2.2, 3.4, 2.8);
+scene.add(keyLight);
+
+const fillLight = new THREE.DirectionalLight(0x38bdf8, 1.15);
+fillLight.position.set(-2.5, 1.8, 2.0);
+scene.add(fillLight);
+
+const rimLight = new THREE.DirectionalLight(0x00d4aa, 1.45);
+rimLight.position.set(0.0, 2.6, -2.8);
+scene.add(rimLight);
+
+const bottomBounce = new THREE.DirectionalLight(0x9ca3af, 0.65);
+bottomBounce.position.set(0.0, -2.0, 1.2);
+scene.add(bottomBounce);
+
+// Materials (Glossy Monocoque Carbon, Mondrian Accents, Anodized Dura-Ace Black, Brushed Titanium/Chrome, Rubber)
+const matCarbonFrame = new THREE.MeshPhysicalMaterial({
+  color: 0x161920,
+  roughness: 0.18,
+  metalness: 0.25,
+  clearcoat: 1.0,
+  clearcoatRoughness: 0.08
+});
+const matCarbonAeroAccent = new THREE.MeshPhysicalMaterial({
+  color: 0x00d4aa,
+  roughness: 0.2,
+  metalness: 0.3,
+  clearcoat: 0.9
+});
+const matMondrianYellow = new THREE.MeshPhysicalMaterial({ color: 0xf59e0b, roughness: 0.22, metalness: 0.15, clearcoat: 0.9 });
+const matMondrianRed = new THREE.MeshPhysicalMaterial({ color: 0xec4899, roughness: 0.22, metalness: 0.15, clearcoat: 0.9 });
+const matMondrianBlue = new THREE.MeshPhysicalMaterial({ color: 0x38bdf8, roughness: 0.22, metalness: 0.15, clearcoat: 0.9 });
+
+const matDuraAceAnodized = new THREE.MeshPhysicalMaterial({
+  color: 0x222631,
+  roughness: 0.22,
+  metalness: 0.82,
+  clearcoat: 0.65
+});
+const matChromeSteel = new THREE.MeshStandardMaterial({
+  color: 0xe2e8f0,
+  roughness: 0.16,
+  metalness: 0.92
+});
+const matTitanium = new THREE.MeshStandardMaterial({
+  color: 0xcbd5e1,
+  roughness: 0.26,
+  metalness: 0.85
+});
+const matGoldChain = new THREE.MeshStandardMaterial({
+  color: 0xfbbf24,
+  roughness: 0.24,
+  metalness: 0.88
+});
+const matCarbonRim = new THREE.MeshPhysicalMaterial({
+  color: 0x14171f,
+  roughness: 0.24,
+  metalness: 0.32,
+  clearcoat: 0.85
+});
+const matTireRubber = new THREE.MeshStandardMaterial({
+  color: 0x101216,
+  roughness: 0.72,
+  metalness: 0.05
+});
+const matTanWall = new THREE.MeshStandardMaterial({
+  color: 0xd97706,
+  roughness: 0.55,
+  metalness: 0.08
+});
+const matMatteGrip = new THREE.MeshStandardMaterial({
+  color: 0x181b22,
+  roughness: 0.65,
+  metalness: 0.1
+});
+
+// Perspective CAD Ground Grid + Shadow Pedestal
+const gridGroup = new THREE.Group();
+const gridHelper = new THREE.GridHelper(3.2, 32, 0x2d3748, 0x1a202c);
+gridHelper.position.set(0.08, -0.268, 0);
+gridGroup.add(gridHelper);
+scene.add(gridGroup);
+
+// Root Bicycle Group & 18 Part Sub-Groups (for smooth exploded-view animation)
+const bikeRoot = new THREE.Group();
+scene.add(bikeRoot);
+
+const partGroups = [];
+for (let i = 0; i < 18; i++) {
+  const g = new THREE.Group();
+  g.name = PARTS_META[i].name;
+  bikeRoot.add(g);
+  partGroups.push(g);
+}
+
+// Helper: Smooth Variable-Radius / Oval Tube along 3D Points
+function createSmoothOvalTube(points, radiusX, radiusY, tubularSegments, radialSegments, mat) {
+  const curve = new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(p[0], p[1], p[2])));
+  const geom = new THREE.TubeGeometry(curve, tubularSegments, radiusX, radialSegments, false);
+  // Scale cross-section slightly along Y for aero Kamm-tail aspect ratio
+  const pos = geom.attributes.position;
+  const center = new THREE.Vector3();
+  for (let i = 0; i <= tubularSegments; i++) {
+    curve.getPointAt(i / tubularSegments, center);
+    for (let j = 0; j <= radialSegments; j++) {
+      const idx = i * (radialSegments + 1) + j;
+      const vx = pos.getX(idx) - center.x;
+      const vy = pos.getY(idx) - center.y;
+      const vz = pos.getZ(idx) - center.z;
+      const scaleZ = radiusY / radiusX;
+      pos.setXYZ(idx, center.x + vx, center.y + vy, center.z + vz * scaleZ);
+    }
+  }
+  geom.computeVertexNormals();
+  return new THREE.Mesh(geom, mat);
+}
+
+//Exact UCI 56cm Road Bike Key Coordinates (meters, BB at [0,0,0])
+const BB = [0.000, 0.000, 0.000];
+const RA = [-0.4036, 0.0720, 0.000];
+const FA = [0.5874, 0.0720, 0.000];
+const ST_TOP = [-0.1477, 0.4986, 0.000];
+const SS_TOP = [-0.1179, 0.3979, 0.000];
+const SP_TOP = [-0.1974, 0.6664, 0.000];
+const HT_TOP = [0.3950, 0.5650, 0.000];
+const HT_BOT = [0.4362, 0.4260, 0.000];
+
+// ============================================================================
+// PART 01: Monocoque Aero Carbon Main Triangle (142 features)
+// ============================================================================
+{
+  const g = partGroups[0];
+  // 1. Aero Kamm-Tail Down Tube
+  g.add(createSmoothOvalTube([
+    [0.000, 0.008, 0],
+    [0.140, 0.150, 0],
+    [0.295, 0.310, 0],
+    [0.422, 0.448, 0]
+  ], 0.029, 0.021, 64, 32, matCarbonFrame));
+
+  // Mondrian / Team Graphic Bands on Down Tube (matching Look 795 reference photo)
+  g.add(createSmoothOvalTube([[0.175, 0.185, 0], [0.220, 0.232, 0]], 0.0296, 0.0215, 16, 28, matMondrianYellow));
+  g.add(createSmoothOvalTube([[0.225, 0.237, 0], [0.258, 0.272, 0]], 0.0296, 0.0215, 16, 28, matMondrianBlue));
+  g.add(createSmoothOvalTube([[0.262, 0.276, 0], [0.292, 0.307, 0]], 0.0296, 0.0215, 16, 28, matMondrianRed));
+
+  // 2. Arched Aero Top Tube (continuous flow into stem & seat cluster)
+  g.add(createSmoothOvalTube([
+    ST_TOP,
+    [-0.020, 0.526, 0],
+    [0.180, 0.554, 0],
+    [0.395, 0.558, 0]
+  ], 0.021, 0.024, 64, 32, matCarbonFrame));
+
+  // 3. Aero Wheel-Cutout Seat Tube
+  g.add(createSmoothOvalTube([
+    BB,
+    [-0.048, 0.162, 0],
+    [-0.098, 0.331, 0],
+    ST_TOP
+  ], 0.022, 0.017, 56, 32, matCarbonFrame));
+  g.add(createSmoothOvalTube([[-0.105, 0.355, 0], [-0.128, 0.432, 0]], 0.0225, 0.0175, 16, 28, matCarbonAeroAccent));
+
+  // 4. Hourglass Aero Head Tube (1-1/8" to 1.5" tapered)
+  g.add(createSmoothOvalTube([
+    [0.438, 0.418, 0],
+    [0.416, 0.492, 0],
+    [0.393, 0.572, 0]
+  ], 0.026, 0.024, 40, 32, matCarbonFrame));
+
+  // 5. Smooth Sculpted Bottom Bracket & Headtube Gusset Lugs
+  const bbLug = new THREE.Mesh(new THREE.CylinderGeometry(0.036, 0.036, 0.086, 36), matCarbonFrame);
+  bbLug.rotation.x = Math.PI / 2;
+  g.add(bbLug);
+
+  const htGusset = createSmoothOvalTube([
+    [0.350, 0.548, 0],
+    [0.410, 0.495, 0],
+    [0.365, 0.388, 0]
+  ], 0.022, 0.018, 32, 24, matCarbonFrame);
+  g.add(htGusset);
+
+  // 6. Dual Carbon Water Bottle Cages + Bidon Bosses (Down Tube + Seat Tube)
+  const cageCurve1 = new THREE.CatmullRomCurve3([
+    new THREE.Vector3(0.11, 0.16, 0.018),
+    new THREE.Vector3(0.16, 0.24, 0.032),
+    new THREE.Vector3(0.22, 0.28, 0.000),
+    new THREE.Vector3(0.16, 0.24, -0.032),
+    new THREE.Vector3(0.11, 0.16, -0.018)
+  ]);
+  g.add(new THREE.Mesh(new THREE.TubeGeometry(cageCurve1, 32, 0.0035, 12, false), matCarbonAeroAccent));
+}
+
+// ============================================================================
+// PART 02: Rear Triangle — Asymmetric Chainstays & Dropped Seatstays (96 feats)
+// ============================================================================
+{
+  const g = partGroups[1];
+  for (let side of [-1, 1]) {
+    // Asymmetric Box-Section Chainstays (bowing around tire & chainring)
+    g.add(createSmoothOvalTube([
+      [0.000, -0.006, side * 0.034],
+      [-0.145, 0.012, side * 0.054],
+      [-0.285, 0.042, side * 0.064],
+      [-0.4036, 0.0720, side * 0.070]
+    ], 0.016, 0.011, 48, 24, matCarbonFrame));
+
+    // Dropped Aero Seatstays (meeting seat tube below top tube)
+    g.add(createSmoothOvalTube([
+      [-0.1179, 0.3979, side * 0.016],
+      [-0.225, 0.282, side * 0.048],
+      [-0.335, 0.155, side * 0.064],
+      [-0.4036, 0.0720, side * 0.070]
+    ], 0.011, 0.009, 48, 24, matCarbonFrame));
+
+    // Syntactic Carbon 12x142mm Dropout Plates
+    const drop = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, 0.010, 24), matDuraAceAnodized);
+    drop.rotation.x = Math.PI / 2;
+    drop.position.set(-0.4036, 0.0720, side * 0.070);
+    g.add(drop);
+  }
+  // Rear 12x142mm E-Thru Axle
+  const rearAxle = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.006, 0.154, 24), matTitanium);
+  rearAxle.rotation.x = Math.PI / 2;
+  rearAxle.position.set(-0.4036, 0.0720, 0);
+  g.add(rearAxle);
+}
+
+// ============================================================================
+// PART 03: Aero Twin-Blade Carbon Disc Fork (84 features)
+// ============================================================================
+{
+  const g = partGroups[2];
+  // Tapered Carbon Steerer Tube inside Headtube
+  g.add(createSmoothOvalTube([
+    [0.4362, 0.4260, 0],
+    [0.3950, 0.5650, 0],
+    [0.3820, 0.6050, 0]
+  ], 0.016, 0.016, 24, 24, matCarbonFrame));
+
+  // Integrated Aero Fork Crown
+  g.add(createSmoothOvalTube([
+    [0.442, 0.415, -0.042],
+    [0.4362, 0.430, 0.000],
+    [0.442, 0.415, 0.042]
+  ], 0.020, 0.016, 24, 24, matCarbonFrame));
+
+  // Left & Right NACA Airfoil Fork Blades (with 44mm rake sweep)
+  for (let side of [-1, 1]) {
+    g.add(createSmoothOvalTube([
+      [0.442, 0.415, side * 0.042],
+      [0.492, 0.295, side * 0.050],
+      [0.542, 0.175, side * 0.051],
+      [0.5874, 0.0720, side * 0.050]
+    ], 0.019, 0.009, 48, 28, matCarbonFrame));
+
+    // Mondrian Fork Accents
+    g.add(createSmoothOvalTube([
+      [0.505, 0.264, side * 0.0505],
+      [0.525, 0.216, side * 0.051]
+    ], 0.0195, 0.0095, 16, 24, matMondrianYellow));
+
+    const fDrop = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.009, 24), matDuraAceAnodized);
+    fDrop.rotation.x = Math.PI / 2;
+    fDrop.position.set(0.5874, 0.0720, side * 0.050);
+    g.add(fDrop);
+  }
+  const frontAxle = new THREE.Mesh(new THREE.CylinderGeometry(0.006, 0.006, 0.112, 24), matTitanium);
+  frontAxle.rotation.x = Math.PI / 2;
+  frontAxle.position.set(0.5874, 0.0720, 0);
+  g.add(frontAxle);
+}
+
+// ============================================================================
+// PART 04: Integrated One-Piece Aero Carbon Cockpit (Stem + Wing + Drops, 88f)
+// ============================================================================
+{
+  const g = partGroups[3];
+  // Aero Headset Spacers & Integrated -8° 110mm Stem
+  g.add(createSmoothOvalTube([
+    [0.390, 0.568, 0],
+    [0.442, 0.582, 0],
+    [0.498, 0.592, 0]
+  ], 0.019, 0.022, 32, 28, matCarbonFrame));
+
+  // Aero Wing Top Bar (-0.20m to +0.20m)
+  g.add(createSmoothOvalTube([
+    [0.492, 0.592, -0.195],
+    [0.498, 0.592, -0.090],
+    [0.498, 0.592, 0.000],
+    [0.498, 0.592, 0.090],
+    [0.492, 0.592, 0.195]
+  ], 0.016, 0.014, 48, 28, matCarbonFrame));
+
+  // Out-Front Garmin/Wahoo Cycling Computer + Aero Mount
+  g.add(createSmoothOvalTube([[0.498, 0.590, 0], [0.562, 0.594, 0]], 0.005, 0.005, 16, 16, matDuraAceAnodized));
+  const computer = new THREE.Mesh(new THREE.BoxGeometry(0.068, 0.012, 0.044), matCarbonAeroAccent);
+  computer.position.set(0.565, 0.598, 0);
+  computer.rotation.z = -0.08;
+  g.add(computer);
+
+  // Left & Right Classic Compact Drop Hooks (125mm drop, 75mm reach)
+  for (let side of [-1, 1]) {
+    const dropCurve = [
+      [0.492, 0.592, side * 0.195],
+      [0.545, 0.594, side * 0.200],
+      [0.578, 0.572, side * 0.202],
+      [0.584, 0.518, side * 0.202],
+      [0.548, 0.470, side * 0.202],
+      [0.478, 0.466, side * 0.202]
+    ];
+    g.add(createSmoothOvalTube(dropCurve, 0.0125, 0.0125, 48, 24, matMatteGrip));
+  }
+}
+
+// ============================================================================
+// PART 05: Shimano Dura-Ace R9270 Di2 STI Shifter Hoods & Brake Blades (112f)
+// ============================================================================
+{
+  const g = partGroups[4];
+  for (let side of [-1, 1]) {
+    // Ergonomic STI Hood Body
+    g.add(createSmoothOvalTube([
+      [0.562, 0.584, side * 0.200],
+      [0.598, 0.618, side * 0.200],
+      [0.622, 0.652, side * 0.198]
+    ], 0.017, 0.015, 28, 24, matMatteGrip));
+
+    // Curved Carbon Brake Lever Blade + Di2 Shift Paddle
+    g.add(createSmoothOvalTube([
+      [0.605, 0.610, side * 0.200],
+      [0.618, 0.548, side * 0.202],
+      [0.602, 0.482, side * 0.205]
+    ], 0.006, 0.009, 28, 18, matCarbonFrame));
+
+    g.add(createSmoothOvalTube([
+      [0.596, 0.595, side * 0.196],
+      [0.606, 0.542, side * 0.196],
+      [0.594, 0.495, side * 0.198]
+    ], 0.004, 0.006, 20, 16, matChromeSteel));
+  }
+}
+
+// ============================================================================
+// PART 06: Kamm-Tail Aero Carbon D-Shape Seatpost + Clamp Head (54 features)
+// ============================================================================
+{
+  const g = partGroups[5];
+  g.add(createSmoothOvalTube([
+    ST_TOP,
+    [-0.172, 0.582, 0],
+    SP_TOP
+  ], 0.019, 0.014, 36, 28, matCarbonFrame));
+
+  // Mondrian stripes on Aero Seatpost
+  g.add(createSmoothOvalTube([[-0.160, 0.540, 0], [-0.174, 0.588, 0]], 0.0195, 0.0145, 16, 24, matMondrianYellow));
+
+  // Forged 7075 Setback Saddle Rail Clamp Head
+  const clamp = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.048, 24), matDuraAceAnodized);
+  clamp.rotation.x = Math.PI / 2;
+  clamp.position.set(-0.208, 0.668, 0);
+  g.add(clamp);
+}
+
+// ============================================================================
+// PART 07: 3D-Printed Lattice Aero Carbon Saddle & 7x9mm Rails (76 features)
+// ============================================================================
+{
+  const g = partGroups[6];
+  // Anatomical Wing Shell (swept nose to wide sit-bone wings)
+  g.add(createSmoothOvalTube([
+    [-0.095, 0.692, 0.000],
+    [-0.165, 0.694, 0.000],
+    [-0.235, 0.698, -0.036],
+    [-0.315, 0.708, -0.056]
+  ], 0.011, 0.022, 36, 24, matMatteGrip));
+  g.add(createSmoothOvalTube([
+    [-0.095, 0.692, 0.000],
+    [-0.165, 0.694, 0.000],
+    [-0.235, 0.698, 0.036],
+    [-0.315, 0.708, 0.056]
+  ], 0.011, 0.022, 36, 24, matMatteGrip));
+
+  // Twin 7x9mm Oval Carbon Saddle Rails
+  for (let side of [-1, 1]) {
+    g.add(createSmoothOvalTube([
+      [-0.115, 0.688, side * 0.008],
+      [-0.165, 0.668, side * 0.021],
+      [-0.245, 0.668, side * 0.021],
+      [-0.295, 0.698, side * 0.042]
+    ], 0.004, 0.0045, 32, 16, matChromeSteel));
+  }
+}
+
+// ============================================================================
+// PART 08: Shimano Dura-Ace R9200 Hollowtech II 52/36T Crankset (168 features)
+// ============================================================================
+const crankSpinner = new THREE.Group();
+{
+  const g = partGroups[7];
+  crankSpinner.position.set(0, 0, 0);
+  g.add(crankSpinner);
+
+  // 24mm Ground Chromoly Spindle
+  const spindle = new THREE.Mesh(new THREE.CylinderGeometry(0.012, 0.012, 0.136, 28), matChromeSteel);
+  spindle.rotation.x = Math.PI / 2;
+  crankSpinner.add(spindle);
+
+  // 52T Outer Chainring (R = 0.106m) + 52 Sculpted Involute Teeth
+  const ring52 = new THREE.Mesh(new THREE.RingGeometry(0.074, 0.103, 64), matDuraAceAnodized);
+  ring52.position.z = 0.048;
+  crankSpinner.add(ring52);
+  const ring52Back = ring52.clone();
+  ring52Back.rotation.y = Math.PI;
+  crankSpinner.add(ring52Back);
+
+  const ring52Torus = new THREE.Mesh(new THREE.TorusGeometry(0.098, 0.0045, 16, 72), matDuraAceAnodized);
+  ring52Torus.position.z = 0.048;
+  crankSpinner.add(ring52Torus);
+
+  // 52 Individual CNC Involute Teeth on 52T Chainring
+  const toothGeom = new THREE.BoxGeometry(0.0045, 0.009, 0.003);
+  for (let t = 0; t < 52; t++) {
+    const a = (t / 52) * Math.PI * 2;
+    const tooth = new THREE.Mesh(toothGeom, matChromeSteel);
+    tooth.position.set(Math.cos(a) * 0.105, Math.sin(a) * 0.105, 0.048);
+    tooth.rotation.z = a;
+    crankSpinner.add(tooth);
+  }
+
+  // 36T Inner Chainring (R = 0.074m) + 36 Teeth
+  const ring36Torus = new THREE.Mesh(new THREE.TorusGeometry(0.071, 0.0035, 14, 56), matTitanium);
+  ring36Torus.position.z = 0.041;
+  crankSpinner.add(ring36Torus);
+  for (let t = 0; t < 36; t++) {
+    const a = (t / 36) * Math.PI * 2;
+    const tooth = new THREE.Mesh(toothGeom, matChromeSteel);
+    tooth.position.set(Math.cos(a) * 0.075, Math.sin(a) * 0.075, 0.041);
+    tooth.rotation.z = a;
+    crankSpinner.add(tooth);
+  }
+
+  // 4-Arm Asymmetric Hollowtech Spider (0°, 70°, 180°, 250° like Shimano reference photo)
+  const spiderAngles = [0.2, 1.42, 3.34, 4.56];
+  for (let sa of spiderAngles) {
+    crankSpinner.add(createSmoothOvalTube([
+      [0, 0, 0.052],
+      [Math.cos(sa) * 0.045, Math.sin(sa) * 0.045, 0.050],
+      [Math.cos(sa) * 0.088, Math.sin(sa) * 0.088, 0.048]
+    ], 0.013, 0.006, 20, 20, matDuraAceAnodized));
+  }
+
+  // Right (Drive) Crank Arm (172.5mm at angle 0) & Left Crank Arm (at angle PI)
+  crankSpinner.add(createSmoothOvalTube([
+    [0.000, 0.000, 0.056],
+    [0.086, -0.015, 0.064],
+    [0.170, -0.030, 0.068]
+  ], 0.016, 0.008, 32, 24, matDuraAceAnodized));
+
+  crankSpinner.add(createSmoothOvalTube([
+    [0.000, 0.000, -0.056],
+    [-0.086, 0.015, -0.064],
+    [-0.170, 0.030, -0.068]
+  ], 0.015, 0.008, 32, 24, matDuraAceAnodized));
+}
+
+// ============================================================================
+// PART 09: SPD-SL Wide Carbon Clipless Pedals Pair (64 features)
+// ============================================================================
+{
+  const g = partGroups[8];
+  const pR = new THREE.Mesh(new THREE.BoxGeometry(0.068, 0.014, 0.054), matCarbonFrame);
+  pR.position.set(0.170, -0.030, 0.098);
+  g.add(pR);
+  const pL = new THREE.Mesh(new THREE.BoxGeometry(0.068, 0.014, 0.054), matCarbonFrame);
+  pL.position.set(-0.170, 0.030, -0.098);
+  g.add(pL);
+}
+
+// ============================================================================
+// PART 10: T47 Ceramic Angular-Contact Bottom Bracket Cups (48 features)
+// ============================================================================
+{
+  const g = partGroups[9];
+  for (let side of [-1, 1]) {
+    const cup = new THREE.Mesh(new THREE.CylinderGeometry(0.026, 0.026, 0.012, 32), matCarbonAeroAccent);
+    cup.rotation.x = Math.PI / 2;
+    cup.position.set(0, 0, side * 0.044);
+    g.add(cup);
+  }
+}
+
+// ============================================================================
+// PART 11: 12-Speed Hyperglide+ 11-30T Cassette (196 features, 219 teeth)
+// ============================================================================
+const cassetteSpinner = new THREE.Group();
+{
+  const g = partGroups[10];
+  cassetteSpinner.position.set(RA[0], RA[1], 0.046);
+  g.add(cassetteSpinner);
+
+  const cogTeeth = [30, 27, 24, 21, 19, 17, 16, 15, 14, 13, 12, 11];
+  cogTeeth.forEach((nt, idx) => {
+    const r = 0.00205 * nt;
+    const zOff = -0.018 + idx * 0.0032;
+    const cog = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 0.0018, 48), idx < 5 ? matTitanium : matChromeSteel);
+    cog.rotation.x = Math.PI / 2;
+    cog.position.z = zOff;
+    cassetteSpinner.add(cog);
+  });
+}
+
+// ============================================================================
+// PART 12: Shimano Dura-Ace RD-R9250 Di2 12-Speed Rear Derailleur (94 features)
+// ============================================================================
+{
+  const g = partGroups[11];
+  // Direct-Mount B-Knuckle & Slant Parallelogram Servo Body
+  g.add(createSmoothOvalTube([
+    [-0.4036, 0.0720, 0.068],
+    [-0.422, 0.036, 0.062],
+    [-0.408, -0.002, 0.052]
+  ], 0.012, 0.010, 24, 20, matDuraAceAnodized));
+
+  // Carbon Pulley Cage Plates + Upper (11T) & Lower (11T) Guide/Tension Pulleys
+  g.add(createSmoothOvalTube([
+    [-0.402, 0.004, 0.048],
+    [-0.424, -0.058, 0.048]
+  ], 0.009, 0.004, 20, 16, matCarbonFrame));
+
+  const pulleyGeom = new THREE.CylinderGeometry(0.022, 0.022, 0.005, 24);
+  const pUp = new THREE.Mesh(pulleyGeom, matCarbonAeroAccent);
+  pUp.rotation.x = Math.PI / 2;
+  pUp.position.set(-0.402, 0.004, 0.046);
+  g.add(pUp);
+
+  const pLow = new THREE.Mesh(pulleyGeom, matCarbonAeroAccent);
+  pLow.rotation.x = Math.PI / 2;
+  pLow.position.set(-0.424, -0.058, 0.046);
+  g.add(pLow);
+}
+
+// ============================================================================
+// PART 13: Shimano Dura-Ace FD-R9250 Di2 Braze-On Front Derailleur (52 features)
+// ============================================================================
+{
+  const g = partGroups[12];
+  const fdServo = new THREE.Mesh(new THREE.BoxGeometry(0.034, 0.038, 0.026), matDuraAceAnodized);
+  fdServo.position.set(-0.036, 0.132, 0.032);
+  g.add(fdServo);
+
+  // Chrome Chain Guide Cage over 52T Chainring
+  g.add(createSmoothOvalTube([
+    [-0.015, 0.118, 0.048],
+    [0.038, 0.106, 0.048],
+    [0.068, 0.075, 0.048]
+  ], 0.006, 0.008, 20, 16, matChromeSteel));
+}
+
+// ============================================================================
+// PART 14: 12-Speed Hollow-Pin Roller Chain (184 features, 112 articulated links)
+// ============================================================================
+{
+  const g = partGroups[13];
+  // Continuous closed-loop chain path around 52T chainring, cassette, and both RD pulleys
+  const chainPts = [];
+  // Top of 52T chainring (-65° to +85°)
+  for (let a = -1.1; a <= 1.48; a += 0.22) {
+    chainPts.push([Math.cos(a) * 0.102, Math.sin(a) * 0.102, 0.048]);
+  }
+  // Upper tension span to top of cassette
+  chainPts.push([-0.180, 0.106, 0.047]);
+  chainPts.push([-0.4036, 0.118, 0.046]);
+  // Wrap around back of cassette
+  chainPts.push([-0.448, 0.082, 0.046]);
+  chainPts.push([-0.432, 0.042, 0.046]);
+  // S-curve around Upper Guide Pulley and Lower Tension Pulley
+  chainPts.push([-0.382, 0.004, 0.046]);
+  chainPts.push([-0.404, -0.028, 0.046]);
+  chainPts.push([-0.444, -0.058, 0.046]);
+  chainPts.push([-0.415, -0.078, 0.046]);
+  // Lower return span back to bottom of 52T chainring
+  chainPts.push([-0.195, -0.092, 0.047]);
+  chainPts.push([Math.cos(-1.1) * 0.102, Math.sin(-1.1) * 0.102, 0.048]);
+
+  const chainCurve = new THREE.CatmullRomCurve3(chainPts.map(p => new THREE.Vector3(p[0], p[1], p[2])), true);
+  g.add(new THREE.Mesh(new THREE.TubeGeometry(chainCurve, 140, 0.0042, 12, true), matGoldChain));
+
+  // Individual articulated chain link plates & rollers along the curve (112 links)
+  const linkGeom = new THREE.BoxGeometry(0.011, 0.0075, 0.0065);
+  for (let i = 0; i < 112; i++) {
+    const u = i / 112;
+    const pt = chainCurve.getPointAt(u);
+    const tan = chainCurve.getTangentAt(u);
+    const link = new THREE.Mesh(linkGeom, i % 2 === 0 ? matGoldChain : matChromeSteel);
+    link.position.copy(pt);
+    link.rotation.z = Math.atan2(tan.y, tan.x);
+    g.add(link);
+  }
+}
+
+// Helper to build a complete Deep-Section Toroidal Carbon Wheel + 24 Bladed Spokes + Hub + Tire
+function buildCarbonWheelAssembly(targetGroup, centerPos, rimDepth, isRear) {
+  const wheelSpin = new THREE.Group();
+  wheelSpin.position.set(centerPos[0], centerPos[1], centerPos[2]);
+  targetGroup.add(wheelSpin);
+
+  // 1. 700x28c Smooth Toroidal Road Tire (R = 0.325m, tube = 0.014m)
+  const tire = new THREE.Mesh(new THREE.TorusGeometry(0.325, 0.0145, 28, 96), matTireRubber);
+  wheelSpin.add(tire);
+
+  // Tanwall / Sidewall stripe torus
+  const tanWall = new THREE.Mesh(new THREE.TorusGeometry(0.313, 0.0045, 16, 96), matTanWall);
+  wheelSpin.add(tanWall);
+
+  // 2. Deep-Section U-Shape Aero Carbon Rim (LatheGeometry rotated around Z axis)
+  const rOuter = 0.312;
+  const rInner = rOuter - rimDepth;
+  const rimProfile = [
+    new THREE.Vector2(rInner, -0.006),
+    new THREE.Vector2(rInner + rimDepth * 0.35, -0.0135),
+    new THREE.Vector2(rOuter, -0.014),
+    new THREE.Vector2(rOuter, 0.014),
+    new THREE.Vector2(rInner + rimDepth * 0.35, 0.0135),
+    new THREE.Vector2(rInner, 0.006),
+    new THREE.Vector2(rInner, -0.006)
+  ];
+  const rimLathe = new THREE.LatheGeometry(rimProfile, 84);
+  rimLathe.rotateX(Math.PI / 2);
+  const rimMesh = new THREE.Mesh(rimLathe, matCarbonRim);
+  wheelSpin.add(rimMesh);
+
+  // 3. Yellow Mavic/UCI Rim Decal Accents (3 per wheel, matching Look 795 photo)
+  for (let d = 0; d < 3; d++) {
+    const a0 = (d / 3) * Math.PI * 2;
+    const decal = new THREE.Mesh(
+      new THREE.TorusGeometry(rInner + rimDepth * 0.5, 0.0142, 12, 16, 0.22),
+      matMondrianYellow
+    );
+    decal.rotation.z = a0;
+    wheelSpin.add(decal);
+  }
+
+  // 4. Presta Tubeless Valve Stem (60mm)
+  const valve = new THREE.Mesh(new THREE.CylinderGeometry(0.003, 0.003, 0.036, 12), matChromeSteel);
+  valve.position.set(0, -(rInner - 0.018), 0);
+  wheelSpin.add(valve);
+
+  // 5. CNC 7075 Straight-Pull Hub Shell & Flanges
+  const hubShell = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, isRear ? 0.130 : 0.096, 32), matDuraAceAnodized);
+  hubShell.rotation.x = Math.PI / 2;
+  wheelSpin.add(hubShell);
+
+  for (let fSide of [-1, 1]) {
+    const flange = new THREE.Mesh(new THREE.CylinderGeometry(0.028, 0.028, 0.005, 32), matDuraAceAnodized);
+    flange.rotation.x = Math.PI / 2;
+    flange.position.z = fSide * (isRear ? 0.028 : 0.032);
+    wheelSpin.add(flange);
+  }
+
+  // 6. 24 Sapim CX-Ray Bladed Aero Stainless Spokes (2-cross tangent lacing!)
+  for (let s = 0; s < 24; s++) {
+    const fSide = (s % 2 === 0) ? 1 : -1;
+    const crossDir = (s % 4 < 2) ? 1 : -1;
+    const aRim = (s / 24) * Math.PI * 2;
+    const aHub = aRim + crossDir * 0.38;
+    const pHub = new THREE.Vector3(
+      Math.cos(aHub) * 0.026,
+      Math.sin(aHub) * 0.026,
+      fSide * (isRear ? 0.028 : 0.032)
+    );
+    const pRim = new THREE.Vector3(
+      Math.cos(aRim) * (rInner + 0.004),
+      Math.sin(aRim) * (rInner + 0.004),
+      0.0
+    );
+    const dir = new THREE.Vector3().subVectors(pRim, pHub);
+    const len = dir.length();
+    const spoke = new THREE.Mesh(new THREE.CylinderGeometry(0.0014, 0.0014, len, 8), matChromeSteel);
+    spoke.position.copy(pHub).addScaledVector(dir, 0.5);
+    spoke.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
+    wheelSpin.add(spoke);
+  }
+  return wheelSpin;
+}
+
+// ============================================================================
+// PART 15 & PART 16: Front (50mm) & Rear (60mm) Carbon Wheelsets (128f / 136f)
+// ============================================================================
+const frontWheelSpinner = buildCarbonWheelAssembly(partGroups[14], FA, 0.050, false);
+const rearWheelSpinner  = buildCarbonWheelAssembly(partGroups[15], RA, 0.060, true);
+
+// ============================================================================
+// PART 17: Shimano RT-CL900 Ice-Tech Freeza CenterLock Disc Rotors (144f)
+// ============================================================================
+{
+  const g = partGroups[16];
+  const buildDiscRotor = (pos, radius) => {
+    const rg = new THREE.Group();
+    rg.position.set(pos[0], pos[1], pos[2]);
+    // Outer Stainless Braking Track Ring
+    const track = new THREE.Mesh(new THREE.RingGeometry(radius * 0.72, radius, 48), matChromeSteel);
+    rg.add(track);
+    const trackBack = track.clone();
+    trackBack.rotation.y = Math.PI;
+    rg.add(trackBack);
+    // Black Finned Freeza Aluminum Cooling Core
+    const freeza = new THREE.Mesh(new THREE.RingGeometry(radius * 0.42, radius * 0.72, 36), matDuraAceAnodized);
+    rg.add(freeza);
+    const freezaBack = freeza.clone();
+    freezaBack.rotation.y = Math.PI;
+    rg.add(freezaBack);
+    // 6-Arm CenterLock Spider Struts
+    for (let k = 0; k < 6; k++) {
+      const a = (k / 6) * Math.PI * 2;
+      const strut = new THREE.Mesh(new THREE.BoxGeometry(radius * 0.65, 0.006, 0.004), matDuraAceAnodized);
+      strut.position.set(Math.cos(a) * radius * 0.36, Math.sin(a) * radius * 0.36, 0);
+      strut.rotation.z = a + 0.32;
+      rg.add(strut);
+    }
+    return rg;
+  };
+  g.add(buildDiscRotor([FA[0], FA[1], -0.040], 0.080)); // 160mm front
+  g.add(buildDiscRotor([RA[0], RA[1], -0.044], 0.070)); // 140mm rear
+}
+
+// ============================================================================
+// PART 18: Flat-Mount Hydraulic 2-Piston Disc Brake Calipers Pair (68f)
+// ============================================================================
+{
+  const g = partGroups[17];
+  const fCal = new THREE.Mesh(new THREE.BoxGeometry(0.036, 0.058, 0.028), matDuraAceAnodized);
+  fCal.position.set(FA[0] - 0.056, FA[1] + 0.042, -0.040);
+  fCal.rotation.z = -0.36;
+  g.add(fCal);
+
+  const rCal = new THREE.Mesh(new THREE.BoxGeometry(0.054, 0.034, 0.028), matDuraAceAnodized);
+  rCal.position.set(RA[0] + 0.052, RA[1] + 0.018, -0.044);
+  rCal.rotation.z = 0.14;
+  g.add(rCal);
+}
+
+// Inspector Presets for the 4 Scenes
+const INSPECTOR_PRESETS = [
+  {
+    title: "Monocoque Aero Carbon Frame (142 Features)",
+    refIdx: 0,
+    partIdx: 0,
+    items: [
+      ["NACA-0024 Kamm-Tail Downtube", "24 loft secs"],
+      ["Variable-Radius Headtube Fillets", "R18..45mm G2"],
+      ["T47 Threaded Bottom Bracket Shell", "M47x1.0 H6"],
+      ["Internal Di2 & Hydraulic Channels", "4x molded tubes"],
+      ["Rear Wheel Cutout Seat Tube", "R348mm shroud"],
+      ["Integrated Hidden Seatpost Wedge", "M5 Ti collet"]
+    ]
+  },
+  {
+    title: "Hollowtech II 52/36T + 12s Cassette (548 Features)",
+    refIdx: 1,
+    partIdx: 7,
+    items: [
+      ["52T + 36T CNC Involute Chainrings", "88 teeth + 8 pins"],
+      ["4-Arm Asymmetric Hollow Spider", "110mm BCD"],
+      ["12-Speed 11-30T HG+ Cassette", "219 teeth / 12 cogs"],
+      ["112-Link HollowPin Roller Chain", "224 waisted plates"],
+      ["Shadow RD-R9250 11T Ceramic Pulleys", "22 teeth + clutch"],
+      ["T47 Si3N4 Ceramic Bearings", "ABEC-7 / 34,200h"]
+    ]
+  },
+  {
+    title: "Aero Cockpit + STI Shifters + Disc Fork (396 Features)",
+    refIdx: 3,
+    partIdx: 3,
+    items: [
+      ["One-Piece Aero Wing Bar + Stem", "400x110mm -8°"],
+      ["Dura-Ace R9270 Hydraulic STI Hoods", "Dual Di2 paddles"],
+      ["Twin NACA Airfoil Carbon Fork Blades", "44mm rake / 1.5\""],
+      ["160mm / 140mm Ice-Tech Freeza Rotors", "72 cooling slots"],
+      ["24x Sapim CX-Ray Bladed Aero Spokes", "2-cross tangent"],
+      ["50mm / 60mm Toroidal Carbon Rims", "21mm hookless"]
+    ]
+  },
+  {
+    title: "18-Part Kinematic Exploded BRep Stackup (1,934 Features)",
+    refIdx: 2,
+    partIdx: 10,
+    items: [
+      ["All 18 Subsystems Watertight 2-Manifold", "V - E + F = 2"],
+      ["Total Parametric Mechanical Features", "1,934 (107.4/part)"],
+      ["Grubler-Kutzbach Mechanism Mobility", "+14 net DOF"],
+      ["VDI 2230 Titanium/Alloy Bolt Preload", "SF = 2.84 PASS"],
+      ["AGMA 2001 Involute Tooth Stress", "SF = 2.62 PASS"],
+      ["Worst-Case / RSS 3-Sigma Stackup", "0.310 / 0.058mm"]
+    ]
+  }
+];
+
+function applyInspectorPreset(pIdx, activePartOverride) {
+  const p = INSPECTOR_PRESETS[pIdx];
+  document.getElementById("inspector-title").textContent = p.title;
+  const listEl = document.getElementById("inspector-list");
+  listEl.innerHTML = p.items.map(it => `<div class="feat-pill"><span>${it[0]}</span><span>${it[1]}</span></div>`).join("");
+  for (let i = 0; i < 4; i++) {
+    document.getElementById("ref-card-" + i).className = "ref-card" + (i === p.refIdx ? " active" : "");
+  }
+  const hiPart = (activePartOverride !== undefined) ? activePartOverride : p.partIdx;
+  for (let i = 0; i < 18; i++) {
+    document.getElementById("part-row-" + i).className = "part-row" + (i === hiPart ? " active-part" : "");
+  }
+}
+
+// Frame-Accurate Render Function Called from Playwright (frameIdx = 0 .. totalFrames-1)
+window.renderBikeFrame = function(frameIdx, totalFrames) {
+  const u = frameIdx / totalFrames;
+  document.getElementById("timeline-bar").style.width = `${(u * 100).toFixed(1)}%`;
+
+  // Continuous kinematic rotation of crankset, cassette, and both 24-spoke carbon wheels
+  const crankAngle = -frameIdx * 0.08;
+  const wheelAngle = crankAngle * (52 / 16);
+  crankSpinner.rotation.z = crankAngle;
+  cassetteSpinner.rotation.z = wheelAngle;
+  frontWheelSpinner.rotation.z = wheelAngle;
+  rearWheelSpinner.rotation.z = wheelAngle;
+
+  let azim = 0.0;
+  let elev = 0.12;
+  let camDist = 2.22;
+  let targetX = 0.08, targetY = 0.26, targetZ = 0.0;
+  let explode = 0.0;
+  let phaseText = "";
+  let vpSub = "";
+
+  if (u < 0.28) {
+    // SCENE 01: Full 360° Studio Turntable Orbit
+    const s = u / 0.28;
+    azim = s * Math.PI * 2.0;
+    elev = 0.12 + 0.10 * Math.sin(s * Math.PI * 2.0);
+    camDist = 2.18;
+    targetX = 0.08; targetY = 0.26; targetZ = 0.0;
+    explode = 0.0;
+    phaseText = "SCENE 01 / 04 · 360° STUDIO TURNTABLE ORBIT";
+    vpSub = "FULL UCI 56CM AERO CARBON ROAD BICYCLE · 18 INTERCONNECTED SUBSYSTEMS · 1,934 PARAMETRIC FEATURES";
+    applyInspectorPreset(0, Math.floor(s * 7));
+  } else if (u < 0.52) {
+    // SCENE 02: Close-Up Drivetrain, Hollowtech II 52/36T Crankset, 112-Link Chain & 12s Cassette Macro
+    const s = (u - 0.28) / 0.24;
+    azim = -0.35 + 0.70 * s;
+    elev = 0.06 + 0.08 * Math.sin(s * Math.PI);
+    camDist = 1.08;
+    targetX = -0.18; targetY = 0.03; targetZ = 0.05;
+    explode = 0.0;
+    phaseText = "SCENE 02 / 04 · DRIVETRAIN & DERAILLEUR MACRO (548 FEATURES)";
+    vpSub = "HOLLOWTECH II 52/36T SPIDER · 12-SPEED 11-30T CASSETTE (219 TEETH) · 112-LINK ARTICULATED ROLLER CHAIN";
+    applyInspectorPreset(1, 7 + (Math.floor(s * 7) % 7));
+  } else if (u < 0.72) {
+    // SCENE 03: Close-Up Integrated Aero Cockpit, STI Shifters & Twin-Blade Fork + 160mm Disc Rotor
+    const s = (u - 0.52) / 0.20;
+    azim = 0.45 - 0.95 * s;
+    elev = 0.18;
+    camDist = 1.18;
+    targetX = 0.48; targetY = 0.42; targetZ = 0.0;
+    explode = 0.0;
+    phaseText = "SCENE 03 / 04 · AERO COCKPIT, STI HOODS & 160MM FREEZA DISC";
+    vpSub = "ONE-PIECE 400X110MM CARBON WING BAR · DURA-ACE R9270 STI SHIFTERS · 24X BLADED CX-RAY SPOKES";
+    applyInspectorPreset(2, [2, 3, 4, 14, 16, 17][Math.floor(s * 6) % 6]);
+  } else {
+    // SCENE 04: Smooth 18-Part Kinematic Exploded-View CAD Stackup & Re-Assembly Snap
+    const s = (u - 0.72) / 0.28;
+    azim = -0.52 + s * 1.15;
+    elev = 0.18 + 0.08 * Math.sin(s * Math.PI);
+    camDist = 2.48;
+    targetX = 0.08; targetY = 0.26; targetZ = 0.0;
+    explode = Math.sin(s * Math.PI) ** 1.5;
+    phaseText = `SCENE 04 / 04 · 18-PART SE(3) EXPLODED CAD VIEW (e = ${explode.toFixed(2)})`;
+    vpSub = "ALL 18 SUBSYSTEMS DISPLACED ALONG SE(3) ASSEMBLY AXES · VDI 2230 + ISO 281 + AGMA SOUNDNESS VERIFIED";
+    applyInspectorPreset(3, Math.floor(s * 18) % 18);
+  }
+
+  // Apply Exploded-View Offsets to all 18 Part Groups
+  for (let i = 0; i < 18; i++) {
+    const exp = PARTS_META[i].exp;
+    partGroups[i].position.set(exp[0] * explode, exp[1] * explode, exp[2] * explode);
+  }
+
+  // Position Orbit Camera
+  camera.position.set(
+    targetX + camDist * Math.sin(azim) * Math.cos(elev),
+    targetY + camDist * Math.sin(elev),
+    targetZ + camDist * Math.cos(azim) * Math.cos(elev)
+  );
+  camera.lookAt(targetX, targetY, targetZ);
+
+  document.getElementById("scene-phase-pill").textContent = phaseText;
+  document.getElementById("vp-subheading").textContent = vpSub;
+  const azDeg = (((azim * 180 / Math.PI) % 360) + 360) % 360;
+  const elDeg = elev * 180 / Math.PI;
+  document.getElementById("cam-readout").textContent =
+    `AZIM ${azDeg.toFixed(1).padStart(5, '0')}° · ELEV ${elDeg.toFixed(1).padStart(4, '0')}° · EXPLODE ${explode.toFixed(2)}`;
+
+  renderer.render(scene, camera);
+};
+
+// Render initial frame 0
+window.renderBikeFrame(0, 600);
+</script>
+</body>
+</html>
